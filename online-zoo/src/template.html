@@ -3,14 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/assets/favicon.ico" rel="shortcut icon" />
+  <link href="/src/assets/icons/logo-footer.svg" rel="shortcut icon" />
   <link rel="stylesheet" href="/src/styles/main.scss" />
   <link rel="stylesheet" href="/src/styles/owfont-regular.scss" />
   <title>Momentum</title>
 </head>
 <body>
   <header class="header">
-    <div class="player">
+    <div class="wrapper header__wrapper">
+      <a href="#" class="logo"><img src="/src/assets/icons/logo-footer.svg" alt="PetStory online" class="logo"></a>
+      <nav class="header__navigation">
+        <ul class="navigation">
+          <li class="navigation__link"> <a href="#about" class="link link_colored">About</a></li>
+          <li class="navigation__link"> <a href="#map" class="link link_colored">Map</a></li>
+          <li class="navigation__link"> <a href="#zoos" class="link link_colored">Zoos</a></li>
+          <li class="navigation__link"> <a href="#donate" class="link link_colored">Donate</a></li>
+          <li class="navigation__link"> <a href="#contact" class="link link_colored">Contact us</a></li>
+        </ul>
+      </nav>
+      <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="designed">Designed by©</a>
+    </div>
+  </header>
+  <section class="watch">
+    <div class="wrapper watch__wrapper">
+      <div class="watch__content">
+        <span class="content__ellips"></span>
+        <hi class="content__text">Watch your favorite animal online</hi>
+      </div>
+      <button class="button button_smothed button_orange"></button>
+    </div>
+  </section>
+
+
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
         <button class="play player-icon"></button>
