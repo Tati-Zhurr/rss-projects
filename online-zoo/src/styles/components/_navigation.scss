@@ -1,0 +1,15 @@
+
+.navigation{
+    display:flex;
+    flex-direction: row;
+    color:$color-white;
+    list-style: none;
+    gap: 58px;
+ .navlink__header{
+    color:$color-white;
+    text-decoration: none;
+ }
+ .link_selected{
+    color: $color-primary;
+ }
+}

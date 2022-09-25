@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/src/assets/icons/logo-footer.svg" rel="shortcut icon" />
+  <link href="logo-petonline.svg" rel="shortcut icon" />
   <link rel="stylesheet" href="/src/styles/main.scss" />
-  <link rel="stylesheet" href="/src/styles/owfont-regular.scss" />
-  <title>Momentum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Aleo:ital,wght@0,400;0,700;1,700&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <title>Online-zoo</title>
 </head>
 <body>
   <header class="header" id="header">
     <div class="wrapper header__wrapper">
-      <a href="#" class="logo"><img src="/src/assets/svg/logo-petonline.svg" alt="PetStory online" class="logo"></a>
+      <!--<a href="index.html" class="logo__link"><span class="logo"></span></a>-->
+      <h1 class="petStory-online">
+        <a href="index.html" class="h1 h1__petStory">PetStory online</a>
+        <img alt="bamboo" src="bamboo.svg" class="bamboo"></img>
+      </h1>
       <nav class="navigation__header">
         <ul class="navigation">
-          <li class="navigation__item"> <a href="#about" class="navlink__header link_colored">About</a></li>
+          <li class="navigation__item"> <a href="#about" class="navlink__header link_selected">About</a></li>
           <li class="navigation__item"> <a href="#map" class="navlink__header">Map</a></li>
           <li class="navigation__item"> <a href="#zoos" class="navlink__header">Zoos</a></li>
           <li class="navigation__item"> <a href="donate.html" class="navlink__header">Donate</a></li>
@@ -28,10 +32,10 @@
   <section class="watch" id="watch">
     <div class="wrapper watch__wrapper">
       <div class="watch__content">
-        <span class="content__ellips"></span>
-        <h1 class="h1 content__text">WATCH YOUR FAVORITE ANIMAL ONLINE</h1>
+        <span class="ellips content__ellips"></span>
+        <h1 class="h1 watch__text">WATCH YOUR <span>FAVORITE</span> ANIMAL ONLINE</h1>
       </div>
-      <button class="button button_smothed button_orange">WATCH ONLINE</button>
+      <button class="button button_smothed button__watch">WATCH ONLINE</button>
     </div>
   </section>
 
@@ -141,7 +145,7 @@
           <h2 class="h2 h2_orange">Pick and feed a friend</h2>
           <p class="text_subtitle feed__subtitle">We know the animals bring you joy, and in these extraordinary times, we\’re glad.</p>
           <p class="body_text feed__commentText">During a time when the COVID-19 epidemic is touching all of our lives, we\’re proud and glad that people around the world find joy in PetStory.</p>
-          <p class="body_text feed__mainText">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a class="feed__link">Emergency Support Fund</a>. </p>
+          <p class="body_text feed__mainText">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a href="donate.html" class="feed__link">Emergency Support Fund</a>. </p>
         </article>
         <div class="howItWorks">
           <h3 class="h3 feed__h3">How it works</h3>
@@ -166,7 +170,7 @@
       </div>
     </div>
   </section>
- <section class="testimonials">
+ <section class="testimonials" id="testimonials">
   <div class="wrapper wrapper__testimonials">
     <span class="testimonials__decoration decoration_bottom_right"></span>
     <div class="testimonials">
@@ -243,7 +247,7 @@
   </div>
  </section>
 </main>
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="wrapper wrapper__footer">
     <a href="#" class="logo" id="logo__footer"><img src="/src/assets/svg/logo-petonline.svg" alt="PetStory online" class="logo"></a>
    <form action="#" class="form__footer" id="form__footer">
@@ -253,22 +257,18 @@
    </form>
     <button class="button button_square">donate for volunteers</button>
     <div class="socialMedia__footer">
-      <div class="site">
-        <span class="icon__site"></span>
-        <a href="https://www.facebook.com" class="text_body name__site">Facebook</a>
-      </div>
-      <div class="site">
-        <span class="icon__site"></span>
-        <a href="https://twitter.com" class="text_body name__site">Twitter</a>
-      </div>
-      <div class="site">
-        <span class="icon__site"></span>
-        <a href="https://www.instagram.com" class="text_body name__site">Instagram</a>
-      </div>
-      <div class="site">
-        <span class="icon__site"></span>
-        <a href="https://www.youtube.com" class="text_body name__site">YouTube</a>
-      </div>
+      <a href="https://www.facebook.com" class="link__site">
+        <span class="icon__site"></span>Facebook
+      </a>
+      <a href="https://twitter.com" class="link__site">
+        <span class="icon__site"></span>Twitter
+      </a>
+      <a href="https://www.instagram.com" class="link__site">
+        <span class="icon__site"></span>Instagram
+      </a>
+      <a href="https://www.youtube.com" class="link__site">
+        <span class="icon__site"></span>YouTube
+      </a>
     </div>
     <nav class="navigation__footer">
       <ul class="navigation">

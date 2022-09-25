@@ -1,0 +1,33 @@
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+
+    @include font(106.496px, 75%, 700);
+    
+    & span{
+        color:$color-yellow
+    }
+}
+
+h2{
+    @include font(48px, 120%, 400);
+    margin:0 0 20px 0;
+}
+
+.text_subtitle{
+    @include font(24px, 120%, 400);
+
+}
+
+

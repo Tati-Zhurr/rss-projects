@@ -1,10 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin =require("mini-css-extract-plugin");
+
 
 
 module.exports = {
-    mode:'development',
+    mode:'production',
     entry: {
         bundle: path.resolve(__dirname,'src/index.js')
     },
@@ -28,8 +30,9 @@ module.exports = {
     module:{
         rules:[
             {
-                test:/\.scss$/,
-                use:['style-loader','css-loader','sass-loader']
+                test:/\.s(a|c)ss$/,
+                use:['style-loader','css-loader', 'resolve-url-loader','sass-loader']
+               /*use:[MiniCssExtractPlugin.loader,'css-loader','sass-loader']*/
 
             },
             {
@@ -43,11 +46,13 @@ module.exports = {
                 }
 
             },
+           /*{
+                test: /\.(jpeg|giff|jpg|png|svg)$/i,
+                type: 'assets/resource'
+               
+                
+            },*/
             /*{
-                test: /\.(jpeg|giff|jpg|png)$/i,
-                type: 'assets/resource',
-            },
-            {
                 test: /\.svg$/i,
                 type: 'assets/resourse',
             },*/
@@ -74,28 +79,32 @@ module.exports = {
             }
         }),
 
-        new CopyWebpackPlugin({
+        /*new MiniCssExtractPlugin({
+            filename:'[name][contenthash].scss'
+        })*/
+
+       new CopyWebpackPlugin({
             patterns: [
-            {
+           /* {
               from: path.resolve(__dirname, './src/assets/sounds/'),
               to: path.resolve(__dirname, './dist')
             },
             {
                 from: path.resolve(__dirname, './src/styles/'),
-                to: path.resolve(__dirname, './dist')
-              },
-            {
-                from: path.resolve(__dirname, './src/assets/img'),
-                to: path.resolve(__dirname, './dist')
-              },
+                to: path.resolve(__dirname, './dist/styles/')
+              },*/
+            /* {
+                from: path.resolve(__dirname, './src/assets/img/'),
+                to: path.resolve(__dirname, './dist/img/')
+              },*/
               {
-                from: path.resolve(__dirname, './src/assets/favicon.ico'),
-                to: path.resolve(__dirname, './dist')
-              },
+                from: path.resolve(__dirname, './src/assets/svg/'),
+                to: path.resolve(__dirname, './dist/')
+              }
             ]
-        }),
+        })
         
-    ],
+    ]
 
     
 }

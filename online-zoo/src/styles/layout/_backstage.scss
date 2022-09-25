@@ -1,0 +1,31 @@
+.backStage__content{
+    display: flex;
+    gap:87px;
+    margin:0 220px 180px 220px;
+    font-weight: 400;
+    margin-top: 140px;
+    
+
+
+    .backStage__image{
+        display: inline-block;
+        background-image: url("../../assets/img/bamboo-cap.jpg");
+        height: 403px;
+        width: 609px;
+    }
+
+    .backStage__article{
+        width: 465px;
+     .backStage__commentText{
+        margin-bottom: 54px;
+        line-height: 2.08rem;
+     }
+     .backStage__subtitle{
+        margin-bottom: 34px;
+     }
+     .backStage__mainText{
+       line-height: 2.24rem;
+     }
+    }
+
+}

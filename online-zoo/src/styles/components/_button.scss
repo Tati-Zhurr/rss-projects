@@ -1,3 +1,22 @@
 .button{
-    color:blue;
+    color: $color-white;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(113.96deg, $color-additional 1.49%, $color-primary 101.44%);
+    border-style: none;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button_smothed{
+    border-radius: 25px;
+    
+}
+
+.button__watch{
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    left: calc(50% - 298px/2 + 332px);
+    top: 626px;
 }

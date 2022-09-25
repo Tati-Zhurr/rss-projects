@@ -1,0 +1,32 @@
+.petStory-online{
+    position:relative;
+    width: 82px;
+    height: 52px;
+    font-size: 1.90145rem;
+    font-weight: 400;
+    line-height: 120%;
+    margin:0;
+    border: 1.18841px solid $color-white;
+    border-radius: 2px;
+    padding: 3.55px 4.55px;
+    
+    .h1__petStory{
+        width: 72.49px;
+        height: 44.91px;
+        color: $color-white;
+        text-decoration: none;
+        text-transform:none;
+        text-align: center;
+        z-index: 1;
+
+    }
+    .bamboo{
+        position: absolute;
+        width: 9px;
+        height: 20.98px;
+        left: 13.23px;
+        top: 24.64px; 
+        z-index: 3;
+        padding: 0;
+    }
+}
