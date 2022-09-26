@@ -30,4 +30,14 @@ h2{
 
 }
 
+.text_btn{
+    @include font(16px, 140%, 500);
+
+}
+
+.text_smallParagraph{
+    @include font(15px, 120%, 300);
+
+}
+
 

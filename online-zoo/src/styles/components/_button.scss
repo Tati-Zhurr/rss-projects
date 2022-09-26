@@ -6,6 +6,16 @@
     background: linear-gradient(113.96deg, $color-additional 1.49%, $color-primary 101.44%);
     border-style: none;
     font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    width: 298px;
+    height: 54px;
+    transition:all .3s;
+    &:hover{
+        background: $color-button-hover;
+    }
+    &:active{
+        background: $color-button-active;
+
+    }
 }
 
 .button_smothed{
@@ -15,8 +25,46 @@
 
 .button__watch{
     position: absolute;
-    width: 298px;
-    height: 54px;
     left: calc(50% - 298px/2 + 332px);
     top: 626px;
 }
+
+.slider__arrow{
+    position: relative;
+    height: 62px;
+    width: 62px;
+    background: linear-gradient(113.96deg, $color-additional 1.49%, $color-primary 101.44%);
+    border-radius: 50%;
+    border-style: none;
+   
+    &:active{
+        background: $color-button-active;
+
+    }
+}
+
+
+
+
+.arrow_back{
+    & span{
+    display: inline-block;
+    position:absolute;
+    background-image: url('../../assets/icons/left_arrow.svg');
+    height: 8px;
+    width: 16px;
+    transform: translate(-50%, -50%);
+        }
+}
+
+.arrow_forward{
+    & span{
+    display: inline-block;
+    position:absolute;
+    background-image: url('../../assets/icons/arrow_forward.svg');
+    height: 8px;
+    width: 16px;
+    transform: translate(-50%, -50%);
+        }
+}
+

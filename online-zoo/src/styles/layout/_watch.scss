@@ -1,5 +1,12 @@
 .watch{
     margin-bottom: 0;
+    width:100vw;
+    background-image: url('../../assets/img/Giant_Panda.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 780px;
+    min-width: $desktop-width; 
+    margin-top: -80px;
 }
 .watch__content{
     display: flex;
