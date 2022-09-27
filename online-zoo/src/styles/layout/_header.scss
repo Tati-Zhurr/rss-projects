@@ -1,4 +1,5 @@
 header{
+    position: relative;
     background-color: $color-black;
     width: 100vw;
     z-index: 2;
@@ -8,5 +9,8 @@ header{
     color: $color-white;
     text-decoration: none;
     padding-left: 438px;
+    &:hover{
+        color: $color-button-hover;
+      }
 };
     

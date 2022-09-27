@@ -1,0 +1,121 @@
+.testimonials__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:1160px;
+    margin: 140px auto 180px;
+    & h3{
+        text-align: center;
+        margin-bottom: 47px;
+    }
+
+   
+
+    .testimonials__progress{
+        align-self: center;
+        margin-bottom: 31px;
+        background-color: $color-primary;
+        height: 8px;
+        width: 599px;
+}
+    
+    .testimonials_content{
+        display: flex;
+        
+        .testimonial{
+            height: 391px;
+            width: 268px;
+            padding: 15px 15px 19px 16px;
+            margin-bottom: 21px;
+            overflow: hidden;
+            border: .5px solid  rgba(254, 189, 171, 0.74);
+            border-radius: 20px;
+            background: linear-gradient(0deg, #F1F3F2, #F1F3F2),linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+            .testimonial__person{
+                display: flex;
+                margin-bottom: 10px;
+                .person__image{
+                    display: inline-block;
+                    height: 37px;
+                    width: 37px;
+                    background-repeat: no-repeat;
+                    margin-right: 10px;
+                }
+            }
+    
+            .testimonial__text{
+                height: 308.8px;
+                overflow: hidden;
+                margin: 0;
+            }
+        }
+        
+
+    }
+    
+}
+
+.image_icon{
+    background-image: url('../../assets/icons/user_icon.png');
+}
+
+.image_Oscar{
+    background-image: url('../../assets/icons/Oscar.png');
+}
+
+.image_Frederika{
+    background-image: url('../../assets/icons/Frederika.png');
+}
+
+.image_Mila{
+    background-image: url('../../assets/icons/Mila.png');
+}
+
+.testimonial_Michael{
+    margin-right: 30px;
+}
+
+.testimonial_Oscar{
+    margin-right: 29px;
+}
+
+.testimonial_Friderika{
+    margin-right: 32px;
+}
+
+
+.person__name{
+    .text_name{
+        font-weight: 400;
+        margin-bottom: 1px;
+    }
+    .person__about{
+        display: flex;
+        align-items: center;
+        color: $color-grey;
+        .text_origin{
+            margin-right:6px;
+        }
+        .text_date{
+            margin-left: 5px;
+        }
+    }
+
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  progress[value]::-webkit-progress-bar {
+    background-color:#F5F7F6;
+    
+    
+    
+  }
+  progress::-webkit-progress-value {
+    background-color: $color-primary;
+    border-radius: 5px;
+    border: 0.5px solid rgba(254, 189, 171, 0.74) ;
+  }
+

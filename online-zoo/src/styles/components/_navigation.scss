@@ -5,11 +5,23 @@
     color:$color-white;
     list-style: none;
     gap: 58px;
- .navlink__header{
+    margin-left:63px;
+    padding-left: 0;
+ .navlink{
     color:$color-white;
     text-decoration: none;
+    &:hover{
+      color: $color-button-hover;
+      
+    }
  }
  .link_selected{
     color: $color-primary;
  }
+}
+
+footer{
+   .navigation{
+
+   }
 }

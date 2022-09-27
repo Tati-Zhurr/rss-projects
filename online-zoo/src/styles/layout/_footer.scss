@@ -1,0 +1,107 @@
+footer{
+    background-color: $color-footer;
+}
+
+#logo{
+    grid-area: logo;
+    align-self: baseline;
+}
+
+#form{
+    grid-area: form;
+}
+
+#button{
+    grid-area: button;
+    align-self: baseline;
+  
+}
+
+#media{
+    grid-area: media;
+    
+}
+
+#nav{
+    grid-area: nav;
+    padding-left: 38px;
+    align-self: flex-end;
+}
+
+#design{
+    grid-area: design;
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width:auto;
+}
+
+.socialMedia__footer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-content: center;
+    .link__site{
+        color: $color-white;
+        text-decoration: none;
+        position: relative;
+        height: 26px;
+        .icon__site{
+            display: inline-block;
+            background-image: url(..//..//assets/svg/twitter.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border-style: none;
+            background-color: rgba(196, 196, 196, 0.5);
+            margin-right:12px;
+        }
+        .icon__text{
+            position: absolute;
+            bottom:5px;
+        }   
+    }
+}
+
+#facebook{
+    background-image: url(..//..//assets/svg/facebook.svg);
+}
+
+#instagram{
+    background-image: url(..//..//assets/svg/instagram.svg);
+}
+
+#youtube{
+    background-image: url(..//..//assets/svg/youtube.svg);
+}
+
+.footer__label{
+    color:$color-white;
+    margin-bottom: 14px;
+}
+
+#email{
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    width: 228px;
+    height: 42px;
+    color: $color-grey;
+    padding: 10px 7px 10px 10px;
+    margin-top: 14px;
+}
+
+.designedBy__footer, .copyRights__footer{
+    text-align: end ;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 100;
+}
+.designedBy__footer{
+    text-align: start;
+}
+
+

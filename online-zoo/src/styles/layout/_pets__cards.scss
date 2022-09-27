@@ -20,6 +20,7 @@
         flex-direction: column;
         border-radius: 5px;
         border: 1px solid #FA6F32;
+        flex-shrink: 1;
         
       .pet__image{
         display: inline-block;
@@ -87,12 +88,20 @@
 }
 
 .image_cheetahs{
-  background-image: url('../../assets/img/pandas.jpg');
+  background-image: url('../../assets/img/cheetahs.jpg');
 }
 
 .image_penguins{
   background-image: url('../../assets/img/penguins.jpg');
 }
+
+.button__pet{
+  position: relative;
+  margin-bottom: 100px;
+  z-index: 3;
+}
+
+
 
 
 

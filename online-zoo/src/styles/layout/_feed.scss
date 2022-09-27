@@ -1,0 +1,116 @@
+.feed{
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+}
+
+.feed__link{
+    color: $color-black;
+    text-decoration-color: $color-primary;
+
+}
+
+.feed__article{
+    margin-bottom: 60px;
+}
+
+
+.h2_orange{
+    padding-left: 251px;
+    margin-bottom: 30px;
+}
+
+.feed__subtitle{
+    margin-bottom: 40px;
+    height: 29px;
+}
+
+.feed__commentText{
+    margin-bottom: 10px;
+    height: 21px;
+}
+
+.feed__mainText{
+    margin: 0px;
+    width: 863px;
+    height: 42px;
+}
+
+.howItWorks__plan{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 99px;
+    margin-right: 198px;
+    margin-bottom: 60px;
+    .plan__step{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:30px;
+        
+       .step__image{
+            position: relative;
+            background-color: $color-white;
+            height: 168px;
+            width: 168px;
+            border-radius: 5px;
+            border: 1px solid $color-primary;
+
+            span{
+            position: absolute;
+            display: inline-block;
+            background-repeat: no-repeat;
+            }
+            
+        }
+        .step__text{
+            height: 46px;
+            width: 168px;
+            margin: 0;
+        }
+
+    }
+    .plan__arrow{
+        display: inline-block;
+        background-image: url('../../assets/svg/arrowblack.svg');
+        background-repeat: no-repeat;
+        width: 69px;
+        height: 35.08px;
+        margin-top: 62px;
+        margin-right: 31px;
+        margin-left: 30px;
+    }
+   
+}
+
+.image_pay{
+    background-image: url('../../assets/svg/pay.svg');
+    height: 60px;
+    width: 108px;
+    top:54px;
+    left:30px;
+}
+
+.image_toZoo{
+    background-image: url('../../assets/svg/zoo.svg');
+    height: 95px;
+    width: 85.77493286132812px;
+    right: 41px;
+    top: 38px;
+}
+
+.image_monkey{
+    background-image: url('../../assets/svg/monkey.svg');
+    height: 71.60345458984375px;
+    width: 124.7468032836914px;
+    left: 22px;
+    top: 48px;
+}
+
+.feed__h3{
+    margin: 0 476px 40px 376px;
+}
+
+.button__feed{
+    margin-left: 332px;
+}
+
+

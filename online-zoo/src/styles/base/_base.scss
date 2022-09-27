@@ -25,6 +25,15 @@ h2{
     margin:0 0 20px 0;
 }
 
+.h2_orange{
+    color: $color-primary;
+}
+
+.h3{
+    @include font(36px, 130%, 400);
+    margin:0;
+}
+
 .text_subtitle{
     @include font(24px, 120%, 400);
 
@@ -39,5 +48,18 @@ h2{
     @include font(15px, 120%, 300);
 
 }
+
+.feed__mainText{
+    @include font(16px, 130%, 400);
+
+}
+.feed__commentText{
+    @include font(16px, 130%, 500);
+
+}
+
+
+
+
 
 
