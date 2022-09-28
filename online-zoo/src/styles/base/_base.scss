@@ -34,6 +34,10 @@ h2{
     margin:0;
 }
 
+.h3_orange{
+    color: $color-primary;
+}
+
 .text_subtitle{
     @include font(24px, 120%, 400);
 
@@ -57,6 +61,13 @@ h2{
     @include font(16px, 130%, 500);
 
 }
+
+.text__donate{
+    @include font(16.3px, 140%, 400);
+}
+
+
+
 
 
 
