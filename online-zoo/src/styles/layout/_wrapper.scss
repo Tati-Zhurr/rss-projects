@@ -2,6 +2,9 @@
     width: $desktop-width;
     display: flex;
     margin: 0 auto;
+    @media screen and (max-width: 1600px) and (min-width: 1000px) {
+        width: 100vw;
+    }
    
 }
 
@@ -12,13 +15,15 @@
     background-color: $color-black;
     z-index:4;
     @media screen and (max-width: 1600px) and (min-width: 1000px) {
-        width: 100vw;
         @include padding (1000px, 14px, 30px, 14px, 30px);
+        width: 100vw;
+        justify-content: space-between;
     }
 }
 
 .watch__wrapper{
     flex-direction: column;
+    
    
 }
 
@@ -37,7 +42,7 @@
         width: 293px;
         right: -90px;
         top: 12px;
-        @media screen and (max-width: 1600px) and (min-width: 1000px){
+        @media screen and (max-width: 1599px) and (min-width: 1000px){
             display: none;
         }
       
@@ -53,7 +58,7 @@
         width: 368px;
         right: 0;
         bottom: 0;
-        @media screen and (max-width: 1600px) and (min-width: 1000px){
+        @media screen and (max-width: 1599px) and (min-width: 1000px){
             background-image: url(../../assets/img/strelitzia_1000.png);
             @include height (1000px, 180px);
             @include width (1000px, 241px)
@@ -70,7 +75,7 @@
         width: 880px;
         left: 0;
         bottom: 0;
-        @media screen and (max-width: 1600px) and (min-width: 1000px){
+        @media screen and (max-width: 1599px) and (min-width: 1000px){
             background-image: url(../../assets/img/palm_foto_1000.png);
             @include height (1000px, 202px);
             @include width (1000px, 386px);
@@ -98,7 +103,7 @@
     margin: 69px 220px 100px;
     flex-direction: column;
     padding: 41px 0 59px 99px;
-    @media screen and (max-width: 1600px) and (min-width: 1000px){
+    @media screen and (max-width: 1599px) and (min-width: 1000px){
         @include margin (1000px, 30px, 30px, 50px, 30px);
         @include margin (1000px, 30px, 48px, 50px, 49px);
     }
@@ -120,7 +125,7 @@
         width: 300.9199485151987px;
         right: -90px;
         bottom: 0;
-        @media screen and (max-width: 1600px) and (min-width: 1000px){
+        @media screen and (max-width: 1599px) and (min-width: 1000px){
             background-image: url(../../assets/img/leav_foto_1000.png);
             @include height (1000px, 235.62px);
             @include width (1000px, 239.98px);
@@ -141,7 +146,7 @@
     width:1600px;
     padding:40px 220px 50px;
     z-index:4;
-    @media screen and (max-width: 1600px) and (min-width: 1000px){
+    @media screen and (max-width: 1599px) and (min-width: 1000px){
         //grid: "logo form form" 121px
         // "button button button" 98px
         // "media nav design" 134px

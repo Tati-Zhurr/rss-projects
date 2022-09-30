@@ -8,4 +8,9 @@
     border-style: none;
     border-radius: 50%;
     flex-shrink: 0;
+    @media screen and (max-width: 1599px) and (min-width: 1000px){
+        @include margin(1000px, 69px, 0px, 0px, 456px);
+        @include width (1000px, 367px);
+        @include height (1000px, 367px);
+    }
 }

@@ -12,8 +12,11 @@ h1{
     text-align: center;
     text-transform: uppercase;
     color: $color-white;
-
     @include font(106.496px, 75%, 700);
+    @media screen and (max-width: 1599px) and (min-width: 1000px) {
+        font-size: 8.52rem;
+    }
+    
     
     & span{
         color:$color-yellow

@@ -4,9 +4,15 @@
     background-image: url('../../assets/img/Giant_Panda.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 780px;
-    min-width: $desktop-width; 
+    height: 780px;
+    width: $desktop-width; 
     margin-top: -80px;
+    @media screen and (max-width: 1599px) and (min-width: 1000px){
+        background-image: url(../../assets/img/Giant_Panda_1000.jpg);
+        @include height (1000px, 584px);
+        @include width (1000px, 1000px);
+        @include margin(1000px, -80px, 0px, 0px, 0px);
+    }
 }
 .watch__content{
     display: flex;
@@ -19,4 +25,11 @@
     margin-left:880px;
     width: 500.31px;
     height: 400px;
+    @media screen and (max-width: 1599px) and (min-width: 1000px){
+        @include margin(1000px, 122.8px, 0px, 0px, 514px);
+        @include width (1000px, 400.25px);
+        @include height (1000px, 320px);
+       
+    }
+
 }

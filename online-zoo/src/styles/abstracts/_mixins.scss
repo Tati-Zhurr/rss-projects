@@ -17,12 +17,31 @@
 
 @mixin width($media, $width) {
   width: #{$width/$media*100}vw;
+}
 
+@mixin gap($media, $gap){
+  gap: #{$gap/$media*100}vw;
 }
 
 @mixin margin($media, $top:0, $right:0, $bottom:0, $left:0){
   margin: #{$top/$media*100}vw #{$right/$media*100}vw #{$bottom/$media*100}vw #{$left/$media*100}vw;
     }
+
+@mixin left($media, $left:0){
+  left: $left;
+}
+@mixin right($media, $right:0){
+  right: $right;
+}
+@mixin top ($media, $top:0){
+  top: $top;
+  
+}
+@mixin bottom ($media, $bottom:0){
+  bottom: $bottom;
+  
+}
+
 
 // Управление отзывчивостью.
 // @access public
