@@ -12,5 +12,11 @@ header{
     &:hover{
         color: $color-button-hover;
       }
+      @media screen and (max-width: 1600px) and (min-width: 1000px){
+        @include padding(1000px, 0px, 0px, 0px, 259px);
+
+      }
+        
+      
 };
     
