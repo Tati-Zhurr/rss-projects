@@ -85,6 +85,9 @@
     border-radius: 5px;
     color: $color-button-active;
     margin-left: 6px;
+    &:hover{
+        background: $color-button-hover;
+    }
 }
 
 .mistake{

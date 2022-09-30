@@ -45,17 +45,56 @@
                 <p class="text_subtitle feed__subtitle subtitle__donate">We know the animals bring you joy, and in these extraordinary times, we’re glad.</p>
               </article>
               <div class="panda_diet">
-                <div class="amount">
+                <div class="amount_diet">
                   <span class="number_diet">4</span>
                   <span class="text_diet text_body">Panda diet for the day.</span>
                 </div>
                 <span class="cross"></span>
                 <span class="image_panda"></span>
               </div>
-              
-                
-                <button class="button button_smothed button__feed">Feed a friend now</button>
-              
+
+              <div class="amount">
+                <span class="text__amount">Amount</span> 
+                <div class="progress__amount">
+                  <span class="line"></span>
+                  <div class="points_block">
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  <span class="point"></span>
+                  </div>
+                </div>
+                <div class="money__amount">
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">5000</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">2000</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">1000</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">500</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">250</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">100</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">50</span></div> 
+                  <div class="money"><span class="dollar"></span><span class="dollar_amount">25</span></div> 
+                </div>
+              </div>
+              <div class="another__amount">
+                <form class="form__another" action="#">
+                  <input type="number" placeholder="Another amount" maxlength="4" class="input__another">
+                  <span class="dollar dollar__another"></span>
+                </form>
+              </div>
+              <div class="once_monthly">
+                <form action="#" class="once_monthly__form">
+                  <input type="radio" name="donation" class="input_monthly_once" id="input_monthly" value="monthly">
+                  <label for="input_monthly" class="label__donate monthly__label">Monthly</label>
+                  <input type="radio" name="donation" class="input_monthly_once" id="input_once" value="once" checked="true">
+                  <label for="input_once" class="label__donate once__label">Once</label>
+                </form>
+              </div>
+                <button class="button button_smothed button__feed button_feed__donate">Feed a friend now</button>
+                <span class="text_comment_feed">Share with your friends on social networks </span>
             </div>
           </div>
         </section>
@@ -72,7 +111,7 @@
           <input type="email" id="email" name="email" placeholder="Enter your email"/>
           <input type="submit" value="Submit" id="submit_button" class="button_submit mistake"/>
          </form>
-          <button class="button button_square" id="button">donate for volunteers</button>
+          <button onclick="document.location='donate.html'" class="button button_square" id="button">donate for volunteers</button>
           <div class="socialMedia__footer" id="media">
             <a href="https://www.facebook.com" class="link__site"><span class="icon__site" id="facebook"></span><span class="icon__text">Facebook</span></a>
             <a href="https://twitter.com" class="link__site"><span class="icon__site" id="twitter"></span><span class="icon__text">Twitter</span></a>

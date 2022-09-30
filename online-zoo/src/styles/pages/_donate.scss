@@ -50,9 +50,9 @@
         display:flex;
         margin-left: 215px;
         margin-right: 229px;
-        margin-bottom: 80px;
+        margin-bottom: 48px;
         
-        .amount{
+        .amount_diet{
             display: flex;
             flex-direction: column;
             gap:10px;
@@ -86,13 +86,181 @@
             width: 284px;
             height: 246px;
 
+        }
+    }
+    .amount{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        .text__amount{
+            @include font(16px, 140%, 400);
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .progress__amount{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            height: 27px;
+            width: 976px;
+            border-radius: 2px;
+            background-color: $color-progress-bar;
+            .line{
+                display: inline-block;
+                background-color: $color-line;
+                height: 2px;
+                width: 915px;
+                position: absolute;
+                top:12px;
+                left:31px;
+                right: 30px;
+                z-index: 1;
+                
+            }
+            .points_block{
+                display: flex;
+                flex-direction: row;
+                z-index: 2;
+                gap:120px;
+                margin: 8px 30px 9px 26px;
+                .point{
+                    display: inline;
+                    background-color: $color-point;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    transition: all .2s;
+                    cursor: pointer;
+                   &:hover{
+                    transform: scale(1.5);
+                    background: $color-primary;
+                    }
+                }
+                .point::before {
+                    position: absolute;
+                    content: '';
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index:-1;
+                    border:1px solid $color-primary; /* for demo purposes */
+                  }
+            }
+        
+        }
+        .money__amount{
+            display: flex;
+            justify-content: space-between;
+            margin-right: 29px;
+            .money{
+                display: flex;
+                align-items: baseline;
+                
+                
+               
+                .dollar_amount{
+                    @include font(26px, 140%, 500);
+                    color: $color-dollar;
+    
+                }
+
+            }
+            
+        }
+    }
+
+    .another__amount{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .form__another{
+            position: relative;
+            margin-bottom: 25px;
+            .input__another{
+                background-color: transparent;
+                border: 1px solid $color-input;
+                width: 268px;
+                height: 54px;
+                font-family: 'Roboto', sans-serif;
+                @include font(16px, 140%, 400);
+                padding: 16px 143px 16px 9px;
+                color: $color-input;
+            }
+            .dollar__another{
+                position: absolute;
+                right:17px;
+                top:17px;
+                background-image: url(..//..//assets/icons/dollar_input.svg);
+            }
 
         }
-
-
+        
+       
     }
+
+ .once_monthly__form{
+    display: flex;
+    margin-bottom: 31px;
+    justify-content: center;
+    align-items: center;
+    .input_monthly_once{
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        border-radius: 50%;
+        margin-right: 10px;
+        &:checked{
+            background-color: $color-primary;
+        }
+    }
+    .label__donate{
+        @include font(16px, 140%, 400);
+        color: $color-dollar;
+    }
+
+
+ }
+
+ .monthly__label{
+    margin-right: 50px;
+ }
+
+ .button_feed__donate{
+    margin-bottom: 30.02px;
+ }
+
+ .text_comment_feed{
+    margin-left: 340px ;
+    margin-right: 335px;
+ }
+
+   
 }
 
+ /* Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ 
+ /* Firefox */
+ input[type=number] {
+   -moz-appearance: textfield;
+ }
 
+ .dollar{
+    display: inline;
+    background-image: url("..//..//assets/svg/dollar.svg");
+    width: 10px;
+    height: 20px;
+    color: $color-dollar;
+   
+}
 
 

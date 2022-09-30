@@ -13,6 +13,24 @@ $color-grey:#BDBDBD;
 $color-button-active: #4B9200;
 $color-button-hover: #E47209;
 
+//donate
+$color-progress-bar: #404950;
+$color-line:#72828E;
+$color-point:#FFEE2E;
+$color-dollar: #333B41;
+$color-input: #929699;
+
+$breakpoints: (
+  'medium': (min-width: 800px),
+  'large': (min-width: 1000px),
+  'huge': (min-width: 1200px),
+);
+
+
+
+
+
+
 $desktop-width:1600px;
 $desktop-small-width:100px;
 $tablet-width:638.7px;
