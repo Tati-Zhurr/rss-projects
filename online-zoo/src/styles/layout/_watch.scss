@@ -5,31 +5,92 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 780px;
-    width: $desktop-width; 
+    width: 100vw; 
     margin-top: -80px;
-    @media screen and (max-width: 1599px) and (min-width: 1000px){
+    @media screen and (max-width: 1599px) and (min-width: 1001px){
+        @include height (1600px, 780px);
+        @include margin(1600px, -80px, 0px, 0px, 0px);
+    }
+    @media screen and (min-width: 641px) and (max-width: 1000px){
         background-image: url(../../assets/img/Giant_Panda_1000.jpg);
         @include height (1000px, 584px);
-        @include width (1000px, 1000px);
         @include margin(1000px, -80px, 0px, 0px, 0px);
     }
 }
 .watch__content{
     display: flex;
-
-}
-
-.watch__text{
-    position: absolute;
-    margin-top: 166px;
-    margin-left:880px;
-    width: 500.31px;
-    height: 400px;
-    @media screen and (max-width: 1599px) and (min-width: 1000px){
-        @include margin(1000px, 122.8px, 0px, 0px, 514px);
-        @include width (1000px, 400.25px);
-        @include height (1000px, 320px);
-       
+    flex-direction: column;
+    align-items: center;
+    margin-top: -391px;
+    margin-left: 73px;
+    gap:60px;
+    @media screen and (max-width: 1599px) and (min-width: 1001px){
+        @include margin(1600px, -391px, 0px, 0px, 73px);
+        @include gap(1600px, 60px);
     }
+    @media screen and (min-width: 641px) and (max-width: 1000px){
+        @include margin(1000px, -313.2px, 0px, 0px, 37.3px);
+        @include gap(1000px, 40.2px);
+    }
+    .watch__text{
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        text-align: center;
+        text-transform: uppercase;
+        width:500.31px;
+        height: 400px;
+        color: $color-white;
+        @include font(106.496px, 75%, 700);
+        .text_colored{
+            color:$color-yellow
+        }
+        @media screen and (max-width: 1599px) and (min-width: 1001px){
+            @include width(1600px, 500.31px);
+            @include height(1600px, 400px);
+            @include font-size(1600px, 106.5px);
+        }
+        @media screen and (min-width: 641px) and (max-width: 1000px){
+            @include width(1000px, 400.25px);
+            @include height(1000px, 320px);
+            @include font-size(1000px, 85px);
+        }
+    
+    }
+   // .button__watch{
+        
+        
+       // @media screen and (max-width: 1599px) and (min-width: 1000px){
+          // @include right(1000px, 137px);
+         //  @include top(1000px, 483px);
+         //  left:auto;
+      //  }
+    
+    
+    //}
 
 }
+
+.ellips{
+    position: relative;
+    top: 0px;
+    left:0px;
+    display: inline-block;
+    height: 465px;
+    width: 465px;
+    background: linear-gradient(113.96deg, $color-additional 1.49%, $color-primary 101.44%);
+    border-style: none;
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 1;
+    @media screen and (min-width: 1001px) and (max-width: 1599px){
+        @include width (1600px, 465px);
+        @include height (1600px, 465px);
+    }
+    @media screen and (min-width: 641px) and (max-width: 1000px){
+        @include width (1000px, 367px);
+        @include height (1000px, 367px);
+    }
+   
+}
+

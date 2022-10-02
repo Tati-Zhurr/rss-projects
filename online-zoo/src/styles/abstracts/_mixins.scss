@@ -22,24 +22,35 @@
 @mixin gap($media, $gap){
   gap: #{$gap/$media*100}vw;
 }
+@mixin row-gap($media, $row-gap) {
+  row-gap: #{$row-gap/$media*100}vw;
+}
+
+@mixin column-gap($media, $column-gap) {
+  column-gap: #{$column-gap/$media*100}vw;
+}
 
 @mixin margin($media, $top:0, $right:0, $bottom:0, $left:0){
   margin: #{$top/$media*100}vw #{$right/$media*100}vw #{$bottom/$media*100}vw #{$left/$media*100}vw;
     }
 
 @mixin left($media, $left:0){
-  left: $left;
+  left: #{$left/$media*100}vw;
 }
+
 @mixin right($media, $right:0){
-  right: $right;
+  right: #{$right/$media*100}vw;
 }
 @mixin top ($media, $top:0){
-  top: $top;
-  
+  top: #{$top/$media*100}vw;
 }
 @mixin bottom ($media, $bottom:0){
-  bottom: $bottom;
+  bottom: #{$bottom/$media*100}vw;
   
+}
+
+@mixin font-size ($media, $font-size) {
+  font-size: #{$font-size/$media*100}vw;;
 }
 
 

@@ -24,11 +24,7 @@
     
 }
 
-.button__watch{
-    position: absolute;
-    left: calc(50% - 298px/2 + 332px);
-    top: 626px;
-}
+
 
 .slider__arrow{
     position: relative;
@@ -51,6 +47,10 @@
 }
 
 .arrow_back{
+    @media screen and (max-width: 1000px) and (min-width: 641px){
+        position: absolute;
+        @include left(1000px, 323px);
+    }
     & span{
     display: inline-block;
     position:absolute;
@@ -58,10 +58,14 @@
     height: 8px;
     width: 16px;
     transform: translate(-50%, -50%);
-        }
+  }
 }
 
 .arrow_forward{
+    @media screen and (max-width: 1000px) and (min-width: 641px){
+        position: absolute;
+        @include left(1000px, 556px);
+     }
     & span{
     display: inline-block;
     position:absolute;
@@ -69,7 +73,7 @@
     height: 8px;
     width: 16px;
     transform: translate(-50%, -50%);
-        }
+   }
 }
 
 .button_square{

@@ -1,9 +1,17 @@
 .backStage__content{
     display: flex;
+    align-items: center;
     gap:87px;
-    margin:0 220px 180px 220px;
+    margin:140px 220px 180px 220px;
     font-weight: 400;
-    margin-top: 140px;
+    @media screen and (max-width: 1599px) and (min-width: 1001px){
+        @include gap(1600px, 87px);
+        @include margin (1600px, 140px, 220px, 180px, 220px);
+    }
+    @media screen and (max-width: 1000px) and (min-width: 641px){
+        @include gap(1000px, 31px);
+        @include margin (1000px, 100px, 30px, 142px, 30px);
+    }
     
 
 
@@ -12,16 +20,38 @@
         background-image: url("../../assets/img/bamboo-cap.jpg");
         height: 403px;
         width: 609px;
+        @media screen and (max-width: 1599px) and (min-width: 1001px){
+            @include height(1600px, 403px);
+            @include width(1600px, 609px);
+        }
+        @media screen and (max-width: 1000px) and (min-width: 641px){
+            background-image: url('../../assets/img/bamboo-cap_1000.jpg');
+            @include height(1000px, 408px);
+            @include width(1000px, 455px);
+        }
     }
 
     .backStage__article{
         width: 465px;
+        @media screen and (max-width: 1599px) and (min-width: 1001px){
+            @include width(1600px, 465px);
+        }
+        @media screen and (max-width: 1000px) and (min-width: 641px){
+            @include width(1000px, 454px);
+        }
+
      .backStage__commentText{
         margin-bottom: 54px;
         line-height: 2.08rem;
+        //@media screen and (max-width: 1599px) and (min-width: 641px){
+           // @include margin(1600px, 0px, 0px, 54px, 0px);
+       // }
      }
      .backStage__subtitle{
         margin-bottom: 34px;
+        //@media screen and (max-width: 1599px) and (min-width: 641px){
+           // @include margin(1600px, 0px, 0px, 34px, 0px);
+       // }
      }
      .backStage__mainText{
        line-height: 2.24rem;
