@@ -10,6 +10,11 @@ footer{
 
 #form{
     grid-area: form;
+    @media screen and (max-width: 1000px) and (min-width: 641px){
+        @include width(1000px, 367px);
+        align-self: flex-start;
+        @include margin (1000px, 0px, 0px, 0px, 242px);
+      }
 }
 
 #button{
@@ -27,7 +32,13 @@ footer{
     grid-area: nav;
     padding-left: 38px;
     align-self: flex-end;
+    @media screen and (max-width: 1000px) and (min-width: 641px){
+        justify-self: start;
+        @include padding (1000px, 0px, 0px, 0px, 0px);
+        margin-bottom: -1em;
+      }
 }
+
 
 #design{
     grid-area: design;
@@ -37,6 +48,9 @@ footer{
     flex-direction: column;
     gap:10px;
     width:auto;
+    @media screen and (max-width: 650px) and (min-width: 641px) {
+        @include gap(1000px, 0px);
+     }
 }
 
 .socialMedia__footer{
@@ -44,6 +58,18 @@ footer{
     flex-direction: column;
     gap:10px;
     align-content: center;
+    @media screen and (max-width: 1599px) and (min-width: 1201px){
+        @include gap(1600px, 10px);
+      }
+      @media screen and (max-width: 1201px) and (min-width: 1001px) {
+        @include gap(1000px, 0px);
+      }
+        @media screen and (max-width: 1000px) and (min-width: 771px) {
+          @include gap(1000px, 10px);
+     }
+     @media screen and (max-width: 770px) and (min-width: 641px) {
+        @include gap(1000px, 0px);
+     }
     .link__site{
         color: $color-white;
         text-decoration: none;
@@ -80,9 +106,16 @@ footer{
     background-image: url(..//..//assets/svg/youtube.svg);
 }
 
+
 .footer__label{
     color:$color-white;
     margin-bottom: 14px;
+    @media screen and (max-width: 1150px) and (min-width: 1001px) {
+        @include margin(1600px, 0px, 0px, 5px, 0px);
+        line-height: 100%;
+     }
+
+
 }
 
 #email{
@@ -93,6 +126,9 @@ footer{
     color: $color-grey;
     padding: 10px 7px 10px 10px;
     margin-top: 14px;
+    @media screen and (max-width: 1150px) and (min-width: 1001px) {
+        @include margin(1600px, 0px, 0px, 5px, 0px);
+     }
 }
 
 .designedBy__footer, .copyRights__footer{
@@ -104,5 +140,7 @@ footer{
 .designedBy__footer{
     text-align: start;
 }
+
+
 
 

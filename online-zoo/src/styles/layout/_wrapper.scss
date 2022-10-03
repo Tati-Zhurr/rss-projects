@@ -148,12 +148,14 @@
     flex-direction: column;
     padding: 41px 0 59px 99px;
     @media screen and (max-width: 1599px) and (min-width: 1001px) {
-        @include margin (1600px, 69px, 220px, 100px, 220px);
-        @include padding (1600px, 41px, 0px, 59px, 99px);
+        @include margin (1600px, 69px, 30px, 100px, 30px);
+        @include padding (1600px, 41px, 10px, 59px, 10px);
+        @include width(1600px, 1540px);
     }
     @media screen and (max-width: 1000px) and (min-width: 641px){
         @include margin (1000px, 30px, 30px, 50px, 30px);
         @include padding (1000px, 30px, 48px, 50px, 49px);
+        @include width(1000px, 940px);
     }
 
 
@@ -182,6 +184,7 @@
             background-image: url(../../assets/img/leav_foto_1000.png);
             @include height (1000px, 235.62px);
             @include width (1000px, 239.98px);
+            @include right(1000px, -43px);
         }
     
     }
@@ -201,7 +204,7 @@
     padding:40px 220px 50px;
     z-index:4;
     @media screen and (max-width: 1599px) and (min-width: 1001px){
-        grid: "logo form form" 7.5vw
+        grid: "logo logo form" 7.5vw
         "button button button" 6.4375vw
         "media nav design" 8.375vw
         /18.625vw 30.9375vw 22.9375vw; 
@@ -209,7 +212,7 @@
         @include padding(1600px, 40px, 220px, 50px, 220px);
     }
 
-    @media screen and (max-width: 1599px) and (min-width: 1000px){
+    @media screen and (max-width: 1000px) and (min-width: 641px){
         //grid: "logo form form" 121px
         // "button button button" 98px
         // "media nav design" 134px

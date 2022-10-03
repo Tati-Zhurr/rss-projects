@@ -8,16 +8,24 @@ header{
 .designed__header{
     color: $color-white;
     text-decoration: none;
-    padding-left: 438px;
+    margin-left: 438px;
     &:hover{
         color: $color-button-hover;
       }
-      @media screen and (max-width: 1599px) and (min-width: 1001px){
-        @include padding(1000px, 0px, 0px, 0px, 438px);
+      @media screen and (max-width: 1599px) and (min-width: 1221px) {
+        @include margin(1600px, 0px, 0px, 0px, 438px);
+      }
+
+      @media screen and (max-width: 1220px) and (min-width: 1001px) {
+        @include margin(1000px, 0px, 0px, 0px, 100px);
 
       }
-      @media screen and (max-width: 1600px) and (min-width: 1000px){
-        @include padding(1000px, 0px, 0px, 0px, 259px);
+
+      @media screen and (max-width: 1000px) and (min-width: 981px){
+        @include margin(1000px, 0px, 0px, 0px, 259px);
+      }
+      @media screen and (max-width: 980px) and (min-width: 641px){
+        @include margin(1000px, 0px, 0px, 0px, 100px);
       }
       
 };

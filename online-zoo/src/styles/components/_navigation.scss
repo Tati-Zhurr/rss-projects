@@ -5,15 +5,21 @@
     color:$color-white;
     list-style: none;
     gap: 58px;
-    margin-left:63px;
     padding-left: 0;
     //@include respond-to('large){
      // @include gap(1000px, 48px);
      // @include margin(1000px, 0px, 0px, 0px, 63px);
    // }
-    @media screen and (max-width: 1599px) and (min-width: 1000px) {
+    @media screen and (max-width: 1599px) and (min-width: 1001px) {
+      @include gap(1600px, 58px);
+    }
+    @media screen and (max-width: 1000px) and (min-width: 770px) {
       @include gap(1000px, 48px);
-      @include margin(1000px, 0px, 0px, 0px, 63px);
+    }
+      @media screen and (max-width: 770px) and (min-width: 641px) {
+        @include gap(1000px, 10px);
+
+     // @include margin(1000px, 0px, 0px, 0px, 63px);
    }
     
  .navlink{
