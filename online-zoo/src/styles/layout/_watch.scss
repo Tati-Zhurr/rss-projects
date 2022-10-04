@@ -16,6 +16,11 @@
         @include height (1000px, 584px);
         @include margin(1000px, -80px, 0px, 0px, 0px);
     }
+    @media screen and (max-width: 640px) {
+        background-image: url(../../assets/img/Giant_Panda_640.jpg);
+        @include height (640px, 373px);
+        @include margin(1000px, -34px, 0px, 0px, 0px);
+    }
 }
 .watch__content{
     display: flex;
@@ -31,6 +36,12 @@
     @media screen and (min-width: 641px) and (max-width: 1000px){
         @include margin(1000px, -313.2px, 0px, 0px, 37.3px);
         @include gap(1000px, 40.2px);
+    }
+    @media screen and (max-width: 640px){
+        @include margin(640px, -199.79px, 0px, 0px, 0px);
+        @include gap(640px, 0px);
+        align-items: flex-end;
+     
     }
     .watch__text{
         display: flex;
@@ -55,20 +66,22 @@
             @include height(1000px, 320px);
             @include font-size(1000px, 85px);
         }
+        @media screen and (max-width: 640px){
+            @include width(640px, 255.63751220703125px);
+            @include height(640px, 204.38357543945312px);
+            @include font-size(640px, 54.29px);
+        }
     
     }
-   // .button__watch{
-        
-        
-       // @media screen and (max-width: 1599px) and (min-width: 1000px){
-          // @include right(1000px, 137px);
-         //  @include top(1000px, 483px);
-         //  left:auto;
-      //  }
-    
-    
-    //}
 
+    .button__watch{
+        @media screen and (max-width: 640px){
+            align-self: flex-start;
+     
+        }
+
+    }
+  
 }
 
 .ellips{
@@ -90,6 +103,12 @@
     @media screen and (min-width: 641px) and (max-width: 1000px){
         @include width (1000px, 367px);
         @include height (1000px, 367px);
+    }
+    @media screen and (max-width: 640px){
+        @include width(640px, 237.6px);
+        @include height(640px, 237.6px);
+        @include left (640px, 310.78px);
+       
     }
    
 }

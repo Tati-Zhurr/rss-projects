@@ -5,6 +5,13 @@ header{
     z-index: 2;
 }
 
+.navigation__header{
+  @media screen and (max-width: 640px){
+    display: none;
+  }
+
+}
+
 .designed__header{
     color: $color-white;
     text-decoration: none;
@@ -18,7 +25,6 @@ header{
 
       @media screen and (max-width: 1220px) and (min-width: 1001px) {
         @include margin(1000px, 0px, 0px, 0px, 100px);
-
       }
 
       @media screen and (max-width: 1000px) and (min-width: 981px){
@@ -26,6 +32,9 @@ header{
       }
       @media screen and (max-width: 980px) and (min-width: 641px){
         @include margin(1000px, 0px, 0px, 0px, 100px);
+      }
+      @media screen and (max-width: 640px){
+        display: none;
       }
       
 };

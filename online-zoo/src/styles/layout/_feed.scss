@@ -18,6 +18,9 @@
         @include margin (1000px, 0px, 0px, 40px, 0px);
 
     }
+    @media screen and (max-width: 1000px){
+        @include margin (640px, 0px, 0px, 30px, 0px);
+    }
 }
 
 
@@ -33,6 +36,11 @@
     @media screen and (max-width: 1000px) and (min-width: 641px){
         @include margin (1000px, 0px, 0px, 20px, 0px);
         @include padding (1000px, 0px, 0px, 0px, 0px);
+        text-align: center;
+    }
+    @media screen and (max-width: 640px) {
+        @include margin (640px, 0px, 0px, 20px, 0px);
+        @include padding (640px, 0px, 0px, 0px, 0px);
         text-align: center;
     }
 }
@@ -51,6 +59,12 @@
         @include width (1000px, 843px);
         height: auto;
     }
+    @media screen and (max-width: 640px) {
+        @include margin (640px, 0px, 0px, 20px, 0px);
+        @include width (640px, 600px);
+        height: auto;
+        @include font-size(640px, 22px);
+    }
 }
 
 .feed__commentText{
@@ -67,6 +81,11 @@
         @include width(1000px, 813px);
         height: auto;
     }
+    @media screen and (max-width: 640px) {
+        @include margin (640px, 0px, 0px, 10px, 0px);
+        @include width (640px, 600px);
+        height: auto;
+    }
 }
 
 .feed__mainText{
@@ -79,6 +98,10 @@
     }    
     @media screen and (max-width: 1000px) and (min-width: 641px){
         @include width(1000px, 823px);
+    }
+    @media screen and (max-width: 640px) {
+        @include width (640px, 600px);
+        height: auto;
     }
   
 }
@@ -101,7 +124,10 @@
     @media screen and (max-width: 1000px) and (min-width: 641px){
         @include margin (1000px, 0px, 0px, 70px, 0px);
         justify-content: space-between;
-        
+    }
+    @media screen and (max-width: 640px){
+        @include margin (640px, 0px, 12px, 40px, 0px);
+        @include gap(640px, 42px);
     }
    
     .plan__step{
@@ -109,6 +135,7 @@
         flex-direction: column;
         justify-content: flex-start;
         gap:30px;
+        z-index: 1;
         
        .step__image{
             position: relative;
@@ -119,9 +146,12 @@
             border-radius: 5px;
             border: 1px solid $color-primary;
             @media screen and (max-width: 991px) and (min-width: 641px){
-                height: auto;
-              width: auto;
-        
+                @include width(1000px, 168px);
+                @include height(1000px, 168px);
+            }
+            @media screen and (max-width: 640px){
+                @include width(640px, 168px);
+                @include height(640px, 168px);
             }
             span{
             position: absolute;
@@ -138,6 +168,10 @@
                 @include width (1000px, 168px);
                 height: auto;
             }
+            @media screen and (max-width: 640px){
+                @include width(640px, 168px);
+                height: auto;
+            }
         }
 
     }
@@ -151,9 +185,11 @@
         margin-right: 31px;
         margin-left: 30px;
         @media screen and (max-width: 991px) and (min-width: 641px){
-            @include width (1600px, 69px);
-            @include height (1600px, 35.08px);
+            scale:0.8;
             @include margin (1600px, 62px, 0px, 0px, 0px);
+        }
+        @media screen and (max-width: 640px){
+            display: none;
         }
     }
    
@@ -216,8 +252,11 @@
     }    
     @media screen and (max-width: 1000px) and (min-width: 641px){
         @include margin (1000px, 0px, 0px, 40px, 0px);
+        text-align: center; 
+    }
+    @media screen and (max-width: 640px){
+        @include margin (1000px, 0px, 0px, 0px, 0px);
         text-align: center;
-        
     }
 }
 
@@ -232,6 +271,30 @@
         @include margin(1000px, 0px, 0px, 0px, 0px);
         align-self: center;
     }
+    @media screen and (max-width: 640px){
+        @include margin(640px, 0px, 0px, 0px, 0px);
+        align-self: center;
+    }
+}
+
+.arrow_for-small-width{
+    display: none;
+    @media screen and (max-width: 640px){
+        display: flex;
+        flex-direction: row;
+        @include gap(640px, 114.2px);
+        justify-content: center;
+        z-index: 2;
+        @include margin (640px, 0px, 0px, -10px, 0px);
+        .small_arrow{
+            background-image: url('../../assets/img/small_arrow.png');
+            @include width(640px, 89px);
+            @include height (640px, 29px);
+            display: inline-block;
+           } 
+    }
+   
+
 }
 
 

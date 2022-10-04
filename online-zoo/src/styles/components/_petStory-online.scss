@@ -10,7 +10,6 @@
     border: 1.18841px solid $color-white;
     border-radius: 2px;
     padding: 3.55px 4.55px;
-    
     .h1__petStory{
         width: 72.49px;
         height: 44.91px;
@@ -23,11 +22,36 @@
     }
     .bamboo{
         position: absolute;
-        width: 9px;
-        height: 20.98px;
+        width: 12px;
+        height: 21px;
         left: 13.23px;
         top: 24.64px; 
         z-index: 3;
         padding: 0;
+        @media screen and (max-width: 640px){
+            @include height(640px, 21px);
+            @include width (640px, 12px);
+            @include left(640px, 9.13px); 
+            @include top(640px, 21.09px);
+        }
     }
+}
+
+.logo__header{
+    @media screen and (max-width: 640px){
+        font-size: 1.22899rem;
+        border-style: none;
+        @include height(640px, 29.0266056060791px);
+        @include width (640px, 46.92724609375px);
+        @include padding (640px, 0px, 0px, 0px, 0px); 
+        .bamboo{
+            @media screen and (max-width: 640px){
+                @include height(640px, 14px);
+                @include width (640px, 9px);
+                @include left(640px, 1.54px); 
+                @include top(640px, 13.99px);
+            }
+    }
+
+}
 }

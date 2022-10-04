@@ -6,7 +6,12 @@
   margin-bottom:80px;
   @media screen and (max-width: 1599px) and (min-width: 1001px) {
     @include gap(1600px, 20px);
-}
+  }
+  @media screen and (max-width: 640px){
+    @include margin(640px, 0px, 0px, 60px, 0px);
+   
+  }
+
 
   .layout_3_columns{
     display: grid;
@@ -15,12 +20,21 @@
     row-gap: 30px;
     column-gap: 20px;
     @media screen and (max-width: 1599px) and (min-width: 1001px) {
-      @include row-gap(1600px, 30px);
-      @include column-gap(1600px, 20px);
+      @include row-gap(1600px, 20px);
+      @include column-gap(1600px, 30px);
     }
     @media screen and (max-width: 1000px) and (min-width: 641px){
       @include row-gap(1000px, 92px);
       @include column-gap(1000px, 29px);
+    }
+    @media screen and (max-width: 640px){
+      @include row-gap(640px, 92px);
+      @include column-gap(640px, 27.76px);
+      @include width (640px, 597.76px);
+      overflow: hidden;
+      align-self: flex-start;
+      //margin-left:307px;
+     
     }
     //display:flex;
     //height: 872px;
@@ -39,6 +53,15 @@
         border-radius: 5px;
         border: 1px solid #FA6F32;
         flex-shrink: 1;
+        @media screen and (max-width: 1599px) and (min-width: 1001px) {
+          @include width(1600px, 366px);
+        }
+        @media screen and (max-width: 1000px) and (min-width: 641px){
+          @include width(1000px, 294px);
+        }
+        @media screen and (max-width: 640px){
+          @include width(640px, 285px);
+        }
         
         &:hover{
           .pet__image{
@@ -71,6 +94,10 @@
           @include height(1000px, 294px);
           @include width(1000px, 294px);
         }
+        @media screen and (max-width: 640px){
+          @include height(640px, 285px);
+          @include width(640px, 285px);
+        }
       }
       .pet__comment{
         position: relative;
@@ -85,13 +112,23 @@
           @media screen and (max-width: 1000px) and (min-width: 641px){
             @include padding(1000px, 8px, 47px, 14px, 16px);
           }
+          @media screen and (max-width: 640px) {
+            @include padding(640px, 6.24px, 43.4px, 10.94px, 12.47px);
+          }
           .pet__name{
             text-transform: uppercase;
             margin:0;
             height: 22px;
+            @media screen and (max-width: 640px) {
+              @include height(640px, 17px);
+              @include font-size(640px, 12.47px);
+            }
           }
           .pet__origin{
             margin:0;
+            @media screen and (max-width: 640px) {
+              @include font-size(640px, 11.69px);
+            }
           }
   
         }
@@ -118,6 +155,14 @@
   @media screen and (max-width: 1000px) and (min-width: 641px){
     @include right(1000px, 14px);
   }
+  @media screen and (max-width: 640px) {
+    background-image: url('../../assets/icons/banana-bamboo_icon_640.svg');
+    @include width(640px, 25.72px);
+    @include height(640px, 28.84px);
+    @include top(640px, 7.79px);
+    @include right(640px, 9.11px);
+  }
+
 }
 .food_meat{
   background-image: url('../../assets/icons/meet-fish_icon.svg');
@@ -127,6 +172,13 @@
   right: 8px;
   @media screen and (max-width: 1000px) and (min-width: 641px){
     @include right(1000px, 10px);
+  }
+  @media screen and (max-width: 640px) {
+    background-image: url('../../assets/icons/meet-fish_icon_640.svg');
+    @include width(640px, 37.41px);
+    @include height(640px, 29.62px);
+    @include top(640px, 6.24px);
+    @include right(640px, 6px);
   }
 }
 
@@ -160,6 +212,9 @@
   z-index: 3;
   @media screen and (max-width: 1000px) and (min-width: 641px){
     @include margin(1000px, 0px, 0px, 140px, 0px);
+  }
+  @media screen and (max-width: 640px) {
+    @include margin(640px, 0px, 0px, 100px, 0px);
   }
 }
 

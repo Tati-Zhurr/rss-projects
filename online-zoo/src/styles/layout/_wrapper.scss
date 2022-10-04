@@ -2,13 +2,10 @@
     width: $desktop-width;
     display: flex;
     margin: 0 auto;
-    @media screen and (max-width: 1599px) and (min-width: 1001px) {
+    @media screen and (max-width: 1599px) {
         width: 100vw;
     }
-    @media screen and (max-width: 641px) and (min-width: 1000px){
-        width: 100vw;
-    }
-   
+
 }
 
 .header__wrapper{
@@ -26,6 +23,11 @@
         width: 100vw;
         justify-content: space-between;
     }
+    @media screen and (max-width: 640px) {
+        @include padding (640px, 2.29px, 20px, 2.68px, 20.07px);
+        width: 100vw;
+        justify-content: space-between;
+    }
 }
 
 .watch__wrapper{
@@ -38,6 +40,10 @@
     @media screen and (max-width: 1000px) and (min-width: 641px) {
         width: 100vw;
         @include padding(1000px, 69px, 85.75px, 47px, 456px);
+    }
+    @media screen and (max-width: 640px) {
+        width: 100vw;
+        @include padding(640px, 44.23px, 14.77px, 86.57px, 20.21px);
     }
     
    
@@ -70,6 +76,15 @@
         @media screen and (max-width: 1000px) and (min-width: 641px){
             display: none;
         }
+        @media screen and (max-width: 640px){
+            display: inline-block;
+            background-image: url(../../assets/img/flower_foto1_640.png);
+            @include height(640px, 476px);
+            @include width(640px, 126px);
+            right: 0;
+            top: 0;
+        
+        }
       
     }
 
@@ -92,6 +107,11 @@
             @include height (1000px, 180px);
             @include width (1000px, 241px)
         }
+        @media screen and (max-width: 640px){
+            background-image: url(../../assets/img/strelitzia_640.png);
+            @include height(640px, 131px);
+            @include width(640px, 175px);
+        }
 
     }
 
@@ -113,6 +133,11 @@
             @include height (1000px, 202px);
             @include width (1000px, 386px);
         }
+        @media screen and (max-width: 640px){
+            background-image: url(../../assets/img/palm_foto_640.png);
+            @include height(640px, 202px);
+            @include width(640px, 134px);
+        }
 
     }
 }
@@ -132,10 +157,7 @@
 
 .feed__background{
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
-    @media screen and (max-width: 1599px) and (min-width: 1001px) {
-        width: 100vw;
-    }
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1599px) {
         width: 100vw;
     }
 }
@@ -156,6 +178,11 @@
         @include margin (1000px, 30px, 30px, 50px, 30px);
         @include padding (1000px, 30px, 48px, 50px, 49px);
         @include width(1000px, 940px);
+    }
+    @media screen and (max-width: 640px){
+        width: 100vw;
+        @include margin (640px, 20px, 0px, 20px, 0px);
+        @include padding (640px, 10px, 20px, 60px, 20px);
     }
 
 
@@ -185,6 +212,13 @@
             @include height (1000px, 235.62px);
             @include width (1000px, 239.98px);
             @include right(1000px, -43px);
+        }
+        @media screen and (max-width: 640px){
+            background-image: url(../../assets/img/leav_foto_640.png);
+            @include height (640px, 204px);
+            @include width (640px, 116px);
+            @include right(640px, 0px);
+            @include bottom (640px, -70px);
         }
     
     }
@@ -223,6 +257,15 @@
              /29.1vw 33.2vw 31.6vw; 
          width: 100vw;
          @include padding(1000px, 40px, 220px, 50px, 220px);
+    }
+    @media screen and (max-width: 640px){
+        width: 100vw;
+        @include padding(640px, 12px, 20px, 12px, 20px);
+        grid: "logo media" 13.28125vw
+             "button media" 12.34375vw
+             "nav design" 14.6875vw
+             /46.5625vw 47.1875vw; 
+        overflow: hidden;
     }
 }
 

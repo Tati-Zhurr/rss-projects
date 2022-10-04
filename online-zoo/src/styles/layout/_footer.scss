@@ -15,6 +15,10 @@ footer{
         align-self: flex-start;
         @include margin (1000px, 0px, 0px, 0px, 242px);
       }
+      @media screen and (max-width: 640px) {
+        display: none;
+
+      }
 }
 
 #button{
@@ -36,6 +40,10 @@ footer{
         justify-self: start;
         @include padding (1000px, 0px, 0px, 0px, 0px);
         margin-bottom: -1em;
+      }
+      @media screen and (max-width: 640px){
+        @include padding (640px, 0px, 0px, 0px, 0px);
+        
       }
 }
 
@@ -70,6 +78,10 @@ footer{
      @media screen and (max-width: 770px) and (min-width: 641px) {
         @include gap(1000px, 0px);
      }
+     @media screen and (max-width: 640px) {
+        @include gap(640px, 20px);
+        @include margin (640px, 0px, 0px, 0px, 276px);
+     }
     .link__site{
         color: $color-white;
         text-decoration: none;
@@ -90,6 +102,9 @@ footer{
         .icon__text{
             position: absolute;
             bottom:5px;
+            @media screen and (max-width: 640px) {
+                display: none;
+            }
         }   
     }
 }

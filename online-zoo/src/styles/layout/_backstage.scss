@@ -12,8 +12,11 @@
         @include gap(1000px, 31px);
         @include margin (1000px, 100px, 30px, 142px, 30px);
     }
-    
+    @media screen and (max-width: 640px){
+        @include margin (640px, 60px, 125px, 80px, 20px);
 
+    }
+    
 
     .backStage__image{
         display: inline-block;
@@ -29,6 +32,9 @@
             @include height(1000px, 408px);
             @include width(1000px, 455px);
         }
+        @media screen and (max-width: 640px){
+           display: none;
+        }
     }
 
     .backStage__article{
@@ -39,19 +45,23 @@
         @media screen and (max-width: 1000px) and (min-width: 641px){
             @include width(1000px, 454px);
         }
+        @media screen and (max-width: 640px){
+            @include width(640px, 495px);
+         }
 
      .backStage__commentText{
         margin-bottom: 54px;
         line-height: 2.08rem;
-        //@media screen and (max-width: 1599px) and (min-width: 641px){
-           // @include margin(1600px, 0px, 0px, 54px, 0px);
-       // }
+        @media screen and (max-width: 640px) {
+           @include margin(640px, 0px, 0px, 30px, 0px);
+        }
      }
      .backStage__subtitle{
         margin-bottom: 34px;
-        //@media screen and (max-width: 1599px) and (min-width: 641px){
-           // @include margin(1600px, 0px, 0px, 34px, 0px);
-       // }
+        @media screen and (max-width: 640px) {
+            @include margin(640px, 0px, 0px, 20px, 0px);
+         }
+       
      }
      .backStage__mainText{
        line-height: 2.24rem;

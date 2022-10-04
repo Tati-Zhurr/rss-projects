@@ -8,49 +8,49 @@
     //padding from px to vw
 
 @mixin padding($media, $top:0, $right:0, $bottom:0, $left:0){
-     padding: #{$top/$media*100}vw #{$right/$media*100}vw #{$bottom/$media*100}vw #{$left/$media*100}vw;
+     padding: #{calc($top/$media*100)}vw #{calc($right/$media*100)}vw #{calc($bottom/$media*100)}vw #{calc($left/$media*100)}vw;
        }
 
 @mixin height($media, $height){
-  height: #{$height/$media*100}vw;
+  height: #{calc($height/$media*100)}vw;
 }     
 
 @mixin width($media, $width) {
-  width: #{$width/$media*100}vw;
+  width: #{calc($width/$media*100)}vw;
 }
 
 @mixin gap($media, $gap){
-  gap: #{$gap/$media*100}vw;
+  gap: #{calc($gap/$media*100)}vw;
 }
 @mixin row-gap($media, $row-gap) {
-  row-gap: #{$row-gap/$media*100}vw;
+  row-gap: #{calc($row-gap/$media*100)}vw;
 }
 
 @mixin column-gap($media, $column-gap) {
-  column-gap: #{$column-gap/$media*100}vw;
+  column-gap: #{calc($column-gap/$media*100)}vw;
 }
 
 @mixin margin($media, $top:0, $right:0, $bottom:0, $left:0){
-  margin: #{$top/$media*100}vw #{$right/$media*100}vw #{$bottom/$media*100}vw #{$left/$media*100}vw;
+  margin: #{calc($top/$media*100)}vw #{calc($right/$media*100)}vw #{calc($bottom/$media*100)}vw #{calc($left/$media*100)}vw;
     }
 
 @mixin left($media, $left:0){
-  left: #{$left/$media*100}vw;
+  left: #{calc($left/$media*100)}vw;
 }
 
 @mixin right($media, $right:0){
-  right: #{$right/$media*100}vw;
+  right: #{calc($right/$media*100)}vw;
 }
 @mixin top ($media, $top:0){
-  top: #{$top/$media*100}vw;
+  top: #{calc($top/$media*100)}vw;
 }
 @mixin bottom ($media, $bottom:0){
-  bottom: #{$bottom/$media*100}vw;
+  bottom: #{calc($bottom/$media*100)}vw;
   
 }
 
 @mixin font-size ($media, $font-size) {
-  font-size: #{$font-size/$media*100}vw;;
+  font-size: #{calc($font-size/$media*100)}vw;;
 }
 
 

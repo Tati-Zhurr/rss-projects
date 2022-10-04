@@ -1,0 +1,16 @@
+.burger-nav{
+    display:none;
+    @media screen and (max-width: 640px){
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 1;
+        .burger-line{
+            background-image: url(../../assets/svg/burger_line.svg);
+            width: 18px;
+            height: 2px;
+            display: inline-block;
+            margin: 0;
+            }
+    }
+  }

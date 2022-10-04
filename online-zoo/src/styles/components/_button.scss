@@ -50,7 +50,11 @@
     @media screen and (max-width: 1000px) and (min-width: 641px){
         position: absolute;
         @include left(1000px, 323px);
-    }
+       }
+       @media screen and (max-width: 640px){
+        position: absolute;
+        @include left(640px, 223px);
+       }
     & span{
     display: inline-block;
     position:absolute;
@@ -65,6 +69,10 @@
     @media screen and (max-width: 1000px) and (min-width: 641px){
         position: absolute;
         @include left(1000px, 556px);
+     }
+     @media screen and (max-width: 640px){
+        position: absolute;
+        @include left(640px, 315px);
      }
     & span{
     display: inline-block;
