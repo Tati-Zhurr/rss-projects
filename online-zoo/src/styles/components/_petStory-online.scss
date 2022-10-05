@@ -10,6 +10,13 @@
     border: 1.18841px solid $color-white;
     border-radius: 2px;
     padding: 3.55px 4.55px;
+    @media screen and (max-width: 639px) {
+        width: 128px;
+        height: 23px;
+        margin-right: 0;
+        border:none ;
+        padding: 0;
+    }
     .h1__petStory{
         width: 72.49px;
         height: 44.91px;
@@ -18,38 +25,44 @@
         text-transform:none;
         text-align: center;
         z-index: 1;
+        @media screen and (max-width: 639px) {
+            width: auto;
+            height: auto;
+            font-weight: 300;
+        }
 
     }
     .bamboo{
         position: absolute;
         width: 12px;
         height: 21px;
-        left: 13.23px;
-        top: 24.64px; 
+        left: 8px;
+        top: 23.64px; 
         z-index: 3;
         padding: 0;
-        @media screen and (max-width: 640px){
-            @include height(640px, 21px);
-            @include width (640px, 12px);
-            @include left(640px, 9.13px); 
-            @include top(640px, 21.09px);
+        @media screen and (max-width: 639px) {
+            width: 12px;
+            height: 21px;
+            left: 72px;
+            bottom: 5px;
+            top:auto;
         }
     }
 }
 
 .logo__header{
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) {
         font-size: 1.22899rem;
         border-style: none;
-        @include height(640px, 29.0266056060791px);
-        @include width (640px, 46.92724609375px);
-        @include padding (640px, 0px, 0px, 0px, 0px); 
+        width: 46.92724609375px;
+        height: 29.0266056060791px;
+        padding: 0; 
         .bamboo{
-            @media screen and (max-width: 640px){
-                @include height(640px, 14px);
-                @include width (640px, 9px);
-                @include left(640px, 1.54px); 
-                @include top(640px, 13.99px);
+            @media screen and (max-width: 768px) {
+                width: 9px;
+                height: 14px;
+                left: 2px;
+                top: 12px; 
             }
     }
 

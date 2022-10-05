@@ -1,6 +1,6 @@
 .burger-nav{
     display:none;
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px){
         display: flex;
         flex-direction: column;
         gap: 2px;

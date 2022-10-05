@@ -4,12 +4,14 @@
   gap: 20px;
   align-items: center;
   margin-bottom:80px;
-  @media screen and (max-width: 1599px) and (min-width: 1001px) {
+  @media screen and (max-width: 1599px) and (min-width: 768px) {
     @include gap(1600px, 20px);
   }
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 768px) and (min-width: 639px){
     @include margin(640px, 0px, 0px, 60px, 0px);
-   
+  }
+  @media screen and (max-width: 639px){
+    @include margin(320px, 0px, 0px, 20px, 0px);
   }
 
 
@@ -23,30 +25,26 @@
       @include row-gap(1600px, 20px);
       @include column-gap(1600px, 30px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
       @include row-gap(1000px, 92px);
       @include column-gap(1000px, 29px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
       @include row-gap(640px, 92px);
       @include column-gap(640px, 27.76px);
       @include width (640px, 597.76px);
       overflow: hidden;
       align-self: flex-start;
-      //margin-left:307px;
-     
     }
-    //display:flex;
-    //height: 872px;
-    //width: 1158px;
-    //flex-wrap: wrap;
-    //justify-content: center;
-    //.panda_pet, .eagles_pet, .cheetahs_pet, .sloth_pet {
-      //margin-right: 27px;
-   // }
-    //.panda_pet, .eagles_pet, .gorillas_pet{
-     // margin-bottom: 20px;
-   // }
+    @media screen and (max-width: 639px){
+      grid-template-rows: repeat(4,1fr);
+      grid-template-columns: repeat(1,1fr);
+      @include row-gap(320px, 20px);
+      @include width (320px, 285px);
+      overflow: hidden;
+      align-self: center;
+    }
+    
     .pet{
         display: flex;
         flex-direction: column;
@@ -56,11 +54,14 @@
         @media screen and (max-width: 1599px) and (min-width: 1001px) {
           @include width(1600px, 366px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
           @include width(1000px, 294px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
           @include width(640px, 285px);
+        }
+        @media screen and (max-width: 639px){
+          @include width(320px, 285px);
         }
         
         &:hover{
@@ -86,17 +87,23 @@
         width: 366px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         transition: all 1s;
+        background-repeat: no-repeat;
         @media screen and (max-width: 1599px) and (min-width: 1001px) {
           @include height(1600px, 366px);
           @include width(1600px, 366px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
           @include height(1000px, 294px);
           @include width(1000px, 294px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
           @include height(640px, 285px);
           @include width(640px, 285px);
+        }
+        @media screen and (max-width: 639px){
+          @include height(320px, 285px);
+          @include width(320px, 285px);
+          background-size: cover;
         }
       }
       .pet__comment{
@@ -109,24 +116,34 @@
           @media screen and (max-width: 1599px) and (min-width: 1001px) {
             @include padding(1600px, 8px, 56px, 14px, 16px);
           }
-          @media screen and (max-width: 1000px) and (min-width: 641px){
+          @media screen and (max-width: 1000px) and (min-width: 768px){
             @include padding(1000px, 8px, 47px, 14px, 16px);
           }
-          @media screen and (max-width: 640px) {
+          @media screen and (max-width: 768px) and (min-width: 639px) {
             @include padding(640px, 6.24px, 43.4px, 10.94px, 12.47px);
+          }
+          @media screen and (max-width: 639px){
+            @include padding(320px, 6.24px, 43.4px, 10.94px, 12.47px);
           }
           .pet__name{
             text-transform: uppercase;
             margin:0;
             height: 22px;
-            @media screen and (max-width: 640px) {
+            @media screen and (max-width: 768px) and (min-width: 639px) {
               @include height(640px, 17px);
               @include font-size(640px, 12.47px);
+            }
+            @media screen and (max-width: 639px){
+              @include height(320px, 17px);
+              @include font-size(320px, 12.47px);
             }
           }
           .pet__origin{
             margin:0;
-            @media screen and (max-width: 640px) {
+            @media screen and (max-width: 768px) and (min-width: 639px) {
+              @include font-size(640px, 11.69px);
+            }
+            @media screen and (max-width: 639px){
               @include font-size(640px, 11.69px);
             }
           }
@@ -152,15 +169,24 @@
   width: 33px;
   top:10px;
   right: 12px;
-  @media screen and (max-width: 1000px) and (min-width: 641px){
+  background-repeat: no-repeat;
+  @media screen and (max-width: 1000px) and (min-width: 768px){
     @include right(1000px, 14px);
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) and (min-width: 639px) {
     background-image: url('../../assets/icons/banana-bamboo_icon_640.svg');
     @include width(640px, 25.72px);
     @include height(640px, 28.84px);
     @include top(640px, 7.79px);
     @include right(640px, 9.11px);
+  }
+  @media screen and (max-width: 639px){
+    background-image: url('../../assets/icons/banana-bamboo_icon_320.svg');
+    @include width(320px, 25.72px);
+    @include height(320px, 28.84px);
+    @include top(320px, 7.79px);
+    @include right(320px, 9.11px);
+
   }
 
 }
@@ -170,15 +196,23 @@
   width: 48px;
   top:8px;
   right: 8px;
-  @media screen and (max-width: 1000px) and (min-width: 641px){
+  background-repeat: no-repeat;
+  @media screen and (max-width: 1000px) and (min-width: 768px){
     @include right(1000px, 10px);
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) and (min-width: 640px) {
     background-image: url('../../assets/icons/meet-fish_icon_640.svg');
     @include width(640px, 37.41px);
     @include height(640px, 29.62px);
     @include top(640px, 6.24px);
     @include right(640px, 6px);
+  }
+  @media screen and (max-width: 639px){
+    background-image: url('../../assets/icons/meet-fish_icon_320.svg');
+    @include width(320px, 37.41px);
+    @include height(320px, 29.62px);
+    @include top(320px, 6.24px);
+    @include right(320px, 6px);
   }
 }
 
@@ -210,11 +244,14 @@
  // position: relative;
   margin-bottom: 100px;
   z-index: 3;
-  @media screen and (max-width: 1000px) and (min-width: 641px){
+  @media screen and (max-width: 1000px) and (min-width: 768px){
     @include margin(1000px, 0px, 0px, 140px, 0px);
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) and (min-width: 640px) {
     @include margin(640px, 0px, 0px, 100px, 0px);
+  }
+  @media screen and (max-width: 639px){
+    @include margin(320px, 0px, 0px, 60px, 0px);
   }
 }
 

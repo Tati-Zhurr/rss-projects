@@ -11,15 +11,21 @@
         @include height (1600px, 780px);
         @include margin(1600px, -80px, 0px, 0px, 0px);
     }
-    @media screen and (min-width: 641px) and (max-width: 1000px){
+    @media screen and (min-width: 768px) and (max-width: 1000px){
         background-image: url(../../assets/img/Giant_Panda_1000.jpg);
         @include height (1000px, 584px);
         @include margin(1000px, -80px, 0px, 0px, 0px);
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 768px) and (min-width: 639px) {
         background-image: url(../../assets/img/Giant_Panda_640.jpg);
         @include height (640px, 373px);
-        @include margin(1000px, -34px, 0px, 0px, 0px);
+        @include margin(640px, -34px, 0px, 0px, 0px);
+    }
+    @media screen and (max-width: 639px){
+        background-image: url(../../assets/img/Giant_Panda_320.jpg);
+        @include height (320px, 187px);
+        @include margin(320px, 0px, 0px, 0px, 0px);
+    
     }
 }
 .watch__content{
@@ -33,15 +39,19 @@
         @include margin(1600px, -391px, 0px, 0px, 73px);
         @include gap(1600px, 60px);
     }
-    @media screen and (min-width: 641px) and (max-width: 1000px){
+    @media screen and (min-width: 768px) and (max-width: 1000px){
         @include margin(1000px, -313.2px, 0px, 0px, 37.3px);
         @include gap(1000px, 40.2px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         @include margin(640px, -199.79px, 0px, 0px, 0px);
         @include gap(640px, 0px);
         align-items: flex-end;
-     
+    }
+    @media screen and (max-width: 639px){
+        @include margin(320px, -100.14px, 0px, 0px, 0px);
+        @include gap(320px, 65.74px);
+        align-items: flex-end;
     }
     .watch__text{
         display: flex;
@@ -61,23 +71,30 @@
             @include height(1600px, 400px);
             @include font-size(1600px, 106.5px);
         }
-        @media screen and (min-width: 641px) and (max-width: 1000px){
+        @media screen and (min-width: 768px) and (max-width: 1000px){
             @include width(1000px, 400.25px);
             @include height(1000px, 320px);
             @include font-size(1000px, 85px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             @include width(640px, 255.63751220703125px);
             @include height(640px, 204.38357543945312px);
             @include font-size(640px, 54.29px);
+        }
+        @media screen and (max-width: 639px){
+            @include width(320px, 128.13401794433594px);
+            @include height(320px, 102.44384002685547px);
+            @include font-size(320px, 28px);
         }
     
     }
 
     .button__watch{
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             align-self: flex-start;
-     
+        }
+        @media screen and (max-width: 639px){
+            align-self: center;
         }
 
     }
@@ -100,15 +117,19 @@
         @include width (1600px, 465px);
         @include height (1600px, 465px);
     }
-    @media screen and (min-width: 641px) and (max-width: 1000px){
+    @media screen and (min-width: 768px) and (max-width: 1000px){
         @include width (1000px, 367px);
         @include height (1000px, 367px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         @include width(640px, 237.6px);
         @include height(640px, 237.6px);
         @include left (640px, 310.78px);
-       
+    }
+    @media screen and (max-width: 639px){
+        @include width(320px, 119.09px);
+        @include height(320px, 119.09px);
+        @include left (320px, 151.9px);
     }
    
 }

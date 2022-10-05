@@ -18,13 +18,18 @@
         width: 100vw;
         @include padding (1600px, 14px, 220px, 14px, 220px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 641px) {
+    @media screen and (max-width: 1000px) and (min-width: 768px) {
         @include padding (1000px, 14px, 30px, 14px, 30px);
         width: 100vw;
         justify-content: space-between;
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 768px) and (min-width: 639px) {
         @include padding (640px, 2.29px, 20px, 2.68px, 20.07px);
+        width: 100vw;
+        justify-content: space-between;
+    }
+    @media screen and (max-width: 639px) {
+        @include padding (320px, 2.29px, 10px, 2.68px, 10.07px);
         width: 100vw;
         justify-content: space-between;
     }
@@ -37,13 +42,17 @@
         width: 100vw;
         @include padding(1600px, 92px, 219.69px, 100px, 807px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 641px) {
+    @media screen and (max-width: 1000px) and (min-width: 768px) {
         width: 100vw;
         @include padding(1000px, 69px, 85.75px, 47px, 456px);
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 768px) and (min-width: 639px) {
         width: 100vw;
         @include padding(640px, 44.23px, 14.77px, 86.57px, 20.21px);
+    }
+    @media screen and (max-width: 639px) {
+        @include padding (320px, 22.17px, 11px, 0px, 11px);
+        width: 100vw;
     }
     
    
@@ -54,10 +63,14 @@
     position: relative;
     width:100vw;
     overflow: hidden;
+    @media screen and (max-width: 639px) {
+        @include margin(320px, 74px, 0px, 0px, 0px)
+    }
     .decoration_top_right{
         position: absolute;
         display: inline-block;
         background-image: url(../../assets/img/flower_foto1.png);
+        background-size: cover;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         background-repeat: no-repeat;
         height: 605px;
@@ -73,17 +86,25 @@
             display: none;
         }
 
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             display: none;
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             display: inline-block;
             background-image: url(../../assets/img/flower_foto1_640.png);
             @include height(640px, 476px);
             @include width(640px, 126px);
             right: 0;
             top: 0;
-        
+        }
+        @media screen and (max-width: 639px) {
+            display: inline-block;
+            background-image: url(../../assets/img/flower_foto1_320.png);
+            @include height(320px, 225px);
+            @include width(320px, 35px);
+            right: 0;
+            @include top(320px, -36px);
+            z-index: 2;
         }
       
     }
@@ -94,6 +115,7 @@
         background-image: url(../../assets/img/strelitzia.png);
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         background-repeat: no-repeat;
+        background-size: cover;
         height: 275px;
         width: 368px;
         right: 0;
@@ -102,15 +124,20 @@
             @include height(1600px, 275px);
             @include width(1600px, 368px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             background-image: url(../../assets/img/strelitzia_1000.png);
             @include height (1000px, 180px);
             @include width (1000px, 241px)
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             background-image: url(../../assets/img/strelitzia_640.png);
             @include height(640px, 131px);
             @include width(640px, 175px);
+        }
+        @media screen and (max-width: 639px) {
+            background-image: url(../../assets/img/strelitzia_320.png);
+            @include height(320px, 71px);
+            @include width(320px, 68px);
         }
 
     }
@@ -128,15 +155,21 @@
             @include height(1600px, 460px);
             @include width(1600px, 880px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             background-image: url(../../assets/img/palm_foto_1000.png);
             @include height (1000px, 202px);
             @include width (1000px, 386px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             background-image: url(../../assets/img/palm_foto_640.png);
+            background-size: cover;
             @include height(640px, 202px);
             @include width(640px, 134px);
+        }
+        @media screen and (max-width: 639px) {
+            background-image: url(../../assets/img/palm_foto_320.png);
+            @include height(320px, 72px);
+            @include width(320px, 58px);
         }
 
     }
@@ -174,15 +207,20 @@
         @include padding (1600px, 41px, 10px, 59px, 10px);
         @include width(1600px, 1540px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         @include margin (1000px, 30px, 30px, 50px, 30px);
         @include padding (1000px, 30px, 48px, 50px, 49px);
         @include width(1000px, 940px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         width: 100vw;
         @include margin (640px, 20px, 0px, 20px, 0px);
         @include padding (640px, 10px, 20px, 60px, 20px);
+    }
+    @media screen and (max-width: 639px) {
+        width: 100vw;
+        @include margin (320px, 20px, 11px, 20px, 10px);
+        @include padding (320px, 20px, 0px, 40px, 0px);
     }
 
 
@@ -198,6 +236,7 @@
         display: inline-block;
         background-image: url(../../assets/img/leav_foto.png);
         background-repeat: no-repeat;
+        background-size: cover;
         height: 295.4486434122951px;
         width: 300.9199485151987px;
         right: -90px;
@@ -207,18 +246,27 @@
             @include width (1600px, 300.9199485151987px);
             @include right(1600px, -90px);
         }        
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             background-image: url(../../assets/img/leav_foto_1000.png);
-            @include height (1000px, 235.62px);
-            @include width (1000px, 239.98px);
-            @include right(1000px, -43px);
+            @include height (1000px, 284px);
+            @include width (1000px, 195.96px);
+            @include right(1000px, 0px);
+            @include bottom (1000px, 0px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             background-image: url(../../assets/img/leav_foto_640.png);
             @include height (640px, 204px);
             @include width (640px, 116px);
             @include right(640px, 0px);
             @include bottom (640px, -70px);
+        }
+        @media screen and (max-width: 639px) {
+            background-image: url(../../assets/img/leav_foto_320.png);
+            @include height (320px, 94px);
+            @include width (320px, 51px);
+            @include right(320px, 0px);
+            @include bottom (320px, -29.77px);
+
         }
     
     }
@@ -246,7 +294,7 @@
         @include padding(1600px, 40px, 220px, 50px, 220px);
     }
 
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         //grid: "logo form form" 121px
         // "button button button" 98px
         // "media nav design" 134px
@@ -258,7 +306,7 @@
          width: 100vw;
          @include padding(1000px, 40px, 220px, 50px, 220px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         width: 100vw;
         @include padding(640px, 12px, 20px, 12px, 20px);
         grid: "logo media" 13.28125vw
@@ -266,6 +314,16 @@
              "nav design" 14.6875vw
              /46.5625vw 47.1875vw; 
         overflow: hidden;
+    }
+    @media screen and (max-width: 639px) {
+        width: 100vw;
+        @include padding(320px, 20px, 13px, 20px, 9px);
+        grid: "logo" 16.5625vw
+             "media" 17.5vw
+             "button" 26.25vw
+             "design" 15.3125vw
+             "nav" 16.25vw
+             /1fr; 
     }
 }
 

@@ -6,24 +6,33 @@ footer{
 #logo{
     grid-area: logo;
     align-self: baseline;
+    @media screen and (max-width: 639px) {
+        align-self: flex-start;
+        justify-self: center;
+
+    }
+
 }
 
 #form{
     grid-area: form;
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         @include width(1000px, 367px);
         align-self: flex-start;
         @include margin (1000px, 0px, 0px, 0px, 242px);
       }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 768px) {
         display: none;
-
       }
+     
 }
 
 #button{
     grid-area: button;
     align-self: baseline;
+    @media screen and (max-width: 639px) {
+        justify-self:  center;
+    }
   
 }
 
@@ -36,15 +45,20 @@ footer{
     grid-area: nav;
     padding-left: 38px;
     align-self: flex-end;
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         justify-self: start;
         @include padding (1000px, 0px, 0px, 0px, 0px);
         margin-bottom: -1em;
       }
-      @media screen and (max-width: 640px){
+      @media screen and (max-width: 768px) and (min-width: 639px){
         @include padding (640px, 0px, 0px, 0px, 0px);
-        
       }
+      @media screen and (max-width: 639px) {
+        @include padding (320px, 0px, 9px, 0px, 10px);
+        justify-self:  center;
+      }
+
+
 }
 
 
@@ -59,6 +73,10 @@ footer{
     @media screen and (max-width: 650px) and (min-width: 641px) {
         @include gap(1000px, 0px);
      }
+     @media screen and (max-width: 639px) {
+        @include gap(320px, 13px);
+        font-size: 15px;
+     }
 }
 
 .socialMedia__footer{
@@ -72,15 +90,21 @@ footer{
       @media screen and (max-width: 1201px) and (min-width: 1001px) {
         @include gap(1000px, 0px);
       }
-        @media screen and (max-width: 1000px) and (min-width: 771px) {
+        @media screen and (max-width: 1000px) and (min-width: 768px) {
           @include gap(1000px, 10px);
      }
-     @media screen and (max-width: 770px) and (min-width: 641px) {
-        @include gap(1000px, 0px);
-     }
-     @media screen and (max-width: 640px) {
+     //@media screen and (max-width: 770px) and (min-width: 641px) {
+       // @include gap(1000px, 0px);
+     //}
+     @media screen and (max-width: 768px) and (min-width: 639px) {
         @include gap(640px, 20px);
         @include margin (640px, 0px, 0px, 0px, 276px);
+     }
+     @media screen and (max-width: 639px){
+        flex-direction: row;
+        @include gap(320px, 30px);
+        align-self: flex-start;
+        justify-self: center;
      }
     .link__site{
         color: $color-white;
@@ -102,9 +126,10 @@ footer{
         .icon__text{
             position: absolute;
             bottom:5px;
-            @media screen and (max-width: 640px) {
+            @media screen and (max-width: 768px){
                 display: none;
             }
+
         }   
     }
 }

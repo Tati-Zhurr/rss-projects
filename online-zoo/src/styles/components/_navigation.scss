@@ -13,17 +13,25 @@
     @media screen and (max-width: 1599px) and (min-width: 1001px) {
       @include gap(1600px, 58px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 770px) {
+    @media screen and (max-width: 1000px) and (min-width: 768px) {
       @include gap(1000px, 48px);
     }
-      @media screen and (max-width: 770px) and (min-width: 641px) {
-        @include gap(1000px, 10px);
-   }
+   //   @media screen and (max-width: 770px) and (min-width: 641px) {
+      //  @include gap(1000px, 10px);
+  // }
 
-      @media screen and (max-width: 640px){
-        @include gap(640px, 36px);
+      @media screen and (max-width: 768px) and (min-width: 639px){
+        @include gap(640px, 37px);
         @include margin(640px, 0px, 0px, 0px, 0px);
      }
+
+     @media screen and (max-width: 639px){
+      @include gap(320px, 30px);
+      @include margin(640px, 0px, 0px, 0px, 0px);
+     }
+     
+     
+     
     
  .navlink{
     color:$color-white;

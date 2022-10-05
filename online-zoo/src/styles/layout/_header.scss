@@ -6,7 +6,7 @@ header{
 }
 
 .navigation__header{
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 768px){
     display: none;
   }
 
@@ -30,10 +30,10 @@ header{
       @media screen and (max-width: 1000px) and (min-width: 981px){
         @include margin(1000px, 0px, 0px, 0px, 259px);
       }
-      @media screen and (max-width: 980px) and (min-width: 641px){
+      @media screen and (max-width: 980px) and (min-width: 768px){
         @include margin(1000px, 0px, 0px, 0px, 100px);
       }
-      @media screen and (max-width: 640px){
+      @media screen and (max-width: 768px){
         display: none;
       }
       

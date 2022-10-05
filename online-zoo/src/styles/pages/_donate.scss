@@ -14,16 +14,19 @@
     background-size: cover;
     height: 390px;
     margin-top: 0;
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         background-image: url('../../assets/img/panda_bg_donate_1000.jpg');
         @include height(1000px, 390px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         background-image: url('../../assets/img/panda_bg_donate_640.jpg');
         @include height (640px, 335px);
-
     }
-   
+    @media screen and (max-width: 639px){
+        background-image: url('../../assets/img/panda_bg_donation_320.jpg');
+        @include height (320px, 187px);
+    }
+
 }
 
 .background__donate{
@@ -37,13 +40,18 @@
             @include width (1600px, 1160px);
             @include margin(1600px, 40px, 220px, 40px, 220px);
         }        
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include width (1000px, 939px);
             @include margin(1000px, 40px, 30px, 40px, 30px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             @include width (640px, 600px);
             @include margin(640px, 20px, 30px, 20px, 30px);
+        }
+        @media screen and (max-width: 639px){
+            @include width (320px, 300px);
+            @include margin(320px, 30px, 10px, 30px, 10px);
+
         }
 
         .h3_donate{
@@ -52,17 +60,23 @@
                 @include margin(1600px, 0px, 0px, 10px, 0px);
                 
             }        
-            @media screen and (max-width: 1000px) and (min-width: 641px){
+            @media screen and (max-width: 1000px) and (min-width: 768px){
                 @include width (1000px, 778px);
                 @include margin(1000px, 0px, 0px, 30px, 0px);
                 
             }
-            @media screen and (max-width: 640px){
+            @media screen and (max-width: 768px) and (min-width: 639px){
                 @include width (640px, 600px);
                 @include margin(640px, 0px, 0px, 20px, 0px);
+                font-size: 2.4rem;
+            }
+            @media screen and (max-width: 639px) {
+                @include width (320px, 300px);
+                @include margin(320px, 0px, 0px, 20px, 0px);
+                font-size: 2.4rem;
             }
 
-        }
+           }
 
         .text__donate{
             text-align: left;
@@ -77,14 +91,19 @@
             @include margin (1600px, 0px, 0px, 60px, 220px);
             
         }        
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include width (1000px, 778px);
             @include margin (1000px, 0px, 0px, 40px, 30px);
             
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             @include width (640px, 600px);
             @include margin(640px, 0px, 0px, 30px, 20px);
+        }
+        @media screen and (max-width: 639px){
+            @include width (320px, 227px);
+            @include margin(320px, 0px, 0px, 30px, 10px);
+            font-size: 2.4rem;
         }
     }
     
@@ -99,23 +118,31 @@
         @include padding (1600px, 40px, 92px, 62px, 92px);
         
     }        
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         @include margin (1000px, 0px, 30px, 30px, 30px);
         @include padding (1000px, 20px, 44px, 46px, 47px);
         
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         @include margin (640px, 0px, 20px, 46px, 20px);
         @include padding (640px, 30px, 0px, 32.98px, 0px);
         @include width (640px, 600px);
     }
+    @media screen and (max-width: 639px){
+        @include margin (320px, 0px, 10px, 20px, 10px);
+        @include padding (320px, 17px, 0px, 22.98px, 0px);
+        @include width (320px, 300px);
+    }
+
     .feed__donate{
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include margin (1000px, 0px, 0px, 60px, 0px);
         }
-        @media screen and (max-width: 640px){
-            @include margin (640px, 0px, 0px, 30.02px, 0px);
-    
+        @media screen and (max-width: 768px) and (min-width: 639px){
+            @include margin (640px, 0px, 0px, 50px, 0px);
+        }
+        @media screen and (max-width: 639px){
+            @include margin (320px, 0px, 0px, 10.28px, 0px);
         }
 
     }
@@ -124,22 +151,32 @@
         @media screen and (max-width: 1599px) and (min-width: 1001px){
             @include margin (1600px, 0px, 0px, 20px, 0px);
         }        
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include margin (1000px, 0px, 0px, 10px, 0px);
         }
-        @media screen and (max-width: 640px){
-            @include margin (640px, 0px, 0px, 20px, 0px);
-            
+        @media screen and (max-width: 768px) and (min-width: 639px){
+            @include margin (640px, 0px, 0px, 20px, 0px);   
+        }
+        @media screen and (max-width: 639px) {
+            @include margin (320px, 0px, 0px, 10px, 0px);   
         }
     }
     .subtitle__donate{
         margin: 0;
         @include font(24px, 120%, 400);
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             text-align: center;
             @include width(640px, 560px);
             @include margin (640px, 0px, 0px, 0px, 20px);
+            font-size: 2.4rem;
         }
+        @media screen and (max-width: 639px){
+            text-align: center;
+            @include width(320px, 300px);
+            @include margin (320px, 0px, 0px, 0px, 0px);
+            font-size: 1.6rem;
+        }
+
        
     }
     .panda_diet{
@@ -156,27 +193,39 @@
         @media screen and (max-width: 1000px) and (min-width: 991px){
             @include margin (1000px, 0px, 168px, 80px, 149px);
         }
-        @media screen and (max-width: 990px) and (min-width: 641px){
+        @media screen and (max-width: 990px) and (min-width: 768px){
             @include margin (1000px, 0px, 68px, 80px, 49px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             @include margin (640px, 0px, 41px, 41px, 27px);
+        }
+        @media screen and (max-width: 639px){
+            @include margin (320px, 0px, 0px, 6px, 0px);
         }
         
         .amount_diet{
             display: flex;
             flex-direction: column;
             gap:10px;
+          
         
             .number_diet{
                 @include font(72px, 80%, 500);
                 text-align: center;
                 margin-top: 105px;
+                @media screen and (max-width: 639px){
+                    @include font-size (320px,40.6px);
+                    @include margin (320px, 59.21px, 0px, 0px, 0px);
+                }
         
             }
             .text_diet{
                 @include font(16px, 140%, 400);
                 text-align: center;
+                @media screen and (max-width: 639px){
+                    @include font-size (320px, 9.02px);
+                    @include width (320px, 89.66px);
+                }
         }
         
         }
@@ -188,8 +237,14 @@
             margin-left:11px;
             margin-right: 64px;
             margin-top: 130px;
-            @media screen and (max-width: 770px) and (min-width: 641px){
+            @media screen and (max-width: 770px) and (min-width: 768px){
                 @include margin (1000px, 130px, 11px, 0px, 11px);
+            }
+            @media screen and (max-width: 768px) and (min-width: 639px){
+                @include margin (640px, 130px, 64px, 0px, 11px);
+            }
+            @media screen and (max-width: 639px) {
+                @include margin (320px, 73.31px, 36.09px, 0px, 6.2px);
             }
            
 
@@ -199,6 +254,11 @@
             background-image: url('..//..//assets/img/animals-widget.png');
             width: 284px;
             height: 246px;
+            @media screen and (max-width: 639px) {
+                @include width (320px, 160.15px);
+                @include height (320px, 138.72px);
+                background-size: cover;
+            }
 
         }
     }
@@ -206,16 +266,28 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include padding (1000px, 0px, 0px, 0px, 18px);
         }
+        @media screen and (max-width: 768px) and (min-width: 639px) {
+            @include padding (640px, 0px, 0px, 0px, 0px);
+        }
+        @media screen and (max-width: 639px){
+            @include margin (320px, 0px, 0px, 25px, 0px);
+        }
+
         .text__amount{
             @include font(16px, 140%, 400);
             text-align: left;
             margin-bottom: 17px;
-            @media screen and (max-width: 640px){
+            @media screen and (max-width: 768px) and (min-width: 639px){
                 @include margin (640px, 0px, 0px, 7px, 10px);
             }
+            @media screen and (max-width: 639px){
+                @include margin (320px, 0px, 0px, 8.5px, 0px);
+
+            }
+
         }
         .progress__amount{
             display: flex;
@@ -230,11 +302,16 @@
             @media screen and (max-width: 1599px) and (min-width: 1001px){
                 @include width (1600px, 976px);
             }        
-            @media screen and (max-width: 1000px) and (min-width: 641px){
+            @media screen and (max-width: 1000px) and (min-width: 768px){
                 @include width (1000px, 810px);
             }
-            @media screen and (max-width: 640px){
+            @media screen and (max-width: 768px) and (min-width: 639px){
                 @include width (640px, 600px);
+            }
+            @media screen and (max-width: 639px){
+                @include width (320px, 300px);
+                @include height (320px, 13.5px);
+                @include margin (320px, 0px, 0px,  6px, 0px);
             }
             .line{
                 display: inline-block;
@@ -252,18 +329,27 @@
                     @include right(1600px, 30px);
                     z-index: 1;
                 }        
-                @media screen and (max-width: 1000px) and (min-width: 641px){
+                @media screen and (max-width: 1000px) and (min-width: 768px){
                     @include width (1000px, 785px);
-                    @include left(1600px, 16px);
-                    @include right(1600px, 9px);
+                    @include left(1000px, 16px);
+                    @include right(1000px, 9px);
                     z-index: 1;
                 }
-                @media screen and (max-width: 640px){
+                @media screen and (max-width: 768px) and (min-width: 639px){
                     @include width (640px, 524px);
                     @include left(640px, 41px);
                     @include right(640px, 35px);
                     z-index: 1;
                 }
+                @media screen and (max-width: 639px){
+                    @include width (320px, 262px);
+                    @include height (320px, 1px);
+                    @include left(320px, 17.5px);
+                    @include right(320px, 20.5px);
+                    @include top (320px, 6px);
+                    z-index: 1;
+                }
+
                 
             }
             .points_block{
@@ -285,19 +371,25 @@
                     @include margin(1000px, 8px, 30px, 9px, 11px);
                     z-index: 2;
                 }
-                @media screen and (max-width: 990px) and (min-width: 641px){
+                @media screen and (max-width: 990px) and (min-width: 768px){
                     justify-content: space-between;
                      @include gap (1600px, 100px);
                     @include margin(1000px, 8px, 30px, 9px, 11px);
                     z-index: 2;
                 }
-                @media screen and (max-width: 640px){
+                @media screen and (max-width: 768px) and (min-width: 639px){
                     position: absolute;
                     @include gap (640px, 120px);
                     @include margin(640px, 8px, 35px, 9px, 35px);
-                    z-index: 2;
-                    
+                    z-index: 2; 
                 }
+                @media screen and (max-width: 639px){
+                    position: absolute;
+                    @include gap (320px, 60px);
+                    @include margin(320px, 4px, 17.5px, 4.5px, 17.5px);
+                    z-index: 2; 
+                }
+
                 .point{
                     display: inline;
                     background-color: $color-point;
@@ -306,6 +398,10 @@
                     border-radius: 50%;
                     transition: all .2s;
                     cursor: pointer;
+                    @media screen and (max-width: 639px){
+                        width: 5px;
+                        height: 5px;
+                    }
                    &:hover{
                     transform: scale(1.5);
                     background: $color-primary;
@@ -332,17 +428,22 @@
             @media screen and (max-width: 1599px) and (min-width: 1001px){
                 grid-template-columns: 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 4.4375vw;
             }        
-            @media screen and (max-width: 1000px) and (min-width: 641px){
+            @media screen and (max-width: 1000px) and (min-width: 768px){
                 grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw 13vw 5vw;
                 margin-left: -13vw;
                 overflow: hidden;
             }
-            @media screen and (max-width: 640px){
+            @media screen and (max-width: 768px) and (min-width: 639px){
                 grid-template-columns: 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
                 margin-left: -60.9375vw;
                 @include padding(640px, 0px, 13px, 0px, 17px);
                 overflow: hidden;
-                
+            }
+            @media screen and (max-width: 639px){
+                grid-template-columns:20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
+                margin-left: -60.9375vw;
+                @include padding(320px, 0px, 7.5px, 0px, 8.5px);
+                overflow: hidden;
             }
 
             .money{
@@ -352,7 +453,9 @@
                 .dollar_amount{
                     @include font(26px, 140%, 500);
                     color: $color-dollar;
-    
+                    @media screen and (max-width: 639px){
+                        @include font-size (320px, 13px);
+                    }
                 }
 
             }
@@ -376,12 +479,23 @@
                 @include font(16px, 140%, 400);
                 padding: 16px 143px 16px 9px;
                 color: $color-input;
+                @media screen and (max-width: 639px){
+                    width: 180px;
+                    height: 42px;
+                    padding: 11px 57.96px 11px 6.04px;
+                }
             }
             .dollar__another{
                 position: absolute;
                 right:17px;
                 top:17px;
                 background-image: url(..//..//assets/icons/dollar_input.svg);
+                width: 10px;
+                height: 20px;
+                @media screen and (max-width: 639px){
+                    right: 10px;
+                    top: 11px;
+                }
             }
 
         }
@@ -394,6 +508,9 @@
     margin-bottom: 31px;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 639px){
+        margin-bottom: 28px;
+    }
     .input_monthly_once{
         appearance: none;
         width: 16px;
@@ -425,12 +542,17 @@
  .text_comment_feed{
     margin-left: 340px ;
     margin-right: 335px;
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
        @include margin(1000px, 0px, 0px, 0px, 271px);
    }
-   @media screen and (max-width: 640px){
+   @media screen and (max-width: 768px) and (min-width: 639px){
     @include margin(640px, 0px, 0px, 0px, 0px);
     text-align: center;
+   }
+   @media screen and (max-width: 639px){
+    @include margin(640px, 0px, 0px, 0px, 0px);
+    text-align: center;
+    width: 301px;
    }
  }
 
@@ -455,8 +577,13 @@
     width: 10px;
     height: 20px;
     color: $color-dollar;
-   
+    @media screen and (max-width: 639px){
+        width: 5px;
+        height: 10px;
+        background-size: cover;
+    }
 }
+
 
 .hiden{
     @media screen and (max-width: 1000px) and (min-width: 641px){

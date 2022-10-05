@@ -8,13 +8,15 @@
         @include gap(1600px, 87px);
         @include margin (1600px, 140px, 220px, 180px, 220px);
     }
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         @include gap(1000px, 31px);
         @include margin (1000px, 100px, 30px, 142px, 30px);
     }
-    @media screen and (max-width: 640px){
+    @media screen and (max-width: 768px) and (min-width: 639px){
         @include margin (640px, 60px, 125px, 80px, 20px);
-
+    }
+    @media screen and (max-width: 639px){
+        @include margin (320px, 30px, 10px, 40px, 10px);
     }
     
 
@@ -27,12 +29,12 @@
             @include height(1600px, 403px);
             @include width(1600px, 609px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             background-image: url('../../assets/img/bamboo-cap_1000.jpg');
             @include height(1000px, 408px);
             @include width(1000px, 455px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px){
            display: none;
         }
     }
@@ -42,25 +44,38 @@
         @media screen and (max-width: 1599px) and (min-width: 1001px){
             @include width(1600px, 465px);
         }
-        @media screen and (max-width: 1000px) and (min-width: 641px){
+        @media screen and (max-width: 1000px) and (min-width: 768px){
             @include width(1000px, 454px);
         }
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 768px) and (min-width: 639px){
             @include width(640px, 495px);
          }
-
+         @media screen and (max-width: 639px) {
+            @include width(320px, 300px);
+            .h2__bacKStage{
+                @include margin(320px, 0px, 0px, 10px, 0px);
+                font-size: 2.4rem;
+            }
+         }
      .backStage__commentText{
         margin-bottom: 54px;
         line-height: 2.08rem;
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 768px) and (min-width: 639px) {
            @include margin(640px, 0px, 0px, 30px, 0px);
+        }
+        @media screen and (max-width: 639px) {
+            @include margin(320px, 0px, 0px, 20px, 0px);
         }
      }
      .backStage__subtitle{
         margin-bottom: 34px;
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 768px) and (min-width: 640px){
             @include margin(640px, 0px, 0px, 20px, 0px);
          }
+         @media screen and (max-width: 639px) {
+            @include margin(320px, 0px, 0px, 10px, 0px);
+        }
+
        
      }
      .backStage__mainText{

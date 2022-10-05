@@ -35,6 +35,9 @@
     border-style: none;
     margin-bottom: 0;
     cursor: pointer;
+    @media screen and (max-width: 639px){
+        display: none;
+     }
     &:hover{
         background: $color-button-hover;
     }
@@ -47,11 +50,11 @@
 }
 
 .arrow_back{
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         position: absolute;
         @include left(1000px, 323px);
        }
-       @media screen and (max-width: 640px){
+       @media screen and (max-width: 768px) and (min-width: 640px) {
         position: absolute;
         @include left(640px, 223px);
        }
@@ -66,14 +69,15 @@
 }
 
 .arrow_forward{
-    @media screen and (max-width: 1000px) and (min-width: 641px){
+    @media screen and (max-width: 1000px) and (min-width: 768px){
         position: absolute;
         @include left(1000px, 556px);
      }
-     @media screen and (max-width: 640px){
+     @media screen and (max-width: 768px) and (min-width: 639px){
         position: absolute;
         @include left(640px, 315px);
      }
+    
     & span{
     display: inline-block;
     position:absolute;
