@@ -41,6 +41,7 @@
       grid-template-columns: repeat(1,1fr);
       @include row-gap(320px, 20px);
       @include width (320px, 285px);
+      @include height(320px, 1388px);
       overflow: hidden;
       align-self: center;
     }

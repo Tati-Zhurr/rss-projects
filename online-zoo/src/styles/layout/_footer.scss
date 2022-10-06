@@ -52,10 +52,12 @@ footer{
       }
       @media screen and (max-width: 768px) and (min-width: 639px){
         @include padding (640px, 0px, 0px, 0px, 0px);
+        width: 300px;
       }
       @media screen and (max-width: 639px) {
         @include padding (320px, 0px, 9px, 0px, 10px);
         justify-self:  center;
+        
       }
 
 
@@ -122,6 +124,9 @@ footer{
             border-style: none;
             background-color: rgba(196, 196, 196, 0.5);
             margin-right:12px;
+            @media screen and (max-width: 639px){
+                margin-right: 0;
+            }
         }
         .icon__text{
             position: absolute;

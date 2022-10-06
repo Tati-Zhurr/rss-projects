@@ -34,6 +34,9 @@
     }
     .bamboo{
         position: absolute;
+        display: inline-block;
+        background-image: url(../../assets/svg/bamboo.svg);
+        background-repeat: no-repeat;
         width: 12px;
         height: 21px;
         left: 8px;

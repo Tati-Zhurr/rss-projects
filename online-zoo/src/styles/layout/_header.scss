@@ -5,11 +5,14 @@ header{
     z-index: 2;
 }
 
+.cross__burger{
+  display: none;
+}
+
 .navigation__header{
   @media screen and (max-width: 768px){
     display: none;
   }
-
 }
 
 .designed__header{

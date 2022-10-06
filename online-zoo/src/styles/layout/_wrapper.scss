@@ -22,18 +22,24 @@
         @include padding (1000px, 14px, 30px, 14px, 30px);
         width: 100vw;
         justify-content: space-between;
+        top:0;
     }
     @media screen and (max-width: 768px) and (min-width: 639px) {
         @include padding (640px, 2.29px, 20px, 2.68px, 20.07px);
         width: 100vw;
         justify-content: space-between;
+        position:fixed;
+        top: 0;
     }
     @media screen and (max-width: 639px) {
         @include padding (320px, 2.29px, 10px, 2.68px, 10.07px);
         width: 100vw;
         justify-content: space-between;
+        position:fixed;
+        top: 0;
     }
 }
+
 
 .watch__wrapper{
     flex-direction: column;

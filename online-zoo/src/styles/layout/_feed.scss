@@ -22,7 +22,7 @@
         @include margin (640px, 0px, 0px, 30px, 0px);
     }
     @media screen and (max-width: 639px){
-        @include margin (320px, 0px, 0px, 20px, 0px);
+        @include margin (320px, 0px, 0px, 10px, 0px);
     }
 }
 
@@ -158,10 +158,12 @@
         align-items: center;
         @include margin (320px, 0px, 0px, 30px, 0px);
         @include gap(320px, 20px);
+        overflow: hidden;
     }
    
     .plan__step{
         display:flex;
+        position: relative;
         flex-direction: column;
         justify-content: flex-start;
         gap:30px;
@@ -169,6 +171,16 @@
         @media screen and (max-width: 639px){
             @include gap (320px, 10px);
            height: 222px;
+           &::before{
+            background: url(../../assets/img/small_arrow_320.png) no-repeat;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 167px;
+            right: -173px;
+            z-index: 1;
+        }
 
         }
        .step__image{
@@ -235,13 +247,6 @@
     top:54px;
     left:30px;
    
-    @media screen and (max-width: 991px) and (min-width: 768px){
-        @include width (641px, 108px);
-        @include height (641px, 60px);
-        @include top (641px, 0px);
-        @include left(641px, 0px);
-        scale: 0.8;
-    }
 }
 
 .image_toZoo{
@@ -251,14 +256,6 @@
     right: 41px;
     top: 38px;
     
-    @media screen and (max-width: 991px) and (min-width: 768px){
-        @include width (641px,  85.77493286132812px);
-        @include height (641px, 95px);
-        scale: 0.8;
-        @include right (1000px, 0px);
-        @include top(1000px, 0px);
-
-    }
 }
 
 .image_monkey{
@@ -267,13 +264,7 @@
     width: 124.7468032836914px;
     left: 22px;
     top: 48px;
-    @media screen and (max-width: 991px) and (min-width: 768px){
-        @include width (640px, 124.7468032836914px);
-        @include height (640px, 71.60345458984375px);
-        scale: 0.8;
-        @include left (1000px, 0px);
-        @include top(1000px, 0px);
-    }
+   
 }
 
 .feed__h3{
@@ -331,24 +322,13 @@
             display: inline-block;
            } 
     }
-    @media screen and (max-width: 639px){
-        display: flex;
-        flex-direction: column;
-        gap:154.89px;
-        z-index: 2;
-        position: absolute;
-        @include left(320px, 240px);
-        @include top(320px, 370px);
-        .small_arrow{
-            background-image: url('../../assets/img/small_arrow_320.png');
-            background-repeat: no-repeat;
-            width: 25px;
-            height: 89px;
-            display: inline-block;
-           } 
-    }
+    
    
 
+}
+
+.step_monkey::before{
+    display: none;
 }
 
 

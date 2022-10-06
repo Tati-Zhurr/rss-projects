@@ -21,10 +21,12 @@
     @media screen and (max-width: 768px) and (min-width: 639px){
         background-image: url('../../assets/img/panda_bg_donate_640.jpg');
         @include height (640px, 335px);
+        @include margin (640px, 33.99px, 0px, 0px, 0px);
     }
     @media screen and (max-width: 639px){
         background-image: url('../../assets/img/panda_bg_donation_320.jpg');
         @include height (320px, 187px);
+        @include margin (320px, 33.99px, 0px, 0px, 0px);
     }
 
 }
@@ -46,7 +48,7 @@
         }
         @media screen and (max-width: 768px) and (min-width: 639px){
             @include width (640px, 600px);
-            @include margin(640px, 20px, 30px, 20px, 30px);
+            @include margin(640px, 30px, 20px, 30px, 20px);
         }
         @media screen and (max-width: 639px){
             @include width (320px, 300px);
@@ -67,11 +69,13 @@
             }
             @media screen and (max-width: 768px) and (min-width: 639px){
                 @include width (640px, 600px);
+                @include height (640px, 58px);
                 @include margin(640px, 0px, 0px, 20px, 0px);
                 font-size: 2.4rem;
             }
             @media screen and (max-width: 639px) {
                 @include width (320px, 300px);
+                @include height (320px, 87px);
                 @include margin(320px, 0px, 0px, 20px, 0px);
                 font-size: 2.4rem;
             }
@@ -81,6 +85,13 @@
         .text__donate{
             text-align: left;
             margin:0;
+            @media screen and (max-width: 768px) and (min-width: 639px){
+                @include height(640px, 154px);
+            }
+            @media screen and (max-width: 639px) {
+                @include height(320px, 308px);
+            }
+          
         }
     }
     .donation_info_title{
@@ -470,6 +481,9 @@
         .form__another{
             position: relative;
             margin-bottom: 25px;
+            @media screen and (max-width: 768px) and (min-width: 639px){
+                margin-bottom: 31px;
+            }
             .input__another{
                 background-color: transparent;
                 border: 1px solid $color-input;
@@ -479,11 +493,17 @@
                 @include font(16px, 140%, 400);
                 padding: 16px 143px 16px 9px;
                 color: $color-input;
+                @media screen and (max-width: 768px) and (min-width: 639px){
+                    width: 180px;
+                    height: 42px;
+                    padding: 10px 57.96px 14.89px 6.04px;
+                }
                 @media screen and (max-width: 639px){
                     width: 180px;
                     height: 42px;
-                    padding: 11px 57.96px 11px 6.04px;
+                    padding: 11px 57.96px 13.89px 6.04px;
                 }
+              
             }
             .dollar__another{
                 position: absolute;
@@ -492,7 +512,7 @@
                 background-image: url(..//..//assets/icons/dollar_input.svg);
                 width: 10px;
                 height: 20px;
-                @media screen and (max-width: 639px){
+                @media screen and (max-width: 768px){
                     right: 10px;
                     top: 11px;
                 }
