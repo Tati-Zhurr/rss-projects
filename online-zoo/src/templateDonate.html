@@ -12,6 +12,7 @@
 <body>
     <header class="header" id="header">
         <div class="wrapper header__wrapper">
+          <span class="cross__burger"></span>
           <!--<a href="index.html" class="logo__link"><span class="logo"></span></a>-->
           <h1 class="petStory-online logo__header">
             <a href="index.html" class="h1 h1__petStory">PetStory online</a>
@@ -25,11 +26,11 @@
           </div>
           <nav class="navigation__header">
             <ul class="navigation">
-              <li class="navigation__item"> <a href="index.html" class="navlink__header navlink__donate">About</a></li>
-              <li class="navigation__item"> <a href="#map" class="navlink__header navlink__donate">Map</a></li>
-              <li class="navigation__item"> <a href="#zoos" class="navlink__header navlink__donate">Zoos</a></li>
-              <li class="navigation__item"> <a href="donate.html" class="navlink__header navlink__donate link_selected">Donate</a></li>
-              <li class="navigation__item"> <a href="#contact" class="navlink__header navlink__donate">Contact us</a></li>
+              <li class="navigation__item"> <a href="index.html" class="navlinl navlink__header navlink__donate">About</a></li>
+              <li class="navigation__item"> <a href="#map" class="navlink navlink__header navlink__donate">Map</a></li>
+              <li class="navigation__item"> <a href="#zoos" class="navlink navlink__header navlink__donate">Zoos</a></li>
+              <li class="navigation__item"> <a href="donate.html" class="navlink navlink__header navlink__donate link_selected">Donate</a></li>
+              <li class="navigation__item"> <a href="#contact" class="navlink navlink__header navlink__donate">Contact us</a></li>
             </ul>
           </nav>
           <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="designed__header">Designed by©</a>
@@ -64,30 +65,30 @@
                 <div class="progress__amount">
                   <span class="line"></span>
                   <div class="points_block">
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
-                  <span class="point"></span>
+                  <span class="point" amount="5000" id="5000"></span>
+                  <span class="point" amount="2000" id="2000"></span>
+                  <span class="point" amount="1000" id="1000"></span>
+                  <span class="point" amount="500" id="500"></span>
+                  <span class="point" amount="250" id="250"></span>
+                  <span class="point  point_selected" amount="100" id="100"></span>
+                  <span class="point" amount="50" id="50"></span>
+                  <span class="point" amount="25" id="25"></span>
                   </div>
                 </div>
                 <div class="money__amount">
-                  <div class="money"><span class="dollar hiden"></span><span class="dollar_amount hiden">5000</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">2000</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">1000</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">500</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">250</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">100</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">50</span></div> 
-                  <div class="money"><span class="dollar"></span><span class="dollar_amount">25</span></div> 
+                  <div class="money"><span class="dollar dollar_5000"></span><span class="dollar_amount amount_5000">5000</span></div> 
+                  <div class="money"><span class="dollar dollar_2000"></span><span class="dollar_amount amount_2000">2000</span></div> 
+                  <div class="money"><span class="dollar dollar_1000"></span><span class="dollar_amount amount_1000">1000</span></div> 
+                  <div class="money"><span class="dollar dollar_500"></span><span class="dollar_amount amount_500">500</span></div> 
+                  <div class="money"><span class="dollar dollar_250"></span><span class="dollar_amount amount_250">250</span></div> 
+                  <div class="money"><span class="dollar dollar_100 dollar_selected"></span><span class="dollar_amount amount_100 amount_selected">100</span></div> 
+                  <div class="money"><span class="dollar dollar_50"></span><span class="dollar_amount amount_50">50</span></div> 
+                  <div class="money"><span class="dollar dollar_25"></span><span class="dollar_amount amount_25">25</span></div> 
                 </div>
               </div>
               <div class="another__amount">
                 <form class="form__another" action="#">
-                  <input type="number" placeholder="Another amount" maxlength="4" class="input__another">
+                  <input type="number" placeholder="100" maxlength="4" class="input__another">
                   <span class="dollar dollar__another"></span>
                 </form>
               </div>

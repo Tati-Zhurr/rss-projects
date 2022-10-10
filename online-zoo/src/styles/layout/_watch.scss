@@ -19,12 +19,12 @@
     @media screen and (max-width: 768px) and (min-width: 639px) {
         background-image: url(../../assets/img/Giant_Panda_640.jpg);
         @include height (640px, 373px);
-        @include margin(640px, 33.99px, 0px, 0px, 0px);
+        margin-top: 33.99px;
     }
     @media screen and (max-width: 639px){
         background-image: url(../../assets/img/Giant_Panda_320.jpg);
         @include height (320px, 187px);
-        @include margin(320px, 33.99px, 0px, 0px, 0px);
+        margin-top:33.99px;
     
     }
 }
