@@ -277,13 +277,16 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
+        overflow: hidden;
         @media screen and (max-width: 1000px) and (min-width: 768px){
             @include padding (1000px, 0px, 0px, 0px, 18px);
         }
         @media screen and (max-width: 768px) and (min-width: 639px) {
+            width: 600px;
             @include padding (640px, 0px, 0px, 0px, 0px);
         }
         @media screen and (max-width: 639px){
+            width: 600px;
             @include margin (320px, 0px, 0px, 25px, 0px);
         }
 
@@ -310,21 +313,24 @@
             background-color: $color-progress-bar;
             overflow: hidden;
             margin-bottom: 12px;
-            @media screen and (max-width: 1599px) and (min-width: 1001px){
+            @media screen and (max-width: 1599px) and (min-width: 1200px){
                // @include width (1600px, 976px);
             }        
-            @media screen and (max-width: 1000px) and (min-width: 768px){
+            @media screen and (max-width: 1200px) and (min-width: 995px){
                 width: 810px;
                // @include width (1000px, 810px);
             }
-            @media screen and (max-width: 768px) and (min-width: 639px){
+            @media screen and (max-width: 995px) and (min-width: 639px){
                 width: 600px;
                // @include width (640px, 600px);
             }
             @media screen and (max-width: 639px){
-              @include width (320px, 300px);
-              @include height (320px, 13.5px);
-              @include margin (320px, 0px, 0px,  6px, 0px);
+                width:300px ;
+                height: 13.5px;
+                margin-bottom: 6px;
+             // @include width (320px, 300px);
+             // @include height (320px, 13.5px);
+           //   @include margin (320px, 0px, 0px,  6px, 0px);
             }
             .line{
                 display: inline-block;
@@ -336,13 +342,13 @@
                 left:31px;
                 right: 30px;
                 z-index: 1;
-                @media screen and (max-width: 1599px) and (min-width: 1001px){
+                @media screen and (max-width: 1599px) and (min-width: 1200px){
                   //  @include width (1600px, 915px);
                   //  @include left(1600px, 31px);
                    // @include right(1600px, 30px);
                    z-index: 1;
                 }        
-                @media screen and (max-width: 1000px) and (min-width: 768px){
+                @media screen and (max-width: 1200px) and (min-width: 995px){
                     width: 785px;
                     left:16px;
                     right: 9px;
@@ -351,7 +357,7 @@
                //     @include right(1000px, 9px);
                      z-index: 1;
                 }
-                @media screen and (max-width: 768px) and (min-width: 639px){
+                @media screen and (max-width: 995px) and (min-width: 639px){
                     width: 524px;
                     left:41px;
                     right: 35px;
@@ -361,11 +367,16 @@
                     z-index: 1;
                 }
                 @media screen and (max-width: 639px){
-                  @include width (320px, 262px);
-                  @include height (320px, 1px);
-                  @include left(320px, 17.5px);
-                 @include right(320px, 20.5px);
-                 @include top (320px, 6px);
+                    width: 262px;
+                    height: 1px;
+                    left: 17.5px;
+                    right: 20.5px;
+                    top: 6px;
+                //  @include width (320px, 262px);
+               //   @include height (320px, 1px);
+               //   @include left(320px, 17.5px);
+              //   @include right(320px, 20.5px);
+             //    @include top (320px, 6px);
                      z-index: 1;
                 }
 
@@ -377,12 +388,12 @@
                 z-index: 2;
                 gap:120px;
                 margin: 8px 30px 9px 26px;
-                @media screen and (max-width: 1599px) and (min-width: 1001px){
+                @media screen and (max-width: 1599px) and (min-width: 1200px){
                   //  @include gap (1600px, 120px);
                 //    @include margin(1600px, 8px, 30px, 9px, 26px);
                     z-index: 2;
                 }        
-                @media screen and (max-width: 1000px) and (min-width: 991px){
+                @media screen and (max-width: 1200px) and (min-width: 995px){
                     transform: translateX(-130px);
                     position: absolute;
                   //  gap:120px;
@@ -392,16 +403,17 @@
                   //  @include margin(1000px, 8px, 30px, 9px, 11px);
                     z-index: 2;
                 }
-                @media screen and (max-width: 990px) and (min-width: 768px){
-                    transform: translateX(-130px);
+                @media screen and (max-width: 995px) and (min-width: 768px){
+                    transform: translateX(-390px);
                     position: absolute;
-                    gap: 100px;
-                    margin:8px 30px 9px 11px;
+                    gap: 120px;
+                    margin:8px 35px 9px 35px;
                   //   @include gap (1600px, 100px);
                 //    @include margin(1000px, 8px, 30px, 9px, 11px);
                     z-index: 2;
                 }
                 @media screen and (max-width: 768px) and (min-width: 639px){
+                    transform: translateX(-390px);
                     position: absolute;
                     margin:8px 35px 9px 35px;
                   //  @include gap (640px, 120px);
@@ -409,8 +421,12 @@
                   //  z-index: 2; 
                 }
                 @media screen and (max-width: 639px){
-                    @include gap (320px, 60px);
-                    @include margin(320px, 4px, 17.5px, 4.5px, 17.5px);
+                    position: absolute;
+                    transform: translateX(-195px);
+                    gap:60px;
+                    margin: 4px 17.5px 4.5px 17.5px;
+                   // @include gap (320px, 60px);
+                  //  @include margin(320px, 4px, 17.5px, 4.5px, 17.5px);
                     z-index: 2; 
                 }
 
@@ -445,7 +461,7 @@
                     top: 50%;
                     transform: translate(-50%, -50%);
                     z-index:-1;
-                    border:1px solid $color-primary; /* for demo purposes */
+                    border:1px solid transparent; /* for demo purposes */
                   }
             }
         
@@ -453,25 +469,31 @@
         .money__amount{
             display: grid;
             grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 71px;
-            @media screen and (max-width: 1599px) and (min-width: 1001px){
-                grid-template-columns: 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 4.4375vw;
+            @media screen and (max-width: 1599px) and (min-width: 1200px){
+                grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 71px;
+              //  grid-template-columns: 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 8.125vw 4.4375vw;
             }        
-            @media screen and (max-width: 1000px) and (min-width: 768px){
-                grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw 13vw 5vw;
-                margin-left: -13vw;
-                overflow: hidden;
+            @media screen and (max-width: 1200px) and (min-width: 995px){
+                grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 71px;
+                margin-left:  -130px ;
+               // grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw 13vw 5vw;
+               // margin-left: -13vw;
             }
-            @media screen and (max-width: 768px) and (min-width: 639px){
-                grid-template-columns: 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
-                margin-left: -60.9375vw;
-                @include padding(640px, 0px, 13px, 0px, 17px);
-                overflow: hidden;
+            @media screen and (max-width: 995px) and (min-width: 639px){
+                grid-template-columns:130px 130px 130px 130px 130px 130px 130px 71px;
+                margin-left: -390px;
+                padding: 0 13px 0 17px;
+               // grid-template-columns: 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
+               // margin-left: -60.9375vw;
+               // @include padding(640px, 0px, 13px, 0px, 17px);
             }
             @media screen and (max-width: 639px){
-                grid-template-columns:20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
-                margin-left: -60.9375vw;
-                @include padding(320px, 0px, 7.5px, 0px, 8.5px);
-                overflow: hidden;
+                grid-template-columns: 65px  65px  65px  65px  65px  65px  65px 25px;
+               // grid-template-columns:  20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 20.3125vw 7.8125vw;
+                margin-left: -196px;
+                padding:  0 7.5px 0 8.5px;
+                //@include padding(320px, 0px, 7.5px, 0px, 8.5px);
+        
             }
 
             .money{
@@ -630,7 +652,7 @@
 }
 
 
-.hiden{
+/*hiden{
     @media screen and (max-width: 1000px) and (min-width: 641px){
         display: none;
     }
@@ -640,7 +662,7 @@
 .point_selected{
     transform: scale(1.5);
     background-color: $color-primary;
-}
+}*/
 
 
 

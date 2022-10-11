@@ -24,11 +24,18 @@ header.addEventListener('click', (event) =>{
  });
 
  //pet-slider
- let prev = document.querySelector('.arrow_back');
- let next = document.querySelector('.arrow_forward');
+ const prev = document.querySelector('.arrow_back');
+ const next = document.querySelector('.arrow_forward');
+ const cardsWrapper = document.querySelector('.pets__cards');
+ 
  if (prev){
     prev.addEventListener('click', getNewCards);
- };
+  // prev.addEventListener('click', ()=>{
+    //cardsWrapper.style.transform =`translateX(-10000px)`;
+  //  setTimeout(getNewCards, 1000);
+   }
+ //  );
+ //};
  if (next){
     next.addEventListener('click', getNewCards);
  };
@@ -98,14 +105,18 @@ if (testimonialsBackground){
 
 //donate
 const progressAmount = document.querySelector('.progress__amount');
-const points = document.querySelectorAll('.point');
-//const pseudoPointsArr = window.getComputedStyle(
-	//document.querySelector('.point'), ':before'
-//);
-
 const pointArr = [...document.querySelectorAll('.point')];
 const inputAmount = document.querySelector('.input__another');
+//to limit input numbers
+if (inputAmount){
+    inputAmount.oninput = function () {
+        if (this.value.length > 4) {
+            this.value = this.value.slice(0,4); 
+        }
+    }
 
+}
+//select amount by chosing a point
 if (progressAmount) {
     progressAmount.addEventListener('click', (event)=>{
         if (pointArr.includes(event.target)){
@@ -127,24 +138,21 @@ if (progressAmount) {
     }) 
 
 }
-
+//select amount with input
 const pointIdArr =[];
 pointArr.forEach(point => {pointIdArr.push(point.id)});
-console.log(pointIdArr);
-
 if (inputAmount){
+    
     inputAmount.addEventListener('change', ()=> {
-        if (pointIdArr.includes(inputAmount.value)){
-
-        //if (pointArr.includes(inputAmount.value)){
             let dollarSelected = document.querySelector('.dollar_selected');
             let amountSelected = document.querySelector('.amount_selected');
             let pointSelected = document.querySelector('.point_selected');
-            pointSelected.classList.remove('point_selected');
-            dollarSelected.classList.remove('dollar_selected');
-            amountSelected.classList.remove('amount_selected');
-
-            console.log(`#${inputAmount.value}`);
+            if (dollarSelected){
+                pointSelected.classList.remove('point_selected');
+                dollarSelected.classList.remove('dollar_selected');
+                amountSelected.classList.remove('amount_selected');
+            };
+        if (pointIdArr.includes(inputAmount.value)){
             let newPointSelected = document.getElementById(`${inputAmount.value}`);
             newPointSelected.classList.add('point_selected');
             let newDollarSelected = document.querySelector(`.dollar_${inputAmount.value}`);

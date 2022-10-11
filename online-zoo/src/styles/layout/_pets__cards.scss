@@ -21,6 +21,7 @@
     grid-template-columns: repeat(3,1fr);
     row-gap: 30px;
     column-gap: 20px;
+    transition: all 0.5s;
     @media screen and (max-width: 1599px) and (min-width: 1001px) {
       @include row-gap(1600px, 20px);
       @include column-gap(1600px, 30px);
@@ -52,6 +53,7 @@
         border-radius: 5px;
         border: 1px solid #FA6F32;
         flex-shrink: 1;
+        transition: all 0.5s;
         @media screen and (max-width: 1599px) and (min-width: 1001px) {
           @include width(1600px, 366px);
         }

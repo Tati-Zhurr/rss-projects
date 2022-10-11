@@ -9,6 +9,7 @@ function getNewCards() {
     arrOfCards.forEach(card => {
     card.style.gridArea = shuffledGridAreas.pop();
 });
+//cardsWrapper.style.transform =`translateX(0px)`;
 };
 
 function shuffle(array){
