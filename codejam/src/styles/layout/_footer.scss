@@ -1,0 +1,191 @@
+footer{
+    background-color: $color-footer;
+    width: 100vw;
+}
+
+#logo{
+    grid-area: logo;
+    align-self: baseline;
+    @media screen and (max-width: 639px) {
+        align-self: flex-start;
+        justify-self: center;
+
+    }
+
+}
+
+#form{
+    grid-area: form;
+    @media screen and (max-width: 1000px) and (min-width: 768px){
+        @include width(1000px, 367px);
+        align-self: flex-start;
+        @include margin (1000px, 0px, 0px, 0px, 242px);
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+     
+}
+
+#button{
+    grid-area: button;
+    align-self: baseline;
+    @media screen and (max-width: 639px) {
+        justify-self:  center;
+    }
+  
+}
+
+#media{
+    grid-area: media;
+    
+}
+
+#nav{
+    grid-area: nav;
+    padding-left: 38px;
+    align-self: flex-end;
+    @media screen and (max-width: 1000px) and (min-width: 768px){
+        justify-self: start;
+        @include padding (1000px, 0px, 0px, 0px, 0px);
+        margin-bottom: -1em;
+      }
+      @media screen and (max-width: 768px) and (min-width: 639px){
+        @include padding (640px, 0px, 0px, 0px, 0px);
+        width: 300px;
+      }
+      @media screen and (max-width: 639px) {
+        @include padding (320px, 0px, 9px, 0px, 10px);
+        justify-self:  center;
+        
+      }
+
+
+}
+
+
+#design{
+    grid-area: design;
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width:auto;
+    @media screen and (max-width: 650px) and (min-width: 641px) {
+        @include gap(1000px, 0px);
+     }
+     @media screen and (max-width: 639px) {
+        @include gap(320px, 13px);
+        font-size: 15px;
+     }
+}
+
+.socialMedia__footer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-content: center;
+    @media screen and (max-width: 1599px) and (min-width: 1201px){
+        @include gap(1600px, 10px);
+      }
+      @media screen and (max-width: 1201px) and (min-width: 1001px) {
+        @include gap(1000px, 0px);
+      }
+        @media screen and (max-width: 1000px) and (min-width: 768px) {
+          @include gap(1000px, 10px);
+     }
+     //@media screen and (max-width: 770px) and (min-width: 641px) {
+       // @include gap(1000px, 0px);
+     //}
+     @media screen and (max-width: 768px) and (min-width: 639px) {
+        @include gap(640px, 20px);
+        @include margin (640px, 0px, 0px, 0px, 276px);
+     }
+     @media screen and (max-width: 639px){
+        flex-direction: row;
+        @include gap(320px, 30px);
+        align-self: flex-start;
+        justify-self: center;
+     }
+    .link__site{
+        color: $color-white;
+        text-decoration: none;
+        position: relative;
+        height: 26px;
+        .icon__site{
+            display: inline-block;
+            background-image: url(..//..//assets/svg/twitter.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border-style: none;
+            background-color: rgba(196, 196, 196, 0.5);
+            margin-right:12px;
+            @media screen and (max-width: 639px){
+                margin-right: 0;
+            }
+        }
+        .icon__text{
+            position: absolute;
+            bottom:5px;
+            @media screen and (max-width: 768px){
+                display: none;
+            }
+
+        }   
+    }
+}
+
+#facebook{
+    background-image: url(..//..//assets/svg/facebook.svg);
+}
+
+#instagram{
+    background-image: url(..//..//assets/svg/instagram.svg);
+}
+
+#youtube{
+    background-image: url(..//..//assets/svg/youtube.svg);
+}
+
+
+.footer__label{
+    color:$color-white;
+    margin-bottom: 14px;
+    @media screen and (max-width: 1150px) and (min-width: 1001px) {
+        @include margin(1600px, 0px, 0px, 5px, 0px);
+        line-height: 100%;
+     }
+
+
+}
+
+#email{
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    width: 228px;
+    height: 42px;
+    color: $color-grey;
+    padding: 10px 7px 10px 10px;
+    margin-top: 14px;
+    @media screen and (max-width: 1150px) and (min-width: 1001px) {
+        @include margin(1600px, 0px, 0px, 5px, 0px);
+     }
+}
+
+.designedBy__footer, .copyRights__footer{
+    text-align: end ;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 100;
+}
+.designedBy__footer{
+    text-align: start;
+}
+
+
+
+

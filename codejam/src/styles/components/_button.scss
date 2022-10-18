@@ -1,0 +1,20 @@
+.button__navigation{
+    color: $color-text-light;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    background: $color-buttons;
+    border-radius: 10px;
+    border-style: none;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    transition:all .3s;
+    cursor: pointer;
+    &:hover{
+        background: $color-button-hover;
+    }
+    &:active{
+        background: $color-button-active;
+    }
+}
+
+
