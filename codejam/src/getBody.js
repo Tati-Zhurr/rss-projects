@@ -1,5 +1,8 @@
-function getBody (){
+import getTiles from "./getTiles";
+
+function getBody (a, numberMatrix){
     const body = document.querySelector('body');
+    //buttons block
     const header = document.createElement('header');
     body.append(header);
     let navigation = document.createElement('nav');
@@ -10,9 +13,69 @@ function getBody (){
     navigation.append(ul);
     header.append(navigation);
     body.append(header);
+    //time and moves
     let main = document.createElement('main');
-    main.append(getTiles(4));
+    let divProgress = document.createElement('div');
+    divProgress.classList.add('progress');
+    let spanMoves = document.createElement('span');
+    spanMoves.classList.add ('moves');
+    spanMoves.append('Moves: 0');
+    divProgress.append(spanMoves);
+    let spanTime = document.createElement('span');
+    spanTime.classList.add('time');
+    spanTime.append('Time: 00:00');
+    divProgress.append(spanTime);
+    main.append(divProgress);
+    //tiles
+    main.append(getTiles(a, numberMatrix));
     body.append(main);
+    //size-block
+    let divSize= document.createElement('div');
+    divSize.classList.add ('size_block');
+    let spanSize = document.createElement('span');
+    spanSize.classList.add('current_size');
+    spanSize.append(`Frame size: ${a}x${a}`);
+    divSize.append(spanSize);
+    let otherSizeSpan = document.createElement('span');
+    otherSizeSpan.classList.add('other_size');
+    otherSizeSpan.append('Other sizes: ')
+    let a3 = document.createElement('a');
+    a3.classList.add('a_size');
+    a3.setAttribute('href', '#');
+    a3.append('3x3');
+    otherSizeSpan.append(a3);
+    otherSizeSpan.append(' ');
+    let a4 = document.createElement('a');
+    a4.classList.add('a_size');
+    a4.setAttribute('href', '#');
+    a4.append('4x4');
+    otherSizeSpan.append(a4);
+    otherSizeSpan.append(' ');
+    let a5 = document.createElement('a');
+    a5.classList.add('a_size');
+    a5.setAttribute('href', '#');
+    a5.append('5x5');
+    otherSizeSpan.append(a5);
+    otherSizeSpan.append(' ');
+    let a6 = document.createElement('a');
+    a6.classList.add('a_size');
+    a6.setAttribute('href', '#');
+    a6.append('6x6');
+    otherSizeSpan.append(a6);
+    otherSizeSpan.append(' ');
+    let a7 = document.createElement('a');
+    a7.classList.add('a_size');
+    a7.setAttribute('href', '#');
+    a7.append('7x7');
+    otherSizeSpan.append(a7);
+    otherSizeSpan.append(' ');
+    let a8 = document.createElement('a');
+    a8.classList.add('a_size');
+    a8.setAttribute('href', '#');
+    a8.append('8x8');
+    otherSizeSpan.append(a8);
+    divSize.append(otherSizeSpan);
+    main.append(divSize);
 }
 
 function getList(){
@@ -30,51 +93,6 @@ function getList(){
         fragment.append(li);
     };
     return fragment;
-}
-
-function getTiles(a){
-   let size =a*a;
-  // let numberTileArray = shuffle(size);
-   let fragment = new DocumentFragment;
-   let canvas = document.createElement('canvas');
-   canvas.classList.add('canvas');
-   let ctx = canvas.getContext('2d');
-   canvas.width  = 300;
-   canvas.height = 300;
-    for (let i=0; i<a; i++){
-    for (let j=0; j<a; j++){
-    // let numberOfTile = numberTileArray.push();
-    // if (numberOfTile === size){
-         //   ctx.fillStyle = '#929699';
-          //  let xOfSpace =`${i}`;
-           // let yOfSpace =`${j}`;
- //   };
-    ctx.fillStyle = '#fcda69';
-    ctx.fillRect(20+j*64, 20+i*64, 63, 63);
-    ctx.fillStyle = '#333B41';
-    ctx.fillText('1', 20+j*64+28, 20+i*64+32);
-   }
-}
-  fragment.append(canvas);
-  
-   return fragment;
-}
-
-function shuffle(size){
-    let randomNumber = Math.floor(Math.random()*size)+1;
-    let shuffledArr =[];
-
-    
-    while (shuffledArr.length !== size){
-        while (shuffledArr.includes(randomNumber)){
-            randomNumber = Math.floor(Math.random()*size)+1;
-        };
-        
-        shuffledArr.push (randomNumber);
-    };
-
-    return shuffledArr;
-
 }
 
 
