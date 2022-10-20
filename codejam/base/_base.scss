@@ -1,0 +1,54 @@
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-primary;
+}
+
+
+
+.text_subtitle{
+    @include font(24px, 120%, 400);
+
+}
+
+.text_btn{
+    @include font(16px, 140%, 500);
+
+}
+
+.text_smallParagraph{
+    @include font(15px, 120%, 300);
+
+}
+
+.feed__mainText{
+    @include font(16px, 130%, 400);
+
+}
+.feed__commentText{
+    @include font(16px, 130%, 500);
+
+}
+
+.text__donate{
+    @include font(16.3px, 140%, 400);
+}
+
+
+
+
+
+
+
+
+
