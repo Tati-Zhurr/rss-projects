@@ -13,7 +13,8 @@ getBody(a, numberMatrix);
 
 //timer
 
-let timer = window.setInterval(countTime, 1000);
+
+let timer = setInterval(countTime, 1000);
 let totalSeconds=0;
 function countTime() {
            ++totalSeconds;
@@ -28,6 +29,29 @@ function countTime() {
            document.querySelector(".time").innerHTML = 'Timer: '+ minute + ":" + seconds;
  }
 
+ let buttonPause = document.querySelector('#pause');
+ buttonPause.addEventListener('click', ()=>{
+  buttonPause.classList.toggle('on_pause');
+  if (buttonPause.classList.contains('on_pause')){
+    buttonPause.innerHTML = 'Play';
+    buttonPause.style.background ='#ab2f35'; 
+    clearInterval(timer);
+  } else{
+    buttonPause.innerHTML = 'Pause';
+    buttonPause.style.background ='';
+    timer = setInterval(countTime, 1000);
+  }
+  
+ })
+ 
+
+ //sound
+ const sound = new Audio('sound_tile.mp3');
+ let soundButton = document.querySelector('#sound');
+ 
+ soundButton.addEventListener('click', ()=>{
+  soundButton.classList.toggle('sound_off');
+ })
 
 
 
@@ -35,28 +59,36 @@ let canvas = document.querySelector("canvas");
 let moves = document.querySelector('.moves');
 let counter =0;
 //let matrixResult = getMatrixResult();
-let buttonShuffle = document.querySelector('#shuffle');
-let body = document.querySelector('body');
+
+
 
 //restart
+let buttonShuffle = document.querySelector('#shuffle');
+
 buttonShuffle.addEventListener('click', ()=>{
     numberMatrix = getNumbersMatrix(a);
     getTilesAgain(canvas, a, numberMatrix);
     moves.innerHTML= `Moves: 0`;
     counter =0;
-   // clearInterval(timer);
+    clearInterval(timer);
     totalSeconds=0;
+    if (!buttonPause.classList.contains('on_pause')){
+      timer = setInterval(countTime, 1000);
+    } else{
+      document.querySelector(".time").innerHTML = 'Timer: '+ '00' + ":" + '00';
+    }
 });
 
-canvas.addEventListener("mousedown", function(e)
-{ /*if (counter ===1){
-    totalSeconds=0;
-    timer= window.setInterval(countTime, 1000);
-}*/
+
+//canvas onclick
+canvas.addEventListener("mousedown", function(e){ 
+  if (!buttonPause.classList.contains('on_pause')){
+
   let position=getMousePosition(canvas, e);
   let iOfTileClicked = position.i;
   let jOfTileClicked = position.j;
   let ctx = canvas.getContext('2d');
+
   if (jOfTileClicked+1 < a){
     if (numberMatrix[iOfTileClicked][jOfTileClicked+1] === maxNumber ) {
        let numberOfClickedTile = numberMatrix[iOfTileClicked][jOfTileClicked];
@@ -73,6 +105,10 @@ canvas.addEventListener("mousedown", function(e)
 
        counter+=1;
        moves.innerHTML= `Moves: ${counter}`;
+       if (!soundButton.classList.contains('sound_off')){
+        sound.play();
+       }
+      
     }
   }
   if (jOfTileClicked-1 >=0){
@@ -91,6 +127,9 @@ canvas.addEventListener("mousedown", function(e)
 
        counter+=1;
        moves.innerHTML= `Moves: ${counter}`;
+       if (!soundButton.classList.contains('sound_off')){
+        sound.play();
+       }
     }
   }
   if (iOfTileClicked+1 < a){
@@ -109,6 +148,9 @@ canvas.addEventListener("mousedown", function(e)
 
        counter+=1;
        moves.innerHTML= `Moves: ${counter}`;
+       if (!soundButton.classList.contains('sound_off')){
+        sound.play();
+       }
     }
   }
   if (iOfTileClicked-1 >=0){
@@ -127,28 +169,13 @@ canvas.addEventListener("mousedown", function(e)
 
        counter+=1;
        moves.innerHTML= `Moves: ${counter}`;
+       if (!soundButton.classList.contains('sound_off')){
+        sound.play();
+       }
     }
   }
   return numberMatrix;
-});
+}});
 
-/*function isItSpace(i,j){
-    if (numberMatrix[i][j-1]){
-        if (numberMatrix[i][j-1] === maxNumber){
-            let numberOfClickedTile = numberMatrix[i][j];
-            numberMatrix[i][j] = maxNumber;
-            ctx.fillStyle = '#929699';
-            ctx.fillRect(10+j*70, 10+i*70, 69, 69);
-            numberMatrix[i][j+1]=numberOfClickedTile;
-            ctx.fillStyle = '#fcda69';
-            ctx.fillRect(10+(j+1)*70, 10+i*70, 69, 69);
-            ctx.fillStyle = '#333B41';
-            ctx.font = '3rem san-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText(`${numberOfClickedTile}`, 10+(j+1)*70+69/2, 10+i*70+69/2+16);
-        }
-    }
-
-}*/
 
 

@@ -18,3 +18,26 @@
 }
 
 
+.sound_on{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    padding: 6.4px;
+    span{
+        display: inline-block;
+        background-image: url('../../assets/svg/sound-on-new.svg');
+        background-repeat: no-repeat;
+        height: 18px;
+        width: 18px;
+        background-size:cover;
+    }
+}
+
+.sound_off{
+    span{
+        background-image: url('../../assets/svg/sound-off-new.svg');
+    }
+
+}
+
+

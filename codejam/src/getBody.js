@@ -79,19 +79,28 @@ function getBody (a, numberMatrix){
 }
 
 function getList(){
-    let buttonTextArr = ['Shuffle and start', 'Stop', 'Save', 'Results' ];
-    let buttonIdArr = ['shuffle', 'stop', 'save', 'results'];
+    let buttonTextArr = ['Shuffle and start', 'Pause', 'Save', 'Results' ];
+    let buttonIdArr = ['shuffle', 'pause', 'save', 'results'];
     let fragment = new DocumentFragment;
-    for (let i=0; i<4; i++){
+    for (let i=0; i<5; i++){
         let li = document.createElement('li');
         li.classList.add('navigation__item');
         let button = document.createElement('button');
+        button.setAttribute('type', 'button');
         button.classList.add('button__navigation');
-        button.setAttribute('id', `${buttonIdArr[i]}`);
-        button.append(`${buttonTextArr[i]}`);
+        if (i===4){
+            button.classList.add('sound_on');
+            button.setAttribute('id', 'sound');
+            let span = document.createElement('span');
+            button.append(span);
+        } else{
+            button.setAttribute('id', `${buttonIdArr[i]}`);
+            button.append(`${buttonTextArr[i]}`);
+        }
         li.append(button);
         fragment.append(li);
     };
+
     return fragment;
 }
 
