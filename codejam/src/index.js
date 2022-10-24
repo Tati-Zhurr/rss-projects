@@ -6,13 +6,16 @@ import getBody from "./getBody";
 import getMousePosition from "./getMousePosition";
 import getTilesAgain from "./getTilesAgain";
 import getResults from "./getResults";
+import getTileSize from './getTileSize';
+import getMessage from './getMessage';
+import areEqual from './areEqual';
 //import countTime from "./timer";
 let a=4;
 let maxNumber=a*a;
 let numberMatrix = getNumbersMatrix(a);
 let matrixResult = getMatrixResult(a);
 getBody(a, numberMatrix);
-let bestResults=[20, 21, 22, 23, 24, 25, 26, 27, 28, 30];
+
 
 //size of frame
 let otherSize = document.querySelector('.other_size');
@@ -76,6 +79,7 @@ function countTime() {
  }
 
  let buttonPause = document.querySelector('#pause');
+
  buttonPause.addEventListener('click', ()=>{
   buttonPause.classList.toggle('on_pause');
   if (buttonPause.classList.contains('on_pause')){
@@ -102,6 +106,7 @@ function countTime() {
 
 
 let canvas = document.querySelector("canvas");
+//let ctx = canvas.getContext('2d');
 let moves = document.querySelector('.moves');
 let counter =0;
 //let matrixResult = getMatrixResult();
@@ -111,8 +116,10 @@ let counter =0;
 //restart
 let buttonShuffle = document.querySelector('#shuffle');
 
-buttonShuffle.addEventListener('click', ()=>{
-    numberMatrix = getNumbersMatrix(a);
+buttonShuffle.addEventListener('click', restart);
+
+function restart(){
+  numberMatrix = getNumbersMatrix(a);
     getTilesAgain(canvas, a, numberMatrix);
     moves.innerHTML= `Moves: 0`;
     counter =0;
@@ -123,18 +130,20 @@ buttonShuffle.addEventListener('click', ()=>{
     } else{
       time.innerHTML = 'Timer: '+ '00' + ":" + '00';
     }
-});
+
+}
 
 
 //canvas onclick
-canvas.addEventListener("click", function(e){ 
-  if (!buttonPause.classList.contains('on_pause')){
-    console.log(numberMatrix);
 
+let bestResults=[100, 101, 102, 103, 104, 105, 106, 107, 108, 109];
+
+canvas.addEventListener("click", function(e){ 
+  if (!buttonPause.classList.contains('on_pause')&&(numberMatrix !== matrixResult)){
   let position=getMousePosition(canvas, e, a);
   let iOfTileClicked = position.i;
   let jOfTileClicked = position.j;
-  let ctx = canvas.getContext('2d');
+  //let ctx = canvas.getContext('2d');
   
 
   if (jOfTileClicked+1 < a){
@@ -161,41 +170,69 @@ canvas.addEventListener("click", function(e){
       
     }
   }
-  if (numberMatrix === matrixResult){
-    bestResults.push(counter).sort((a,b) => a-b);
+  
+  if ( areEqual(numberMatrix,  matrixResult, a)){
+    clearInterval(timer);
+    console.log('yes');
+    bestResults.push(counter);
+    bestResults.sort((a,b) => a-b);
     if (bestResults.length >10){
       bestResults.pop();
     }
-    //getMessage(counter, totalSeconds);
+    getMessage(counter, totalSeconds);
+    let messageWrapper = document.querySelector('.message__wrapper');
+   if (messageWrapper){
+   let cross = document.querySelector('.cross');
+   let buttonRestart = document.querySelector('.restart');
+   let wrapperMessage = document.querySelector('.message__wrapper');
+   wrapperMessage.addEventListener('click', (e)=>{
+   if (e.target === wrapperMessage){
+     wrapperMessage.remove();
+
+   }
+ })
+ cross.addEventListener('click', ()=>{
+   wrapperMessage.remove();
+ });
+ buttonRestart.addEventListener('click', ()=>{
+  wrapperMessage.remove();
+  restart();
+});
+}
+
   }
   return numberMatrix;
 }});
 
+//close message block
+
 function getTileMoved(iOfTileClicked, jOfTileClicked, iOfSpace, jOfSpace){
-  let tileSize;
+  
+  let screenWidth=window.screen.width;
+  let tileSize = getTileSize(screenWidth, a);
   let fontSize;
   if (a=== 4){
-      tileSize = 69;
+     // tileSize = 69;
       fontSize = 48;
     }   
     if (a ===3){
-      tileSize = 92.5;
+    // tileSize = 92.66;
       fontSize = 48;
     }
     if (a===5){
-      tileSize = 55.2;
+    // tileSize = 55.2;
       fontSize = 36;
     }
     if (a===6){
-      tileSize = 45.8;
+    // tileSize = 45.8;
       fontSize = 32;
     }
     if (a===7){
-      tileSize = 39.1;
+     // tileSize = 39.1;
       fontSize = 30;
     }
     if (a===8){
-      tileSize = 34.125;
+    // tileSize = 34.125;
       fontSize = 24;
     }
   let ctx = canvas.getContext('2d');
@@ -210,7 +247,25 @@ function getTileMoved(iOfTileClicked, jOfTileClicked, iOfSpace, jOfSpace){
        ctx.font = `${fontSize}px san-serif `;
        ctx.textAlign = 'center';
        ctx.fillText(`${numberOfClickedTile}`, 10+jOfSpace*(tileSize+1)+tileSize/2, 10+iOfSpace*(tileSize+1)+tileSize/2+fontSize/3);
+      
 
+       //animation
+     /* let position =0;
+       setInterval(function () {
+        //clear the empty space
+       /* ctx.clearRect(10+jOfSpace*(tileSize+1), 10+iOfSpace*(tileSize+1), tileSize, tileSize);*/
+       /*if (position !== tileSize){
+          position++;
+          ctx.fillStyle = '#fcda69';
+          ctx.fillRect(10+jOfSpace*(tileSize+1)-position*(jOfTileClicked-jOfSpace)/tileSize, 10+iOfSpace*(tileSize+1)-position*(iOfTileClicked-iOfSpace)/tileSize, tileSize, tileSize);
+          ctx.fillStyle = '#333B41';
+          ctx.font = `${fontSize}px san-serif `;
+          ctx.textAlign = 'center';
+          ctx.fillText(`${numberOfClickedTile}`, 10+jOfSpace*(tileSize+1)+tileSize/2-position*(jOfTileClicked-jOfSpace)/tileSize, 10+iOfSpace*(tileSize+1)+tileSize/2+fontSize/3-position*(iOfTileClicked-iOfSpace)/tileSize);
+        }
+    }, 120);
+    */
+  
        counter+=1;
        moves.innerHTML= `Moves: ${counter}`;
        if (!soundButton.classList.contains('sound_off')){
@@ -282,7 +337,7 @@ buttonResults.addEventListener('click', ()=>{
   cross.addEventListener('click', ()=>{
     wrapperResults.remove();
     buttonResults.classList.toggle('active');
-  })
+  });
     
   } 
 

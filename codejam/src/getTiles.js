@@ -1,35 +1,50 @@
 function getTiles(a, numberMatrix){
-  let tileSize;
-  let fontSize;
-  if (a=== 4){
-    tileSize = 69;
-    fontSize = 48;
-  }   
-  if (a ===3){
-    tileSize = 92.5;
-  }
-  if (a===5){
-    tileSize = 55.2;
-  }
-  if (a===6){
-    tileSize = 45.8;
-  }
-  if (a===7){
-    tileSize = 39.1;
-  }
-  if (a===8){
-    tileSize = 34.125;
-    fontSize = 24;
-  }
-
-
-    let size =a*a;
-    let fragment = new DocumentFragment;
-    let canvas = document.createElement('canvas');
-    canvas.classList.add('canvas');
-    let ctx = canvas.getContext('2d');
+  let size =a*a;
+  let fragment = new DocumentFragment;
+  let canvas = document.createElement('canvas');
+  canvas.classList.add('canvas');
+  let ctx = canvas.getContext('2d');
+  let screenWidth=window.screen.width;
+  if (screenWidth <= 500){
     canvas.width  = 300;
     canvas.height = 300;
+  };
+  if ((screenWidth > 500)&&(screenWidth < 1000)){
+    canvas.width  = 400;
+    canvas.height = 400;
+  }
+  if ((screenWidth > 1000)){
+    canvas.width  = 500;
+    canvas.height = 500;
+  };
+
+  let tileSize = (canvas.width -20 -a*1)/a;
+ //let tileSize;
+
+  let fontSize;
+
+  if (a=== 4){
+   // tileSize = 69;
+    fontSize = 48;
+  }   
+ /* if (a ===3){
+    tileSize = 92.66;
+  }
+  if (a===5){
+   tileSize = 55.2;
+  }
+  if (a===6){
+   tileSize = 45.8;
+  }
+  if (a===7){
+  tileSize = 39.1;
+  }
+  if (a===8){
+   tileSize = 34.125;
+    fontSize = 24;
+  }*/
+   //canvas.width  = 300;
+  // canvas.height = 300;
      for (let i=0; i<a; i++){
      for (let j=0; j<a; j++){
      let numberOfTile = numberMatrix[i][j];
@@ -45,7 +60,7 @@ function getTiles(a, numberMatrix){
          ctx.fillStyle = '#333B41';
          ctx.font = `${fontSize}px san-serif `;
          ctx.textAlign = 'center';
-         ctx.fillText(`${numberOfTile}`, 10+j*(tileSize+1)+69/2, 10+i*(tileSize+1)+tileSize/2+fontSize/3);
+         ctx.fillText(`${numberOfTile}`, 10+j*(tileSize+1)+tileSize/2, 10+i*(tileSize+1)+tileSize/2+fontSize/3);
      }
     
     }
