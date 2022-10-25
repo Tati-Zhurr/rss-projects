@@ -24,25 +24,7 @@ function getMousePosition(canvas, event, a) {
   let tileSize = (canvas.width -20 -a*1)/a;*/
   let tileSize = getTileSize(screenWidth, a);
     
-   /* if (a=== 4){
-       tileSize = 69;
-      }   
-      if (a ===3){
-       tileSize = 92.5;
-      }
-      if (a===5){
-        tileSize = 55.2;
-      }
-      if (a===6){
-       tileSize = 45.8;
-      }
-      if (a===7){
-        tileSize = 39.1;
-      }
-      if (a===8){
-        tileSize = 34.125;
-      }*/
-
+   
       for (j=0; j<a; j++){
         if ((x > 10+j*tileSize)&&(x <= 10+(j+1)*tileSize)){
             selectedTile.j=j;
