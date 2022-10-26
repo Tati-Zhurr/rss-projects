@@ -249,10 +249,10 @@ function getTileMoved(iOfTileClicked, jOfTileClicked, iOfSpace, jOfSpace){
        ctx.clearRect(10+jOfTileClicked*(tileSize+1), 10+iOfTileClicked*(tileSize+1), tileSize, tileSize);
        setInterval(function () {
         //clear the empty space
-        if (position !== tileSize+1){
+        if (position <= tileSize){
+          position++;
           ctx.fillStyle = '#929699';
           ctx.fillRect(10+jOfTileClicked*(tileSize+1)-(position-1)*(jOfTileClicked-jOfSpace), 10+iOfTileClicked*(tileSize+1)-(position-1)*(iOfTileClicked-iOfSpace), tileSize, tileSize);
-          position++;
           ctx.fillStyle = '#fcda69';
           ctx.fillRect(10+jOfTileClicked*(tileSize+1)-position*(jOfTileClicked-jOfSpace), 10+iOfTileClicked*(tileSize+1)-position*(iOfTileClicked-iOfSpace), tileSize, tileSize);
           ctx.fillStyle = '#333B41';
