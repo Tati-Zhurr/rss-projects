@@ -1,0 +1,85 @@
+@mixin font($size, $height, $weight, $style:normal){
+   font-size: $size;
+   font-weight: $weight;
+   font-style: $style;
+   line-height: $height;
+    }
+
+    //padding from px to vw
+
+@mixin padding($media, $top:0, $right:0, $bottom:0, $left:0){
+     padding: #{calc($top/$media*100)}vw #{calc($right/$media*100)}vw #{calc($bottom/$media*100)}vw #{calc($left/$media*100)}vw;
+       }
+
+@mixin height($media, $height){
+  height: #{calc($height/$media*100)}vw;
+}     
+
+@mixin width($media, $width) {
+  width: #{calc($width/$media*100)}vw;
+}
+
+@mixin gap($media, $gap){
+  gap: #{calc($gap/$media*100)}vw;
+}
+@mixin row-gap($media, $row-gap) {
+  row-gap: #{calc($row-gap/$media*100)}vw;
+}
+
+@mixin column-gap($media, $column-gap) {
+  column-gap: #{calc($column-gap/$media*100)}vw;
+}
+
+@mixin margin($media, $top:0, $right:0, $bottom:0, $left:0){
+  margin: #{calc($top/$media*100)}vw #{calc($right/$media*100)}vw #{calc($bottom/$media*100)}vw #{calc($left/$media*100)}vw;
+    }
+
+@mixin left($media, $left:0){
+  left: #{calc($left/$media*100)}vw;
+}
+
+@mixin right($media, $right:0){
+  right: #{calc($right/$media*100)}vw;
+}
+@mixin top ($media, $top:0){
+  top: #{calc($top/$media*100)}vw;
+}
+@mixin bottom ($media, $bottom:0){
+  bottom: #{calc($bottom/$media*100)}vw;
+  
+}
+
+@mixin font-size ($media, $font-size) {
+  font-size: #{calc($font-size/$media*100)}vw;;
+}
+
+
+// Управление отзывчивостью.
+// @access public
+// @param {String} $breakpoint - точка останова
+// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+  @error 'Не указано значение для `#{$breakpoint}`. '
+       + 'Пожалуйста, убедитесь, что точка останова объявлена в карте `$breakpoints`.';
+  }
+}
+    
+
+ 
+
+
+
+
