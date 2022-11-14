@@ -43,7 +43,7 @@ module.exports = {
                 }
 
             },
-            /*{
+          /*  {
                 test: /\.(jpeg|giff|jpg|png)$/i,
                 type: 'assets/resource',
             },
@@ -64,6 +64,16 @@ module.exports = {
             }
         }),
 
+        new HtmlWebpackPlugin({
+            title:'Webpack App',
+            filename:'play.html',
+            template: 'src/play.html',
+            minify:{
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+
 
         new CopyWebpackPlugin({
             patterns: [
@@ -75,14 +85,19 @@ module.exports = {
                 from: path.resolve(__dirname, './src/styles/'),
                 to: path.resolve(__dirname, './dist')
               },
-            {
+             {
                 from: path.resolve(__dirname, './src/assets/img'),
                 to: path.resolve(__dirname, './dist')
               },
               {
-                from: path.resolve(__dirname, './src/assets/favicon.ico'),
+                from: path.resolve(__dirname, './src/assets/icons'),
                 to: path.resolve(__dirname, './dist')
               },
+
+             /* {
+                from: path.resolve(__dirname, './src/assets/favicon.ico'),
+                to: path.resolve(__dirname, './dist')
+              },*/
             ]
         }),
         

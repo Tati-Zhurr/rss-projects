@@ -1,0 +1,51 @@
+.audio-player{
+    width: 100%;
+    min-width: 100px;
+
+    .controls {
+        display: flex;
+        align-items: center;
+    }
+
+    .playback-button {
+      display: flex;
+      align-items: center;
+      transition: .2s;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #c93a3d;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 20px;
+      margin-bottom: 12px;
+      cursor: pointer;
+
+      .img-play{
+        transition: .2s;
+        width: 18px;
+        height: 18px;
+        align-self: center;
+      }
+      
+
+    }
+}
+
+.timebar{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+
+.timebar-bar {
+    height: 4px;
+}
+
+.timebar-time-info {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+}

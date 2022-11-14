@@ -1,19 +1,18 @@
-$color-primary:#39838a;
-$color-additional:#fcda69;
-$color-empty-space: #929699;
-$color-buttons:#f9804b;
-$color-button-hover:#ab2f35;
-$color-button-active:#7d3950;
+$color-primary:#f0c592;
+$color-additional:#131212;
+$color-buttons:#c93a3d;
+$color-button-hover:#1e797f;
+$color-categories:#1e797f;
+$color-button-active:#f0c592;
 $color-text-dark:#333B41;
 $color-white:#FFFFFF;
 $color-text-light:#F1F3F2;
 
 
-
 $breakpoints: (
     'small':(min-width: 320px),
-  'medium': (min-width: 768px),
-  'large': (min-width: 1280px),
+    'medium': (min-width: 768px),
+    'large': (min-width: 1280px),
 );
 
 

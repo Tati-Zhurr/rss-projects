@@ -10,12 +10,15 @@
 //Components
 @import "components/button";
 @import "components/navigation";
+@import "components/logo";
+@import "components/audio";
+
 
 //layout
 @import "layout/header";
-@import "layout/canvas";
-@import "layout/size";
-@import "layout/progress";
+@import "layout/start";
+@import "layout/footer";
+@import "layout/guess";
 @import "layout/results";
 @import "layout/message";
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="logo.png" rel="favicon" />
+  <link rel="stylesheet" href="/src/styles/main.scss" />
+  <title>SongBird</title>
+</head>
+<body>
+  <div class="body__wrapper">
+    <header class="header">
+      <div class="wrapper header__wrapper_play">
+  
+        <div class="logo-block">
+          <a class="link link_logo" href="index.html"><span class="img_logo"></span></a>
+          <a class="link link_house" href="index.html"><span class="img_house"></span></a>
+        </div>
+  
+        <h5 class="score">
+          Score: <span class="score_actual">0</span>
+        </h5>
+      
+        <ul class="categories-block">
+          <li class="category category_warm-up category_selected">Warming-up</li>
+          <li class="category category_passerines">Passerines</li>
+          <li class="category category_forest">Forest birds</li>
+          <li class="category category_songbirds">Songbirds</li>
+          <li class="category category_predator">Predator birds</li>
+          <li class="category category_sea">Sea birds</li>
+        </ul>
+  
+      </div>
+    </header>
+    <main class="play">
+      <div class="wrapper play__wrapper">
+        <section class="guess">
+          <div class="wrapper guess__wrapper">
+            <span class="img-guess"></span>
+            <div class="block-guess">
+              <h3 class="name-guess">******</h3>
+              <div class="audio-player">
+                <audio src="https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3"></audio>
+                <div style class="controls">
+                  <div class="playback-button">
+                    <svg class="img-play" viewBox="-200 0 1200 1000"><path fill="#c93a3d" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z"></path></svg>
+                  </div>
+                  <div class="timebar " style="position: relative;">
+                    <div class="timebar-bar" style="background: linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) 2.90146%, #f0c592 2.90146%, #c93a3d 100%);">
+                    </div>
+                    <div class="timebar-circle" style="left: 2.90146%;">
+                    </div>
+                    <div class="timebar-time-info">
+                      <div>00:02</div>
+                      <div>01:35</div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper footer__wrapper">
+        <a href="https://github.com/Tati-Zhurr"><span class="img-github"></span></a>
+        <span class="year">2022</span>
+        <a href="https://rs.school/js/"><span class="rssschool"></span></a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

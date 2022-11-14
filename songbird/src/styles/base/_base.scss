@@ -18,10 +18,16 @@ body{
     position: relative;
 }
 
+.body__wrapper{
+    margin: 0 auto;
+    width: 70%;
+}
 
 
-.text_subtitle{
-    @include font(24px, 120%, 400);
+
+
+.button_nav{
+    @include font(50px, 120%, 400);
 
 }
 

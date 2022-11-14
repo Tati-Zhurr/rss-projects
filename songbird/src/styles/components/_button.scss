@@ -1,47 +1,102 @@
-.button__navigation{
+.button__nav{
     color: $color-text-light;
+    font-size: 48px;
     line-height: 140%;
     text-align: center;
     text-transform: uppercase;
     background: $color-buttons;
-    border-radius: 10px;
+    border-radius: 5px;
     border-style: none;
     font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
     transition:all .3s;
     cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+        width: 300px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 150px;
+        font-size: 42px;
+    }
+
     &:hover{
-        background: $color-button-hover;
+        background-color: $color-button-hover;
     }
     &:active{
         background: $color-button-active;
     }
 }
 
-
-.sound_on{
+.start__button_sound{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background-color: $color-buttons;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    padding: 6.4px;
-    span{
-        display: inline-block;
-        background-image: url('../../assets/svg/sound-on-new.svg');
-        background-repeat: no-repeat;
-        height: 18px;
-        width: 18px;
-        background-size:cover;
+    border-style: none;
+    box-shadow: 5px $color-text-dark;
+    &:hover{
+        background-color: $color-button-hover;
     }
+    .button__img_sound-on{
+        display: inline-block;
+        background-image: url(..//..//assets/icons/on_sound.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+        @media screen and (min-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+    
+        @media screen and (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
 }
 
 .sound_off{
-    span{
-        background-image: url('../../assets/svg/sound-off-new.svg');
-    }
+    .button__img_sound-on{
+        display: inline-block;
+        background-image: url(..//..//assets/icons/off_sound.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+        @media screen and (min-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+    
+        @media screen and (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+        }
 
+        @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
 }
+
+
 
 .active{
     background: $color-button-active;
 }
 
+.press{
+    background-color: $color-button-hover;
+}
 

@@ -1,0 +1,30 @@
+.guess__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba($color-categories, 0.2);
+    padding: 2%;
+    margin-bottom: 2%;
+    margin-top: 0;
+    border-radius: 5px;
+    gap: 3%;
+
+    .img-guess{
+        display: inline-block;
+        background-image: url(..//..//assets/img/img_guess.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 200px;
+        height: 155px;
+        border-radius: 5px;
+    }
+
+    .block-guess{
+        width: calc(100% - 240px);
+
+        .name-guess{
+            margin-top: 0;
+        }
+
+    }
+
+}
