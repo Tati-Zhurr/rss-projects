@@ -65,7 +65,7 @@
 }
 
 .sound_off{
-    .button__img_sound-on{
+    .button__img_sound{
         display: inline-block;
         background-image: url(..//..//assets/icons/off_sound.png);
         background-repeat: no-repeat;
@@ -98,5 +98,15 @@
 
 .press{
     background-color: $color-button-hover;
+}
+
+.play__button_next{
+    width: 100%;
+    border-radius: 5px;
+    border-style: none ;
+    padding: 2rem;
+    font-weight: 700;
+    background-color: rgba(30, 121, 127, 0.2);
+    color:  rgba(30, 121, 127, 0.8);
 }
 

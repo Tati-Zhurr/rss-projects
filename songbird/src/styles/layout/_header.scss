@@ -44,6 +44,11 @@ header{
     background-color: $color-categories;
     border-radius: 5px;
     gap:10px;
+
+    .category{
+      padding: 1rem;
+      font-weight: 500;
+    }
      
     .category_selected{
       color: $color-buttons;
