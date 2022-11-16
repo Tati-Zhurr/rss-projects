@@ -8,6 +8,11 @@
     border-radius: 5px;
     gap: 3%;
 
+    @media screen and (max-width: 569px) {
+        flex-direction: column;
+    }
+
+
     .img-guess{
         display: inline-block;
         background-image: url(..//..//assets/img/img_guess.jpg);
@@ -16,13 +21,32 @@
         width: 200px;
         height: 155px;
         border-radius: 5px;
+
+        @media screen and (max-width: 569px) {
+            align-self: center;
+            margin-bottom: 3%;
+        }
     }
 
     .block-guess{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: calc(100% - 240px);
+        flex-shrink: 0;
+
+        @media screen and (max-width: 569px) {
+            width: 100%;
+        }
 
         .name-guess{
             margin-top: 0;
+
+            @media screen and (max-width: 569px) {
+               text-align: center;
+            }
+
+
         }
 
     }

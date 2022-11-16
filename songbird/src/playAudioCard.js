@@ -1,11 +1,10 @@
-import birdHidden from "./index";
-const playButton = document.querySelector(".guess__playback-button");
+import birdsData from "./birds";
+const playButton = document.querySelector(".card__playback-button");
 
- 
-async function playAudio(birdHidden, audio, isPlay) {
-    const playButton = document.querySelector(".guess__playback-button");
+
+function playAudioCard(level, cardId, isPlay, audio) {
     if (!isPlay) {
-     // audio.src = await birdHidden.audio;
+      
       audio.currentTime = 0;
       audio.play();
      // isPlay = true;
@@ -23,9 +22,6 @@ async function playAudio(birdHidden, audio, isPlay) {
     }
     
   }
-
- 
-
-  export default playAudio;
-
+  
+  export default playAudioCard;
   

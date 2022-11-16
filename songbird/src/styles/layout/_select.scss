@@ -3,10 +3,19 @@
     gap: 2%;
     font-weight: 500;
     flex-wrap: wrap;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
+
+    @media screen and (max-width: 569px) {
+        flex-direction: column;
+    }
 
     .answer-wrapper{
         width: 33%;
+
+        @media screen and (max-width: 569px) {
+            width: 100%;
+            margin-bottom: 2%;
+        }
         
         .answer-list{
             display: flex;
@@ -21,6 +30,10 @@
                 border: 1px solid $color-primary;
                 padding: 1rem 3rem;
                 cursor: pointer;
+
+                &:hover{
+                   color: $color-text-light;
+                }
 
                 .answer-indicator{
                     display: inline-block;
@@ -46,12 +59,17 @@
         padding: 2%;
         width: 33%;
 
+        @media screen and (max-width: 569px) {
+            width: 100%;
+        }
+
         .instructions{
             display: flex;
             flex-direction: column;
             margin: 0;
         }
-
+        
+        
         .card-body{
             display: flex;
             flex-wrap: wrap;
@@ -78,6 +96,10 @@
             }
         }
 
+        .hidden{
+            display: none;
+        }
+
     }
 
 }
@@ -85,3 +107,4 @@
 .bird-name{
     margin: 0;
 }
+

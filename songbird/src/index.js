@@ -4,6 +4,10 @@ import getButtonColorChanged from './getButtonColorChanged';
 import getBirdToGuess from './getBirdToGuess';
 import getAnswers from './getAnswers';
 import playAudio from './playAudio';
+import getBirdCard from './getBirdCard';
+import isCorrectAnswer from './isCorrectAnswer';
+import playAudioCard from './playAudioCard'
+console.log(birdsData[0][1].name);
 
 //singin Hens
 const buttonOn = document.querySelector('.start__button_sound');
@@ -31,16 +35,20 @@ if (buttonOn) {
 
 if (document.querySelector('.play')){
 
-  let level =0;
-  let score =0;
+  let level = 0;
+  let score = 0;
+  let scoreLevel = 5;
+  
+
   const birdHidden = getBirdToGuess(level);
+
   console.log(birdHidden);
   getAnswers(level);
-  const audio = new Audio();
 
-  
+  const audio = new Audio(birdHidden.audio);
   const playButton = document.querySelector(".guess__playback-button");
   let isPlay = false;
+
   /*function playAudio(birdHidden, audio) {
     if (!isPlay) {
       let timePause=0;
@@ -66,8 +74,58 @@ if (document.querySelector('.play')){
     playAudio(birdHidden, audio, isPlay);
     isPlay=!isPlay;
   });
+   
+  const cardBird = document.querySelector('.card-body');
+  const instructions =document.querySelector('.instructions');
+  const answerList = document.querySelector('.answer-list');
+  const nextLevelButton = document.querySelector('.play__button_next');
+
+  let cardId =0;
+
+
+  let audioCard;
+  answerList.addEventListener('click', (el) =>{
+    cardBird.classList.remove('hidden');
+    instructions.classList.add('hidden');
+    let answerCorrect;
+  
+    if (el.target.id){
+      cardId = el.target.id;
+      answerCorrect = isCorrectAnswer(birdHidden, el.target, cardId); 
+    } else{
+      cardId = el.target.parentNode.id;
+      answerCorrect = isCorrectAnswer(birdHidden, el.target.parentNode, cardId);
+    }
+    audioCard = new Audio(birdsData[level][cardId].audio);
+    getBirdCard(cardId, level);
+
+    if (answerCorrect){
+      nextLevelButton.classList.add('active');
+      
+    }
+    
+    });
+    
+    //bird from card singing
+    const playButtonCard = document.querySelector(".card__playback-button");
+    let isPlay2 = false;
+    if (playButtonCard){
+      playButtonCard.addEventListener('click', () =>{
+        playAudioCard(level, cardId, isPlay2, audioCard);
+        isPlay2=!isPlay2; 
+      })
+    }
+
+
+    
+
+
+ 
 
 }
+
+
+
 
 
 
