@@ -6,8 +6,10 @@ import getAnswers from './getAnswers';
 import playAudio from './playAudio';
 import getBirdCard from './getBirdCard';
 import isCorrectAnswer from './isCorrectAnswer';
-import playAudioCard from './playAudioCard'
-console.log(birdsData[0][1].name);
+import playAudioCard from './playAudioCard';
+import getAudioReset from './getAudioReset';
+import getHiddenBirdCard from './getHiddenBirdCard';
+
 
 //singin Hens
 const buttonOn = document.querySelector('.start__button_sound');
@@ -45,30 +47,10 @@ if (document.querySelector('.play')){
   console.log(birdHidden);
   getAnswers(level);
 
-  const audio = new Audio(birdHidden.audio);
+  const audio = new Audio();
   const playButton = document.querySelector(".guess__playback-button");
   let isPlay = false;
 
-  /*function playAudio(birdHidden, audio) {
-    if (!isPlay) {
-      let timePause=0;
-      audio.src = birdHidden.audio;
-      audio.currentTime = timePause;
-      audio.play();
-      isPlay = true;
-      playButton.classList.add("pause");
-    } else if (isPlay) {
-      audio.pause();
-      isPlay = false;
-
-      if (audio.currentTime === audio.duration) {
-        audio.currentTime = 0;
-      }
-      timePause = audio.currentTime;
-      //audio.currentTime = 0;
-      playn.classList.remove("pause");
-    }
-  }*/
 
   playButton.addEventListener("click", () => {
     playAudio(birdHidden, audio, isPlay);
@@ -79,33 +61,48 @@ if (document.querySelector('.play')){
   const instructions =document.querySelector('.instructions');
   const answerList = document.querySelector('.answer-list');
   const nextLevelButton = document.querySelector('.play__button_next');
+  const actualScore = document.querySelector('.score_actual');
 
   let cardId =0;
+  let answerCorrect;
 
 
-  let audioCard;
+  let audioCard = new Audio();
   answerList.addEventListener('click', (el) =>{
     cardBird.classList.remove('hidden');
     instructions.classList.add('hidden');
-    let answerCorrect;
   
     if (el.target.id){
       cardId = el.target.id;
-      answerCorrect = isCorrectAnswer(birdHidden, el.target, cardId); 
+      if (!answerCorrect){
+        answerCorrect = isCorrectAnswer(birdHidden, el.target, cardId)
+      }
+       
     } else{
       cardId = el.target.parentNode.id;
+      if (!answerCorrect){
       answerCorrect = isCorrectAnswer(birdHidden, el.target.parentNode, cardId);
+      }
     }
-    audioCard = new Audio(birdsData[level][cardId].audio);
+    audioCard.src = birdsData[level][cardId].audio;
     getBirdCard(cardId, level);
 
     if (answerCorrect){
       nextLevelButton.classList.add('active');
-      
+      score = score + scoreLevel;
+      actualScore.textContent = `${score}`;
+      getAudioReset(audio, playButton, isPlay);
+      getAudioReset(audioCard, playButtonCard, isPlay2);
+      getHiddenBirdCard(birdHidden);
+    } else {
+      scoreLevel--;
     }
-    
+    console.log(scoreLevel);
+
     });
+
     
+
     //bird from card singing
     const playButtonCard = document.querySelector(".card__playback-button");
     let isPlay2 = false;
@@ -115,6 +112,16 @@ if (document.querySelector('.play')){
         isPlay2=!isPlay2; 
       })
     }
+
+   audioCard.addEventListener('ended', ()=>{
+      playButtonCard.classList.remove('pause');
+      isPlay2=!isPlay2;
+    } )
+
+    audio.addEventListener('ended', ()=>{
+      playButton.classList.remove('pause');
+      isPlay=!isPlay;
+    } )
 
 
     
