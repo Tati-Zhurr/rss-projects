@@ -62,6 +62,7 @@ if (document.querySelector('.play')){
   const answerList = document.querySelector('.answer-list');
   const nextLevelButton = document.querySelector('.play__button_next');
   const actualScore = document.querySelector('.score_actual');
+  
 
   let cardId =0;
   let answerCorrect;
@@ -71,19 +72,17 @@ if (document.querySelector('.play')){
   answerList.addEventListener('click', (el) =>{
     cardBird.classList.remove('hidden');
     instructions.classList.add('hidden');
-  
-    if (el.target.id){
-      cardId = el.target.id;
-      if (!answerCorrect){
+
+    if ((!answerCorrect)&&( !nextLevelButton.classList.contains('active'))){
+      if (el.target.id){
+        cardId = el.target.id;
         answerCorrect = isCorrectAnswer(birdHidden, el.target, cardId)
-      }
-       
-    } else{
-      cardId = el.target.parentNode.id;
-      if (!answerCorrect){
-      answerCorrect = isCorrectAnswer(birdHidden, el.target.parentNode, cardId);
+      } else {
+        cardId = el.target.parentNode.id;
+        answerCorrect = isCorrectAnswer(birdHidden, el.target.parentNode, cardId);
       }
     }
+    
     audioCard.src = birdsData[level][cardId].audio;
     getBirdCard(cardId, level);
 
@@ -94,6 +93,8 @@ if (document.querySelector('.play')){
       getAudioReset(audio, playButton, isPlay);
       getAudioReset(audioCard, playButtonCard, isPlay2);
       getHiddenBirdCard(birdHidden);
+      answerCorrect = false;
+      scoreLevel =5;
     } else {
       scoreLevel--;
     }
