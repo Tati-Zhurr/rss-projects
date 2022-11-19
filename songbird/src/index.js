@@ -9,6 +9,8 @@ import isCorrectAnswer from './isCorrectAnswer';
 import playAudioCard from './playAudioCard';
 import getAudioReset from './getAudioReset';
 import getHiddenBirdCard from './getHiddenBirdCard';
+import showResults from './showResults';
+import hideNewBird from './hideNewBird';
 
 
 //singin Hens
@@ -42,9 +44,7 @@ if (document.querySelector('.play')){
   let scoreLevel = 5;
   
 
-  const birdHidden = getBirdToGuess(level);
-
-  console.log(birdHidden);
+  let birdHidden = getBirdToGuess(level);
   getAnswers(level);
 
   const audio = new Audio();
@@ -66,9 +66,8 @@ if (document.querySelector('.play')){
 
   let cardId =0;
   let answerCorrect;
-
-
   let audioCard = new Audio();
+
   answerList.addEventListener('click', (el) =>{
     cardBird.classList.remove('hidden');
     instructions.classList.add('hidden');
@@ -87,23 +86,36 @@ if (document.querySelector('.play')){
     getBirdCard(cardId, level);
 
     if (answerCorrect){
-      nextLevelButton.classList.add('active');
       score = score + scoreLevel;
       actualScore.textContent = `${score}`;
       getAudioReset(audio, playButton, isPlay);
       getAudioReset(audioCard, playButtonCard, isPlay2);
       getHiddenBirdCard(birdHidden);
       answerCorrect = false;
-      scoreLevel =5;
+      if (level ===5){
+        showResults(score);
+      } else{
+        nextLevelButton.classList.add('active');
+      } 
     } else {
       scoreLevel--;
     }
-    console.log(scoreLevel);
-
+    
     });
+    
+    const levelNameList = document.querySelector('.categories-block');
+    nextLevelButton.addEventListener('click', ()=>{
+      if (nextLevelButton.classList.contains('active')){
+        level++;
+        resetForNextLevel(level);
+      }
+    })
+    
+    
 
     
 
+    
     //bird from card singing
     const playButtonCard = document.querySelector(".card__playback-button");
     let isPlay2 = false;
@@ -124,13 +136,25 @@ if (document.querySelector('.play')){
       isPlay=!isPlay;
     } )
 
-
-    
-
-
- 
-
+    function resetForNextLevel (level){
+      const indicators = document.querySelectorAll('.answer-indicator');
+      scoreLevel = 5;
+      levelNameList.childNodes[level-1].classList.remove('category_selected');
+      levelNameList.childNodes[level].classList.add('category_selected');
+      birdHidden = getBirdToGuess(level);
+      getAnswers(level);
+      hideNewBird();
+      cardBird.classList.add('hidden');
+      instructions.classList.remove('hidden');
+      nextLevelButton.classList.remove('active');
+      for (let indicator of indicators){
+        indicator.style.backgroundColor = '';
+      }
+    }
+  
 }
+
+
 
 
 
