@@ -36,10 +36,27 @@
     border-radius: 50%;
     border-style: none;
     box-shadow: 5px $color-text-dark;
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 30px;
+        height: 30px;
+    }
+
     &:hover{
         background-color: $color-button-hover;
     }
-    .button__img_sound-on{
+    .button__img_sound{
         display: inline-block;
         background-image: url(..//..//assets/icons/on_sound.png);
         background-repeat: no-repeat;
