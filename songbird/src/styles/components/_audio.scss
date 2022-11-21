@@ -64,9 +64,9 @@
 
 
 .timebar-bar {
-    height: 4px;
+    height: 6px;
     min-width: 100%;
-    background: linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) 2.90146%, #f0c592 2.90146%, #c93a3d 100%);
+    background: linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) 0%, #f0c592 2.90146%, #c93a3d 100%);
 }
 
 .timebar-circle {
@@ -80,7 +80,7 @@
   transform: translate(-50%,calc(-50% + 2px));
   box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
   cursor: pointer;
-  left: 2.90146%;
+  
 }
 
 .timebar-time-info {

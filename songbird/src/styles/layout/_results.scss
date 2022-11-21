@@ -1,41 +1,70 @@
 .results__wrapper{
-    position: absolute;
-    top:0;
-    width: 100%;
-    height: 100%;
-    z-index:2;
-    background-color: rgba($color: #333B41, $alpha: 0.5) ;
-    .results_block{
-        margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-block{
+    background-color: rgba(30, 121, 127, 0.2);
+    width: 60%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 3%;
+
+    @media screen and (max-width: 1700px) {
         width: 80%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: $color-additional;
-        padding: 20px 10px;
-        h1{
-            margin: 0;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    }
+
+    .text-results{
+        text-align: center;   
+        font-weight: 700;
+        font-size: 3.2rem;
+        color: $color-categories;
+        background-color: rgba($color-text-light, 0.5);
+        width: 40%;
+        border-radius: 5px;
+
+        @media screen and (min-width: 1000px) {
+            font-size: 4.8rem;
         }
-        ol{
-            padding: 0;
-            font-weight: 800;
-            background-color: rgba($color: #333B41, $alpha: 0.5);
-            li{
-                background-color: $color-buttons;
-            }
+
+        @media screen and (max-width: 700px) {
+            width: 50%;
+            font-size: 2.4rem;
         }
-        .cross{ 
-            position: absolute;
-            top: 2%;
-            right: 2%;
-            display: inline-block;
-            background-image: url('../../assets/svg/cross.svg');
-            width: 15px;
-            height: 15px;
-            background-size: cover;
-    
+        @media screen and (max-width: 500px) {
+            width: 70%;
         }
     }
+
+    .img-results{
+        display: inline-block;
+        width: 320px;
+        height: 280px;
+        background-image: url(..//..//assets/img/hen_result.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media screen and (min-width: 500px) and (max-width: 700px) {
+            width: 220px;
+            height: 200px;
+        }
+
+        @media screen and (max-width: 500px) {
+          width: 120px;
+          height: 100px;
+        }
+       
+    }
+
 
 }

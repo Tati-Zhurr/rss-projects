@@ -11,6 +11,12 @@ import getAudioReset from './getAudioReset';
 import getHiddenBirdCard from './getHiddenBirdCard';
 import showResults from './showResults';
 import hideNewBird from './hideNewBird';
+import resetForNewGame from './resetForNewGame';
+import progressAudio from './progressAudio';
+import myComment from './myComment';
+
+myComment();
+
 
 
 //singin Hens
@@ -62,6 +68,7 @@ if (document.querySelector('.play')){
   const answerList = document.querySelector('.answer-list');
   const nextLevelButton = document.querySelector('.play__button_next');
   const actualScore = document.querySelector('.score_actual');
+  const levelNameList = document.querySelector('.categories-block');
   
 
   let cardId =0;
@@ -71,15 +78,16 @@ if (document.querySelector('.play')){
   answerList.addEventListener('click', (el) =>{
     cardBird.classList.remove('hidden');
     instructions.classList.add('hidden');
+    let answerItem;
+    if (el.target.id){
+      answerItem = el.target;
+    } else {
+      answerItem = el.target.parentNode;
+    };
+    cardId = answerItem.id;
 
     if ((!answerCorrect)&&( !nextLevelButton.classList.contains('active'))){
-      if (el.target.id){
-        cardId = el.target.id;
-        answerCorrect = isCorrectAnswer(birdHidden, el.target, cardId)
-      } else {
-        cardId = el.target.parentNode.id;
-        answerCorrect = isCorrectAnswer(birdHidden, el.target.parentNode, cardId);
-      }
+        answerCorrect = isCorrectAnswer(birdHidden, answerItem, cardId);
     }
     
     audioCard.src = birdsData[level][cardId].audio;
@@ -103,16 +111,25 @@ if (document.querySelector('.play')){
     
     });
     
-    const levelNameList = document.querySelector('.categories-block');
+   
     nextLevelButton.addEventListener('click', ()=>{
       if (nextLevelButton.classList.contains('active')){
         level++;
         resetForNextLevel(level);
+      } else if (nextLevelButton.classList.contains('play_again')){
+        score =0;
+        level =0;
+        scoreLevel =5;
+        birdHidden = getBirdToGuess(level);
+        resetForNewGame();
+        getAnswers(level);
+        hideNewBird();  
+        resetForNextLevel (level);
+        actualScore.textContent = `${score}`   
       }
+      
     })
     
-    
-
     
 
     
@@ -137,10 +154,15 @@ if (document.querySelector('.play')){
     } )
 
     function resetForNextLevel (level){
+      if (level === 0){
+        levelNameList.childNodes[level].classList.add('category_selected');
+        levelNameList.childNodes[level+5].classList.remove('category_selected');
+      } else {
+        levelNameList.childNodes[level-1].classList.remove('category_selected');
+        levelNameList.childNodes[level].classList.add('category_selected');
+      }
       const indicators = document.querySelectorAll('.answer-indicator');
       scoreLevel = 5;
-      levelNameList.childNodes[level-1].classList.remove('category_selected');
-      levelNameList.childNodes[level].classList.add('category_selected');
       birdHidden = getBirdToGuess(level);
       getAnswers(level);
       hideNewBird();
@@ -151,6 +173,91 @@ if (document.querySelector('.play')){
         indicator.style.backgroundColor = '';
       }
     }
+
+
+
+    let thumb = document.querySelector('.timebar-circle');
+    const timeBar = document.querySelector('.timebar');
+    const progress = document.querySelector('.timebar-bar');
+    const block = document.querySelector('.block-guess');
+    let progressValue;
+    let newTimeAudio;
+    let newLeft;
+    
+
+    timeBar.onmousedown = function(event) {
+      if (isPlay){
+        event.preventDefault(); // prevent selection start (browser action)
+
+        let shiftX = event.clientX - thumb.getBoundingClientRect().left;
+        // shiftY not needed, the thumb moves only horizontally
+  
+        timeBar.addEventListener('mousemove', onMouseMove);
+        timeBar.addEventListener('mouseup', onMouseUp);
+  
+        function onMouseMove(event) {
+          newLeft = event.clientX - shiftX - timeBar.getBoundingClientRect().left;
+          
+  
+          // the pointer is out of slider => lock the thumb within the bounaries
+          if (newLeft < 0) {
+            newLeft = 0;
+          }
+          let rightEdge = timeBar.offsetWidth - thumb.offsetWidth;
+          if (newLeft > rightEdge) {
+            newLeft = rightEdge;
+          }
+          
+          thumb.style.left = newLeft + 'px';
+          progressValue = newLeft/timeBar.offsetWidth;
+          newTimeAudio = progressValue* audio.duration;
+          audio.currentTime = newTimeAudio;
+          progress.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressValue*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
+        }
+  
+        function onMouseUp() {
+          timeBar.removeEventListener('mouseup', onMouseUp);
+          timeBar.removeEventListener('mousemove', onMouseMove);
+        }
+  
+      };
+  
+      thumb.ondragstart = function() {
+        return false;
+      };
+  
+        
+      }
+
+     setInterval(() => {
+      progressAudio(audio, block)
+    }, 300);
+    
+      /*function getTimeCodeFromNum(num) {
+        let seconds = parseInt(num);
+        let minutes = parseInt(seconds / 60);
+        seconds -= minutes * 60;
+        const hours = parseInt(minutes / 60);
+        minutes -= hours * 60;
+        if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+        return `${String(hours).padStart(2, 0)}:${minutes}:${String(
+          seconds % 60
+        ).padStart(2, 0)}`;
+      }
+    
+      audio.addEventListener(
+        "loadeddata",
+        () => {
+          block.querySelector(".length").textContent = getTimeCodeFromNum(
+            audio.duration
+          );
+          audio.volume = 0.75;
+        },
+        false
+      );
+    };*/
+     
+  
   
 }
 

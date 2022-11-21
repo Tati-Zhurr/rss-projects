@@ -116,6 +116,29 @@
     background-color: rgba(30, 121, 127, 0.2);
     color:  rgba(30, 121, 127, 0.8);
     margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.play_again{
+    width: 60%;
+    color: $color-text-light;
+    background-color: $color-buttons;
+    height: 20%;
+    font-size: 3.6rem;
+    font-weight: 500;
+
+    &:hover{
+        scale: 1.05;
+    }
+
+    @media screen and (max-width: 1700px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        font-size: 1.8rem;
+    }
 }
 
 
