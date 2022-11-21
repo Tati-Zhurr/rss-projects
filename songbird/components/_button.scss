@@ -1,0 +1,158 @@
+.button__nav{
+    color: $color-text-light;
+    font-size: 48px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    background: $color-buttons;
+    border-radius: 5px;
+    border-style: none;
+    font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+    transition:all .3s;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+        width: 300px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 150px;
+        font-size: 42px;
+    }
+
+    &:hover{
+        background-color: $color-button-hover;
+    }
+    &:active{
+        background: $color-button-active;
+    }
+}
+
+.start__button_sound{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background-color: $color-buttons;
+    border-radius: 50%;
+    border-style: none;
+    box-shadow: 5px $color-text-dark;
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 30px;
+        height: 30px;
+    }
+
+    &:hover{
+        background-color: $color-button-hover;
+    }
+    .button__img_sound{
+        display: inline-block;
+        background-image: url(..//..//assets/icons/on_sound.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+        @media screen and (min-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+    
+        @media screen and (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+}
+
+.sound_off{
+    .button__img_sound{
+        display: inline-block;
+        background-image: url(..//..//assets/icons/off_sound.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       
+        @media screen and (min-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+    
+        @media screen and (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+}
+
+.play__button_next{
+    width: 100%;
+    border-radius: 5px;
+    border-style: none ;
+    padding: 2rem;
+    font-weight: 700;
+    background-color: rgba(30, 121, 127, 0.2);
+    color:  rgba(30, 121, 127, 0.8);
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.play_again{
+    width: 60%;
+    color: $color-text-light;
+    background-color: $color-buttons;
+    height: 20%;
+    font-size: 3.6rem;
+    font-weight: 500;
+
+    &:hover{
+        scale: 1.05;
+    }
+
+    @media screen and (max-width: 1700px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        font-size: 1.8rem;
+    }
+}
+
+
+
+.active{
+    background: $color-button-hover;
+    color: $color-text-light ;
+}
+
+.press{
+    background-color: $color-button-hover;
+}
+
+
+
+
+

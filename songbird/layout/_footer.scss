@@ -1,0 +1,51 @@
+.footer{
+    background-color: $color-button-active;
+    height: 20%;
+
+    .footer__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1%;
+        color:$color-text-light;
+        font-size: 30px;
+
+        @media screen and (max-width: 569px) {
+            font-size: 16px;
+        }
+
+        color: $color-text-light;
+
+        .img-github{
+            display: inline-block;
+            background-image: url(..//..//assets/icons/GitHub-Symbol.png);
+            width: 140px;
+            height: 70px;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @media screen and (max-width: 569px) {
+                width: 70px;
+                height: 35px;
+            }
+
+        }
+
+        .rssschool{
+            display: inline-block;
+            background-image: url(..//..//assets/icons/rs_school_js.svg);
+            width: 140px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: 2%;
+
+            @media screen and (max-width: 569px) {
+                width: 70px;
+                height: 16px;
+            }
+
+        }
+
+    }
+}

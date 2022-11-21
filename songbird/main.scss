@@ -1,0 +1,26 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+
+//Base
+@import "base/normalize";
+@import "base/base";
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Aleo:ital,wght@0,400;0,700;1,700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+//Components
+@import "components/button";
+@import "components/navigation";
+@import "components/logo";
+@import "components/audio";
+
+
+//layout
+@import "layout/header";
+@import "layout/start";
+@import "layout/footer";
+@import "layout/guess";
+@import "layout/results";
+@import "layout/message";
+@import "layout/select";
+
+
