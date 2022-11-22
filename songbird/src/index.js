@@ -218,11 +218,14 @@ if (document.querySelector('.play')){
     const timeBar = document.querySelector('.timebar');
     const progress = document.querySelector('.timebar-bar');
     const block = document.querySelector('.block-guess');
+    const buttonVolume = block.querySelector('.button__img_volume');
+    const  barVolume = block.querySelector('.bar_volume');
 
     const blockSelect = document.querySelector('.select');
     const thumbSelect = blockSelect.querySelector('.timebar-circle');
     const timeBarSelect = blockSelect.querySelector('.timebar');
     const progressSelect = blockSelect.querySelector('.timebar-bar');
+    
 
     let progressValue;
     let progressValueSelect
@@ -274,7 +277,60 @@ if (document.querySelector('.play')){
   
         
       }
+
+
+      buttonVolume.addEventListener('mouseover', ()=>{
+        barVolume.style.display = 'block';
+        buttonVolume.onmousedown = function (event){
+          if (isPlay){
+            console.log('yes');
+            event.preventDefault(); // prevent selection start (browser action)
+    
+            let shiftX = event.clientX - buttonVolume.getBoundingClientRect().left;
+            // shiftY not needed, the thumb moves only horizontally
       
+            barVolume.addEventListener('mousemove', onMouseMove);
+            barVolume.addEventListener('mouseup', onMouseUp);
+      
+            function onMouseMove(event) {
+             let newLeft = event.clientX - shiftX - barVolume.getBoundingClientRect().left;
+    
+              // the pointer is out of slider => lock the thumb within the bounaries
+              if (newLeft < 0) {
+                newLeft = 0;
+              }
+              let rightEdge = barVolume.offsetWidth - buttonVolume.offsetWidth;
+              if (newLeft > rightEdge) {
+                newLeft = rightEdge;
+              }
+              
+              buttonVolume.style.left = newLeft + 'px';
+              let progressVolume = newLeft/barVolume.offsetWidth;
+              let newVolumeAudio = progressVolume;
+              audio.volume = newVolumeAudio;
+              buttonVolume.style.left = newLeft + 'px';
+              barVolume.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressVolume*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
+            }
+      
+            function onMouseUp() {
+              barVolume.removeEventListener('mouseup', onMouseUp);
+              barVolume.removeEventListener('mousemove', onMouseMove);
+              barVolume.style.display = 'none';
+            }
+      
+          };
+      
+          buttonVolume.ondragstart = function() {
+            return false;
+          };
+
+        }
+
+      } );
+
+     
+      
+
       if (timeBarSelect){
         timeBarSelect.onmousedown = function(event) {
           if (isPlay2){
@@ -351,32 +407,6 @@ if (document.querySelector('.play')){
       }
     };
     
-      /*function getTimeCodeFromNum(num) {
-        let seconds = parseInt(num);
-        let minutes = parseInt(seconds / 60);
-        seconds -= minutes * 60;
-        const hours = parseInt(minutes / 60);
-        minutes -= hours * 60;
-        if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-        return `${String(hours).padStart(2, 0)}:${minutes}:${String(
-          seconds % 60
-        ).padStart(2, 0)}`;
-      }
-    
-      audio.addEventListener(
-        "loadeddata",
-        () => {
-          block.querySelector(".length").textContent = getTimeCodeFromNum(
-            audio.duration
-          );
-          audio.volume = 0.75;
-        },
-        false
-      );
-    };*/
-     
-  
-  
 }
 
 

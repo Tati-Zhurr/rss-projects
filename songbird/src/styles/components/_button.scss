@@ -109,6 +109,26 @@
     }
 }
 
+.button__img_volume{
+    display: inline-block;
+    background-image: url(..//..//assets/icons/volume_white.png);
+    background-color: $color-categories;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+   
+    
+    &:hover{
+        background-image: url(..//..//assets/icons/volume_black.png);
+    }
+
+}
+
 .play__button_next{
     width: 100%;
     border-radius: 5px;
