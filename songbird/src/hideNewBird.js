@@ -1,7 +1,7 @@
 const imgBird = document.querySelector('.img-guess');
 const nameBird = document.querySelector('.name-guess');
 
-function hideNewBird(birdHidden){
+function hideNewBird(){
     imgBird.style.backgroundImage = '';
     nameBird.textContent = '******';
 }

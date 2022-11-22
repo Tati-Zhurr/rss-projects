@@ -4,14 +4,15 @@ import getTimeFromNum from "./getTimeFromNum";
 
 const playButton = document.querySelector(".guess__playback-button");
 const block = document.querySelector('.block-guess');
-const currentTime = block.querySelector('.current-time');
-const thumb = block.querySelector('.timebar-circle');
-const progressBar = block.querySelector('.timebar-bar');
-const duration = block.querySelector('.duration');
-
 
  
 async function playAudio(birdHidden, audio, isPlay) {
+  
+  const currentTime = block.querySelector('.current-time');
+  const thumb = block.querySelector('.timebar-circle');
+  const progressBar = block.querySelector('.timebar-bar');
+  const duration = block.querySelector('.duration');
+
     if (!isPlay) {
       audio.src = await birdHidden.audio;
       audio.currentTime = 0;

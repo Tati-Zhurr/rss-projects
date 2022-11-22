@@ -14,15 +14,24 @@ import hideNewBird from './hideNewBird';
 import resetForNewGame from './resetForNewGame';
 import progressAudio from './progressAudio';
 import myComment from './myComment';
+import changeLanguageMainPage from './changeLanguageMainPage';
+import changeLanguagePlayPage from './changeLanguageplayPage';
 
-myComment();
 
 
 
 //singin Hens
 const buttonOn = document.querySelector('.start__button_sound');
 const soundHens = new Audio('Hens_song.mp3');
+const langButton = document.querySelector('.img_lang');
+let lang = true; //English
+
 if (buttonOn) {
+  
+    langButton.addEventListener('click', ()=>{
+      lang = !lang;
+      changeLanguageMainPage(lang);
+    });
 
     buttonOn.addEventListener('click', async ()=>{
         if (buttonOn.classList.contains('sound_off')){
@@ -39,6 +48,26 @@ if (buttonOn) {
     
       //button chenge color
       getButtonColorChanged();
+
+
+      function setLocalStorage() {
+        localStorage.setItem('lang', lang);
+      };
+
+      function getLocalStorage() {
+        if(localStorage.getItem('lang')) {
+          if (localStorage.getItem('lang') === 'true'){
+          lang = true;
+          } else {
+          lang = false;
+          }
+        
+          changeLanguageMainPage(lang);
+        }
+      };
+
+      window.addEventListener('beforeunload', setLocalStorage);
+      window.addEventListener('load', getLocalStorage);
 }
 
 
@@ -50,12 +79,23 @@ if (document.querySelector('.play')){
   let scoreLevel = 5;
   
 
-  let birdHidden = getBirdToGuess(level);
-  getAnswers(level);
+  let birdHidden = getBirdToGuess(level, lang);
+  getAnswers(level, lang);
 
   const audio = new Audio();
   const playButton = document.querySelector(".guess__playback-button");
   let isPlay = false;
+
+  langButton.addEventListener('click',()=>{
+    lang = !lang;
+    changeLanguagePlayPage(lang);
+    birdHidden = getBirdToGuess(level, lang);
+    getAnswers(level, lang);
+    if (cardId){
+      getBirdCard(cardId, level, lang);
+    }
+    
+  });
 
 
   playButton.addEventListener("click", () => {
@@ -71,7 +111,7 @@ if (document.querySelector('.play')){
   const levelNameList = document.querySelector('.categories-block');
   
 
-  let cardId =0;
+  let cardId;
   let answerCorrect;
   let audioCard = new Audio();
 
@@ -91,7 +131,7 @@ if (document.querySelector('.play')){
     }
     
     audioCard.src = birdsData[level][cardId].audio;
-    getBirdCard(cardId, level);
+    getBirdCard(cardId, level, lang);
 
     if (answerCorrect){
       score = score + scoreLevel;
@@ -101,7 +141,7 @@ if (document.querySelector('.play')){
       getHiddenBirdCard(birdHidden);
       answerCorrect = false;
       if (level ===5){
-        showResults(score);
+        showResults(score, lang);
       } else{
         nextLevelButton.classList.add('active');
       } 
@@ -120,9 +160,9 @@ if (document.querySelector('.play')){
         score =0;
         level =0;
         scoreLevel =5;
-        birdHidden = getBirdToGuess(level);
+        birdHidden = getBirdToGuess(level, lang);
         resetForNewGame();
-        getAnswers(level);
+        getAnswers(level, lang);
         hideNewBird();  
         resetForNextLevel (level);
         actualScore.textContent = `${score}`   
@@ -130,8 +170,6 @@ if (document.querySelector('.play')){
       
     })
     
-    
-
     
     //bird from card singing
     const playButtonCard = document.querySelector(".card__playback-button");
@@ -142,7 +180,7 @@ if (document.querySelector('.play')){
         isPlay2=!isPlay2; 
       })
     }
-
+   
    audioCard.addEventListener('ended', ()=>{
       playButtonCard.classList.remove('pause');
       isPlay2=!isPlay2;
@@ -163,8 +201,8 @@ if (document.querySelector('.play')){
       }
       const indicators = document.querySelectorAll('.answer-indicator');
       scoreLevel = 5;
-      birdHidden = getBirdToGuess(level);
-      getAnswers(level);
+      birdHidden = getBirdToGuess(level, lang);
+      getAnswers(level, lang);
       hideNewBird();
       cardBird.classList.add('hidden');
       instructions.classList.remove('hidden');
@@ -232,6 +270,25 @@ if (document.querySelector('.play')){
      setInterval(() => {
       progressAudio(audio, block)
     }, 300);
+
+    window.addEventListener('beforeunload', setLocalStorage);
+    window.addEventListener('load', getLocalStorage);
+
+    function setLocalStorage() {
+      localStorage.setItem('lang', lang);
+    };
+
+    function getLocalStorage() {
+      if(localStorage.getItem('lang')) {
+        if (localStorage.getItem('lang') === 'true'){
+          lang = true;
+        } else {
+          lang = false;
+        } 
+        changeLanguagePlayPage(lang);
+        getAnswers(level, lang);
+      }
+    };
     
       /*function getTimeCodeFromNum(num) {
         let seconds = parseInt(num);

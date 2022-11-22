@@ -84,6 +84,41 @@ header{
   
 }
 
+.img_lang{
+
+  display: inline-block;
+  background-image: url(..//..//assets/icons/ru_white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: right;
+  background-size: contain;
+
+  @media screen and (min-width: 768px) {
+      width: 69.2px;
+      height: 69.2px;
+  }
+
+  @media screen and (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+  }
+
+  &:hover{
+    background-image: url(..//..//assets/icons/ru_black.png);
+  }
+
+}
+
+.en{
+  background-image: url(..//..//assets/icons/eng_white.png);
+
+  &:hover{
+    background-image: url(..//..//assets/icons/eng_white.png);
+  }
+
+}
+
 
 
 
