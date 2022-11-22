@@ -225,6 +225,9 @@ if (document.querySelector('.play')){
     const thumbSelect = blockSelect.querySelector('.timebar-circle');
     const timeBarSelect = blockSelect.querySelector('.timebar');
     const progressSelect = blockSelect.querySelector('.timebar-bar');
+    const buttonVolumeSelect = blockSelect.querySelector('.button__img_volume');
+    const  barVolumeSelect = blockSelect.querySelector('.bar_volume');
+
     
 
     let progressValue;
@@ -279,11 +282,12 @@ if (document.querySelector('.play')){
       }
 
 
-      buttonVolume.addEventListener('mouseover', ()=>{
-        barVolume.style.display = 'block';
+      buttonVolume.addEventListener('click', ()=>{
+        //barVolume.style.display = 'block';
+        barVolume.classList.toggle('active');
+
         buttonVolume.onmousedown = function (event){
-          if (isPlay){
-            console.log('yes');
+         
             event.preventDefault(); // prevent selection start (browser action)
     
             let shiftX = event.clientX - buttonVolume.getBoundingClientRect().left;
@@ -304,18 +308,18 @@ if (document.querySelector('.play')){
                 newLeft = rightEdge;
               }
               
-              buttonVolume.style.left = newLeft + 'px';
               let progressVolume = newLeft/barVolume.offsetWidth;
               let newVolumeAudio = progressVolume;
               audio.volume = newVolumeAudio;
-              buttonVolume.style.left = newLeft + 'px';
+             // buttonVolume.style.left = newLeft + 'px';
               barVolume.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressVolume*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
             }
       
             function onMouseUp() {
-              barVolume.removeEventListener('mouseup', onMouseUp);
+              barVolume.classList.remove('active');
+              buttonVolume.removeEventListener('mouseup', onMouseUp);
               barVolume.removeEventListener('mousemove', onMouseMove);
-              barVolume.style.display = 'none';
+             
             }
       
           };
@@ -323,10 +327,57 @@ if (document.querySelector('.play')){
           buttonVolume.ondragstart = function() {
             return false;
           };
-
-        }
-
       } );
+
+      buttonVolumeSelect.addEventListener('click', ()=>{
+        
+        barVolumeSelect.classList.toggle('active');
+        buttonVolumeSelect.onmousedown = function (event){
+         
+            event.preventDefault(); // prevent selection start (browser action)
+    
+            let shiftX = event.clientX - buttonVolumeSelect.getBoundingClientRect().left;
+            // shiftY not needed, the thumb moves only horizontally
+      
+            barVolumeSelect.addEventListener('mousemove', onMouseMove);
+            barVolumeSelect.addEventListener('mouseup', onMouseUp);
+      
+            function onMouseMove(event) {
+             let newLeft = event.clientX - shiftX - barVolumeSelect.getBoundingClientRect().left;
+    
+              // the pointer is out of slider => lock the thumb within the bounaries
+              if (newLeft < 0) {
+                newLeft = 0;
+              }
+              let rightEdge = barVolumeSelect.offsetWidth;
+              if (newLeft > rightEdge) {
+                newLeft = rightEdge;
+              }
+              
+              let progressVolume = newLeft/barVolumeSelect.offsetWidth;
+              let newVolumeAudio = progressVolume;
+              audioCard.volume = newVolumeAudio;
+             // buttonVolume.style.left = newLeft + 'px';
+              barVolumeSelect.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressVolume*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
+            }
+      
+            function onMouseUp() {
+              barVolumeSelect.classList.remove('active');
+              buttonVolumeSelect.removeEventListener('mouseup', onMouseUp);
+              barVolumeSelect.removeEventListener('mousemove', onMouseMove);
+             
+            }
+      
+          };
+      
+          buttonVolumeSelect.ondragstart = function() {
+            return false;
+          };
+      } );
+
+
+
+      
 
      
       

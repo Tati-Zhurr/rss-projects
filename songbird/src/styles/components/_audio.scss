@@ -97,11 +97,13 @@
   align-items: center;
   position: relative;
  
-  
-
   .bar_volume{
     display: none;
     min-width: 10%;
+  }
+
+  .active{
+    display: block;
   }
 
 }

@@ -117,12 +117,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-left: 5px;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    position: absolute;
-   
     
+   
     &:hover{
         background-image: url(..//..//assets/icons/volume_black.png);
     }
