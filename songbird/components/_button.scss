@@ -10,14 +10,16 @@
     font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
     transition:all .3s;
     cursor: pointer;
+    
 
     @media screen and (min-width: 768px) {
         width: 300px;
+      
     }
 
     @media screen and (max-width: 768px) {
-        width: 150px;
-        font-size: 42px;
+        width: 120px;
+        font-size: 3.6rem;
     }
 
     &:hover{
@@ -105,6 +107,26 @@
         }
 
     }
+}
+
+.button__img_volume{
+    display: inline-block;
+    background-image: url(..//..//assets/icons/volume_white.png);
+    background-color: $color-categories;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    
+   
+    &:hover{
+        background-image: url(..//..//assets/icons/volume_black.png);
+    }
+
 }
 
 .play__button_next{

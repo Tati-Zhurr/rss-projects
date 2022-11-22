@@ -4,6 +4,7 @@
     font-weight: 500;
     flex-wrap: wrap;
     margin-bottom: 3%;
+    
 
     @media screen and (max-width: 569px) {
         flex-direction: column;
@@ -11,6 +12,8 @@
 
     .answer-wrapper{
         width: 33%;
+        height: 100%;
+        
 
         @media screen and (max-width: 569px) {
             width: 100%;
@@ -25,12 +28,13 @@
             margin: 0;
             background-color: rgba(30, 121, 127, 0.2);
             border-radius: 5px;
+           
 
             .answer-item{
                 border: 1px solid $color-primary;
                 padding: 1rem 3rem;
                 cursor: pointer;
-
+            
                 &:hover{
                    color: $color-text-light;
                 }
@@ -51,6 +55,7 @@
     }
 
     .card-wrapper{
+        display: flex;
         background-color: rgba(30, 121, 127, 0.2);
         border-radius: 5px;
         flex-grow: 1;
@@ -92,7 +97,7 @@
                 gap: 1rem;
                 flex-grow: 1;
                 flex-shrink: 1;
-               
+
             }
         }
 
@@ -106,5 +111,9 @@
 
 .bird-name{
     margin: 0;
+}
+
+.bird-description{
+    max-width: 100%;
 }
 
