@@ -16,8 +16,8 @@ import progressAudio from './progressAudio';
 import myComment from './myComment';
 import changeLanguageMainPage from './changeLanguageMainPage';
 import changeLanguagePlayPage from './changeLanguageplayPage';
-
-
+import changeVolume from './changeVolume';
+import moveThumbAudio from './moveThumbAudio';
 
 
 //singin Hens
@@ -49,7 +49,7 @@ if (buttonOn) {
       //button chenge color
       getButtonColorChanged();
 
-
+      //lang
       function setLocalStorage() {
         localStorage.setItem('lang', lang);
       };
@@ -60,8 +60,7 @@ if (buttonOn) {
           lang = true;
           } else {
           lang = false;
-          }
-        
+          } 
           changeLanguageMainPage(lang);
         }
       };
@@ -214,222 +213,33 @@ if (document.querySelector('.play')){
 
 
 
-    let thumb = document.querySelector('.timebar-circle');
     const timeBar = document.querySelector('.timebar');
-    const progress = document.querySelector('.timebar-bar');
     const block = document.querySelector('.block-guess');
     const buttonVolume = block.querySelector('.button__img_volume');
-    const  barVolume = block.querySelector('.bar_volume');
-
+   
     const blockSelect = document.querySelector('.select');
-    const thumbSelect = blockSelect.querySelector('.timebar-circle');
     const timeBarSelect = blockSelect.querySelector('.timebar');
-    const progressSelect = blockSelect.querySelector('.timebar-bar');
     const buttonVolumeSelect = blockSelect.querySelector('.button__img_volume');
-    const  barVolumeSelect = blockSelect.querySelector('.bar_volume');
-
+   
     
-
-    let progressValue;
-    let progressValueSelect
-    let newTimeAudio;
-    let newTimeAudioSelect
-    let newLeft;
-    let newLeftSelect;
-    
-
     timeBar.onmousedown = function(event) {
-      if (isPlay){
-        event.preventDefault(); // prevent selection start (browser action)
+      moveThumbAudio (event, block, isPlay, audio);
+    }
 
-        let shiftX = event.clientX - thumb.getBoundingClientRect().left;
-        // shiftY not needed, the thumb moves only horizontally
-  
-        timeBar.addEventListener('mousemove', onMouseMove);
-        timeBar.addEventListener('mouseup', onMouseUp);
-  
-        function onMouseMove(event) {
-          newLeft = event.clientX - shiftX - timeBar.getBoundingClientRect().left;
-
-          // the pointer is out of slider => lock the thumb within the bounaries
-          if (newLeft < 0) {
-            newLeft = 0;
-          }
-          let rightEdge = timeBar.offsetWidth - thumb.offsetWidth;
-          if (newLeft > rightEdge) {
-            newLeft = rightEdge;
-          }
-          
-          thumb.style.left = newLeft + 'px';
-          progressValue = newLeft/timeBar.offsetWidth;
-          newTimeAudio = progressValue* audio.duration;
-          audio.currentTime = newTimeAudio;
-          progress.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressValue*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
-        }
-  
-        function onMouseUp() {
-          timeBar.removeEventListener('mouseup', onMouseUp);
-          timeBar.removeEventListener('mousemove', onMouseMove);
-        }
-  
-      };
-  
-      thumb.ondragstart = function() {
-        return false;
-      };
-  
-        
+    if (timeBarSelect){
+      timeBarSelect.onmousedown = function(event) {
+        moveThumbAudio (event, blockSelect, isPlay2, audioCard);
       }
+    };
 
+    buttonVolume.addEventListener('click', (event) =>{
+      changeVolume(buttonVolume, audio)
+    }); 
 
-      buttonVolume.addEventListener('click', ()=>{
-        //barVolume.style.display = 'block';
-        barVolume.classList.toggle('active');
+    buttonVolumeSelect.addEventListener('click', (event) =>{
+      changeVolume(buttonVolumeSelect, audioCard)
+    });
 
-        buttonVolume.onmousedown = function (event){
-         
-            event.preventDefault(); // prevent selection start (browser action)
-    
-            let shiftX = event.clientX - buttonVolume.getBoundingClientRect().left;
-            // shiftY not needed, the thumb moves only horizontally
-      
-            barVolume.addEventListener('mousemove', onMouseMove);
-            barVolume.addEventListener('mouseup', onMouseUp);
-      
-            function onMouseMove(event) {
-             let newLeft = event.clientX - shiftX - barVolume.getBoundingClientRect().left;
-    
-              // the pointer is out of slider => lock the thumb within the bounaries
-              if (newLeft < 0) {
-                newLeft = 0;
-              }
-              let rightEdge = barVolume.offsetWidth - buttonVolume.offsetWidth;
-              if (newLeft > rightEdge) {
-                newLeft = rightEdge;
-              }
-              
-              let progressVolume = newLeft/barVolume.offsetWidth;
-              let newVolumeAudio = progressVolume;
-              audio.volume = newVolumeAudio;
-             // buttonVolume.style.left = newLeft + 'px';
-              barVolume.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressVolume*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
-            }
-      
-            function onMouseUp() {
-              barVolume.classList.remove('active');
-              buttonVolume.removeEventListener('mouseup', onMouseUp);
-              barVolume.removeEventListener('mousemove', onMouseMove);
-             
-            }
-      
-          };
-      
-          buttonVolume.ondragstart = function() {
-            return false;
-          };
-      } );
-
-      buttonVolumeSelect.addEventListener('click', ()=>{
-        
-        barVolumeSelect.classList.toggle('active');
-        buttonVolumeSelect.onmousedown = function (event){
-         
-            event.preventDefault(); // prevent selection start (browser action)
-    
-            let shiftX = event.clientX - buttonVolumeSelect.getBoundingClientRect().left;
-            // shiftY not needed, the thumb moves only horizontally
-      
-            barVolumeSelect.addEventListener('mousemove', onMouseMove);
-            barVolumeSelect.addEventListener('mouseup', onMouseUp);
-      
-            function onMouseMove(event) {
-             let newLeft = event.clientX - shiftX - barVolumeSelect.getBoundingClientRect().left;
-    
-              // the pointer is out of slider => lock the thumb within the bounaries
-              if (newLeft < 0) {
-                newLeft = 0;
-              }
-              let rightEdge = barVolumeSelect.offsetWidth;
-              if (newLeft > rightEdge) {
-                newLeft = rightEdge;
-              }
-              
-              let progressVolume = newLeft/barVolumeSelect.offsetWidth;
-              let newVolumeAudio = progressVolume;
-              audioCard.volume = newVolumeAudio;
-             // buttonVolume.style.left = newLeft + 'px';
-              barVolumeSelect.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressVolume*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
-            }
-      
-            function onMouseUp() {
-              barVolumeSelect.classList.remove('active');
-              buttonVolumeSelect.removeEventListener('mouseup', onMouseUp);
-              barVolumeSelect.removeEventListener('mousemove', onMouseMove);
-             
-            }
-      
-          };
-      
-          buttonVolumeSelect.ondragstart = function() {
-            return false;
-          };
-      } );
-
-
-
-      
-
-     
-      
-
-      if (timeBarSelect){
-        timeBarSelect.onmousedown = function(event) {
-          if (isPlay2){
-            event.preventDefault(); // prevent selection start (browser action)
-    
-            let shiftX = event.clientX - thumbSelect.getBoundingClientRect().left;
-            // shiftY not needed, the thumb moves only horizontally
-      
-            timeBarSelect.addEventListener('mousemove', onMouseMove);
-            timeBarSelect.addEventListener('mouseup', onMouseUp);
-      
-            function onMouseMove(event) {
-              newLeftSelect = event.clientX - shiftX - timeBarSelect.getBoundingClientRect().left;
-              
-      
-              // the pointer is out of slider => lock the thumb within the bounaries
-              if (newLeftSelect < 0) {
-                newLeftSelect = 0;
-              }
-              let rightEdge = timeBarSelect.offsetWidth - thumbSelect.offsetWidth;
-              if (newLeftSelect > rightEdge) {
-                newLeftSelect = rightEdge;
-              }
-              
-              thumbSelect.style.left = newLeftSelect + 'px';
-              progressValueSelect = newLeftSelect/timeBarSelect.offsetWidth;
-              newTimeAudioSelect = progressValueSelect* audioCard.duration;
-              audioCard.currentTime = newTimeAudioSelect;
-              progressSelect.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) ${progressValueSelect*100}%, #f0c592 2.90146%, #c93a3d 100%)`;
-            }
-      
-            function onMouseUp() {
-              timeBarSelect.removeEventListener('mouseup', onMouseUp);
-              timeBarSelect.removeEventListener('mousemove', onMouseMove);
-            }
-      
-          };
-      
-          thumbSelect.ondragstart = function() {
-            return false;
-          };
-      
-            
-          }
-
-      }
-      
-     
     setInterval(() => {
       progressAudio(audio, block)
     }, 300);
@@ -464,130 +274,6 @@ if (document.querySelector('.play')){
 
 
 
-
-
-
-
-
-//audio-player
-/*const player1 = document.querySelector(".guess__controls");
-const player2 = document.querySelector(".card__controls");
-let isPlay = false;
-const audio1 = new Audio();
-const audio2 = new Audio();
-
-const audioPlayer = (player, song, audio) => {
-  const playButton = player.querySelector(".playback-button");
-  let timePause = 0;
-
-  function playAudio() {
-    if (!isPlay) {
-      audio.src = song;
-      audio.currentTime = timePause;
-      audio.play();
-      isPlay = true;
-      playButton.classList.add("pause");
-    } else if (isPlay) {
-      audio.pause();
-      isPlay = false;
-
-      if (audio.currentTime === audio.duration) {
-        audio.currentTime = 0;
-      }
-      timePause = audio.currentTime;
-      //audio.currentTime = 0;
-      playn.classList.remove("pause");
-    }
-  }
-
-  playButton.addEventListener("click", () => {
-    playAudio();
-  });
-
-  //click on timeline
-  const timeline = block.querySelector(".timeline");
-  timeline.addEventListener(
-    "click",
-    (e) => {
-      const timelineWidth = window.getComputedStyle(timeline).width;
-      const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
-      audio.currentTime = timeToSeek;
-    },
-    false
-  );
-
-  //click volume slider to change volume
-  block.querySelector(".volume-button").addEventListener("click", () => {
-    const volumeEl = block.querySelector(".volume");
-    audio.muted = !audio.muted;
-    if (audio.muted) {
-      volumeEl.classList.remove("icono-volumeMedium");
-      volumeEl.classList.add("icono-volumeMute");
-
-      block.querySelector(".volume-percentage").style.width = 0 + "%";
-    } else {
-      volumeEl.classList.add("icono-volumeMedium");
-      volumeEl.classList.remove("icono-volumeMute");
-      block.querySelector(".volume-percentage").style.width = 75 + "%";
-    }
-  });
-
-  //click volume slider to change volume
-  const volumeSlider = block.querySelector(".volume-slider");
-
-  volumeSlider.addEventListener(
-    "click",
-    (e) => {
-      const sliderWidth = window.getComputedStyle(volumeSlider).width;
-      const newVolume = e.offsetX / parseInt(sliderWidth);
-      audio.volume = newVolume;
-      block.querySelector(".volume-percentage").style.width =
-        newVolume * 100 + "%";
-    },
-    false
-  );
-  block.querySelector(".volume_container").addEventListener("mouseover", () => {
-    volumeSlider.classList.add("hover_volume");
-  });
-  block.querySelector(".volume_container").addEventListener("mouseout", () => {
-    volumeSlider.classList.remove("hover_volume");
-  });
-
-  //advanced player
-
-  setInterval(() => {
-    const progressBar = block.querySelector(".progress");
-    progressBar.style.width = (audio.currentTime / audio.duration) * 100 + "%";
-    block.querySelector(".current").textContent = getTimeCodeFromNum(
-      audio.currentTime
-    );
-  }, 300);
-
-  function getTimeCodeFromNum(num) {
-    let seconds = parseInt(num);
-    let minutes = parseInt(seconds / 60);
-    seconds -= minutes * 60;
-    const hours = parseInt(minutes / 60);
-    minutes -= hours * 60;
-    if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-    return `${String(hours).padStart(2, 0)}:${minutes}:${String(
-      seconds % 60
-    ).padStart(2, 0)}`;
-  }
-
-  audio.addEventListener(
-    "loadeddata",
-    () => {
-      block.querySelector(".length").textContent = getTimeCodeFromNum(
-        audio.duration
-      );
-      audio.volume = 0.75;
-    },
-    false
-  );
-};
-audioPlayer(blockPlayer1, birdsData[level][solution].audio, audio1);
-*/
 
 
 

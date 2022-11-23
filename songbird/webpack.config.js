@@ -74,6 +74,16 @@ module.exports = {
             }
         }),
 
+        new HtmlWebpackPlugin({
+            title:'Webpack App',
+            filename:'gallery.html',
+            template: 'src/gallery.html',
+            minify:{
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+
 
         new CopyWebpackPlugin({
             patterns: [

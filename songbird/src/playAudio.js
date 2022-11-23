@@ -34,6 +34,7 @@ async function playAudio(birdHidden, audio, isPlay) {
     } else if (isPlay) {
       audio.pause();
       audio.currentTime = 0;
+      audio.volume =0.75;
       currentTime.textContent = '00:00';
       progressBar.style.background = `linear-gradient(to right, #1e797f 0%, rgb(61, 133, 140) 0%, #f0c592 2.90146%, #c93a3d 100%)`;
       thumb.style.left = '0%';
