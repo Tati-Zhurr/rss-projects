@@ -18,6 +18,10 @@ import changeLanguageMainPage from './changeLanguageMainPage';
 import changeLanguagePlayPage from './changeLanguageplayPage';
 import changeVolume from './changeVolume';
 import moveThumbAudio from './moveThumbAudio';
+import playAudioGallery from './playAudioGallery';
+import stopPrevAudio from './stopPrevAudio';
+
+import birdsDataGalleryEnglish from "./birdsGallery";
 
 
 //singin Hens
@@ -267,8 +271,75 @@ if (document.querySelector('.play')){
         getAnswers(level, lang);
       }
     };
-    
 }
+
+
+const gallery = document.querySelector('.gallery');
+
+if (gallery){
+  let isPlay = false;
+  let audioBird = new Audio();
+  let buttonPlay;
+  let blockBird;
+  const birdImg =gallery.querySelector('.img-bird');
+  const bird = gallery.querySelector('.bird');
+  const birdName = gallery.querySelector('.bird-name');
+  const latinName = gallery.querySelector('.species');
+  const birdDescription = gallery.querySelector('.bird-description');
+  birdImg.src = birdsDataGalleryEnglish[0].image;
+  birdName.textContent = birdsDataGalleryEnglish[0].name;
+  latinName.textContent = birdsDataGalleryEnglish[0].species;
+  birdDescription.textContent = birdsDataGalleryEnglish[0].description;
+
+  for (let i=2; i < birdsDataGalleryEnglish.length+1; i++){
+   let nextBird = bird.cloneNode(true);
+   const nextBirdImg =nextBird.querySelector('.img-bird');
+   const nextBirdName = nextBird.querySelector('.bird-name');
+   const nextBirdLatinName = nextBird.querySelector('.species');
+   const nextBirdDescription = nextBird.querySelector('.bird-description');
+   
+   nextBirdImg.src = birdsDataGalleryEnglish[i-1].image;
+   nextBirdName.textContent = birdsDataGalleryEnglish[i-1].name;
+   nextBirdLatinName.textContent = birdsDataGalleryEnglish[i-1].species;
+   nextBirdDescription.textContent = birdsDataGalleryEnglish[i-1].description;
+   gallery.append(nextBird);
+   nextBird.id = `${i}`;
+  }
+
+  audioBird.addEventListener('ended', ()=>{
+    buttonPlay.classList.remove('pause');
+    isPlay=!isPlay;
+  } );
+  
+ 
+   
+
+  
+  gallery.addEventListener('click', (event)=>{
+    if (event.target.classList.contains('button__img_volume')){
+      let button = event.target;
+      changeVolume(button, audioBird);
+
+    } else if (event.target.classList.contains('button__img_sound')){
+      if (event.target !== buttonPlay ){
+        setInterval(() => {
+          progressAudio(audioBird, blockBird)
+        }, 300);
+        stopPrevAudio(buttonPlay, blockBird, audioBird);
+      };
+
+    buttonPlay = event.target;
+    blockBird  =buttonPlay.closest('.bird');
+    let idBird =  blockBird.id;
+    let audioBirdSource = birdsDataGalleryEnglish[idBird-1].audio;
+    playAudioGallery(audioBirdSource, audioBird, isPlay, blockBird );
+    isPlay =!isPlay;
+  }
+
+}
+)
+}
+
 
 
 
