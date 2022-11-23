@@ -20,8 +20,10 @@ import changeVolume from './changeVolume';
 import moveThumbAudio from './moveThumbAudio';
 import playAudioGallery from './playAudioGallery';
 import stopPrevAudio from './stopPrevAudio';
-
-import birdsDataGalleryEnglish from "./birdsGallery";
+import getBirdCardGallery from './getBirdCardGallery';
+import birdsDataGalleryEnglish from "./birdsGalleryEnglish";
+import birdsDataGallery from './birdsGallery';
+import changeLanguageGalleryPage from './changeLanguageGalleryPage';
 
 
 //singin Hens
@@ -274,26 +276,63 @@ if (document.querySelector('.play')){
 }
 
 
-const gallery = document.querySelector('.gallery');
 
+const gallery = document.querySelector('.gallery');
 if (gallery){
+  let lang = true;
+  const langButton= document.querySelector('.img_lang');
+  langButton.addEventListener('click', ()=>{
+  changeLanguageGalleryPage(lang);
+  lang=!lang;
+})
+
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+};
+function getLocalStorage() {
+  if(localStorage.getItem('lang')) {
+    if (localStorage.getItem('lang') === 'true'){
+      lang = true;
+    } else {
+      lang = false;
+    } 
+    changeLanguageGalleryPage(lang);
+  }
+};
+
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
   let isPlay = false;
   let audioBird = new Audio();
   let buttonPlay;
   let blockBird;
-  const birdImg =gallery.querySelector('.img-bird');
+
   const bird = gallery.querySelector('.bird');
+  if (lang){
+    getBirdCardGallery(bird, birdsDataGalleryEnglish[0]);
+  } else {
+    getBirdCardGallery(bird, birdsDataGallery[0]);
+  };
+
+  /*const birdImg =gallery.querySelector('.img-bird');
   const birdName = gallery.querySelector('.bird-name');
   const latinName = gallery.querySelector('.species');
   const birdDescription = gallery.querySelector('.bird-description');
+
   birdImg.src = birdsDataGalleryEnglish[0].image;
   birdName.textContent = birdsDataGalleryEnglish[0].name;
   latinName.textContent = birdsDataGalleryEnglish[0].species;
-  birdDescription.textContent = birdsDataGalleryEnglish[0].description;
+  birdDescription.textContent = birdsDataGalleryEnglish[0].description;*/
 
   for (let i=2; i < birdsDataGalleryEnglish.length+1; i++){
    let nextBird = bird.cloneNode(true);
-   const nextBirdImg =nextBird.querySelector('.img-bird');
+   if (lang){
+    getBirdCardGallery(nextBird, birdsDataGalleryEnglish[i-1]);
+  } else {
+    getBirdCardGallery(nextBird, birdsDataGallery[i-1]);
+  }
+
+   /*const nextBirdImg =nextBird.querySelector('.img-bird');
    const nextBirdName = nextBird.querySelector('.bird-name');
    const nextBirdLatinName = nextBird.querySelector('.species');
    const nextBirdDescription = nextBird.querySelector('.bird-description');
@@ -301,7 +340,8 @@ if (gallery){
    nextBirdImg.src = birdsDataGalleryEnglish[i-1].image;
    nextBirdName.textContent = birdsDataGalleryEnglish[i-1].name;
    nextBirdLatinName.textContent = birdsDataGalleryEnglish[i-1].species;
-   nextBirdDescription.textContent = birdsDataGalleryEnglish[i-1].description;
+   nextBirdDescription.textContent = birdsDataGalleryEnglish[i-1].description;*/
+
    gallery.append(nextBird);
    nextBird.id = `${i}`;
   }
@@ -310,9 +350,8 @@ if (gallery){
     buttonPlay.classList.remove('pause');
     isPlay=!isPlay;
   } );
-  
+
  
-   
 
   
   gallery.addEventListener('click', (event)=>{

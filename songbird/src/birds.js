@@ -287,7 +287,7 @@ const birdsData = [
         name: 'Пингвин',
         species: 'Aptenodytes forsteri',
         description: 'Самец императорского пингвина достигает роста 130 см, его масса может приближаться к 50 кг. Из всех современных пингвинов этот вид – самый крупный. Питание пингвина состоит из рыбы, кальмаров и криля. Охотятся птицы в океане большими группами.',
-        image: 'https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg',
+        image: 'https://img.fotocommunity.com/everglades-pelikan-fb67c026-e6cb-4c57-8df4-3b531a49c123.jpg?height=1080',
         audio: 'https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3'
       },
       {
