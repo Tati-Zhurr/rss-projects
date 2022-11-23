@@ -11,17 +11,7 @@
     transition:all .3s;
     cursor: pointer;
     
-
-    @media screen and (min-width: 768px) {
-        width: 300px;
-      
-    }
-
-    @media screen and (max-width: 768px) {
-        width: 120px;
-        font-size: 3.6rem;
-    }
-
+    
     &:hover{
         background-color: $color-button-hover;
     }
