@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 /*const jsLoaders =() =>{
     const loaders = [{
@@ -64,6 +65,10 @@ const baseConfig = {
                 use: ['style-loader', 'css-loader'],
             },
             {
+                test: /\.ts$/i,
+                use: 'ts-loader',
+            },
+            {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
@@ -84,6 +89,7 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
+        new ESLintPlugin({extensions: 'ts'}),
     ],
 };
 
