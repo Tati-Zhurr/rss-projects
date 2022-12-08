@@ -1,48 +1,3 @@
-class Loader {
-    constructor(baseLink, options) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
-
-    getResp(
-        { endpoint, options = {} },
-        callback = () => {
-            console.error('No callback for GET response');
-        }
-    ) {
-        this.load('GET', endpoint, callback, options);
-    }
-
-    errorHandler(res) {
-        if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
-                console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-            throw Error(res.statusText);
-        }
-
-        return res;
-    }
-
-    makeUrl(options, endpoint) {
-        const urlOptions = { ...this.options, ...options };
-        let url = `${this.baseLink}${endpoint}?`;
-
-        Object.keys(urlOptions).forEach((key) => {
-            url += `${key}=${urlOptions[key]}&`;
-        });
-
-        return url.slice(0, -1);
-    }
-
-    load(method, endpoint, callback, options = {}) {
-        fetch(this.makeUrl(options, endpoint), { method })
-            .then(this.errorHandler)
-            .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
-    }
-}
-
 interface ISource {
     id: string;
     name: string;
@@ -53,16 +8,19 @@ interface ISource {
     country: string;
 }
 
-interface IResponse {
+export interface IResponse {
     status: string;
     sources: [...ISource[]];
 }
 
-interface ILoader {
+export interface ILoader {
     baseLink: string;
     options: object;
 
     getResp({endpoint, options}: {endpoint: string, options?: object | undefined}, callback?: () => void) : void;
     errorHandler(res: IResponse): IResponse; 
+    errorHandler<Type extends {ok: boolean, status: 401|404, statusText: string}>(res: Type): Type;
+    makeUrl(options: object, endpoint: string): string;
+    load (method: string, endpoint: string, callback: ()=> void, options: object): void;
    
 }

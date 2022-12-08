@@ -1,11 +1,17 @@
-class Loader {
-    constructor(baseLink, options) {
+import {ILoader} from '../../types/index';
+import {IResponse} from '../../types/index';
+
+class Loader implements ILoader {
+    baseLink: string;
+    options: object;
+
+    constructor(baseLink: string, options: object) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp(
-        { endpoint, options = {} },
+        { endpoint, options = {} }: {endpoint: string, options?: object | undefined},
         callback = () => {
             console.error('No callback for GET response');
         }
@@ -13,7 +19,7 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res) {
+    errorHandler <Response extends {ok: boolean, status: 401|404, statusText: string}>(res: Response): Response {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -23,7 +29,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options, endpoint) {
+    makeUrl(options: { [key: string]: string }, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
