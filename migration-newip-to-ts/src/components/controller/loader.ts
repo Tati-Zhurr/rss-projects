@@ -1,5 +1,5 @@
-import {ILoader} from '../../types/index';
-import {IResponse} from '../../types/index';
+import {ILoader, IResponseArticles, IResponseSources} from '../../types/index';
+
 
 class Loader implements ILoader {
     baseLink: string;
@@ -19,7 +19,7 @@ class Loader implements ILoader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler <Response extends {ok: boolean, status: 401|404, statusText: string}>(res: Response): Response {
+    errorHandler (res: Response): Response {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -40,12 +40,12 @@ class Loader implements ILoader {
         return url.slice(0, -1);
     }
 
-    load(method, endpoint, callback, options = {}) {
+    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources) => void, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
+            .then((data: IResponseArticles | IResponseSources ) => callback(data))
+            .catch((err: string) => console.error(err));
     }
 }
 

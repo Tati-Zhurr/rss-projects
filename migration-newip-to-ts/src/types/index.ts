@@ -8,9 +8,25 @@ interface ISource {
     country: string;
 }
 
-export interface IResponse {
+export interface IResponseSources {
     status: string;
     sources: [...ISource[]];
+}
+
+export interface IResponseArticles {
+  status: string;
+  totalResults: number;
+  articles: [...IArticle[]];
+}
+export interface IArticle {
+      source: {id: string | null, name: string};
+      author: string | null;
+      title: string;
+      description: string;
+      url: string;
+      urlToImage: string;
+      publishedAt: string;
+      content: string;
 }
 
 export interface ILoader {
@@ -18,9 +34,7 @@ export interface ILoader {
     options: object;
 
     getResp({endpoint, options}: {endpoint: string, options?: object | undefined}, callback?: () => void) : void;
-    errorHandler(res: IResponse): IResponse; 
-    errorHandler<Type extends {ok: boolean, status: 401|404, statusText: string}>(res: Type): Type;
+    errorHandler(res: Response): Response; 
     makeUrl(options: object, endpoint: string): string;
-    load (method: string, endpoint: string, callback: ()=> void, options: object): void;
-   
+    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources)=> void, options: object): void;
 }
