@@ -20,7 +20,7 @@ module.exports = {
     "root": true,
     "rules": {
         "@typescript-eslint/no-explicit-any": "error",
-        "semi": ["error", "never"],
+       // "semi": ["error", "never"],
         "quotes": [2, "single"]
     }
 }
