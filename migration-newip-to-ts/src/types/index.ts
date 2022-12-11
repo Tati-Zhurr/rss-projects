@@ -1,3 +1,4 @@
+import { Callback1, Callback2 } from "../components/controller/controller";
 export interface ISource {
     id: string;
     name: string;
@@ -45,4 +46,18 @@ export interface INews {
 
 export interface ISources {
     draw(data: ISource[]): void;
+}
+
+
+export interface IAppController {
+    getSources(callback: Callback2): void;
+    getNews(e: Event, callback: Callback1): void;
+}
+
+export interface IAppView {
+    news: INews; 
+    sources: ISources;
+
+    drawNews(data: IResponseArticles | undefined): void;
+    drawSources(data: IResponseSources | undefined): void;
 }
