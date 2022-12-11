@@ -38,3 +38,11 @@ export interface ILoader {
     makeUrl(options: object, endpoint: string): string;
     load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources)=> void, options: object): void;
 }
+
+export interface INews {
+    draw(data: IArticle[]): void;
+}
+
+export interface ISources {
+    draw(data: ISource[]): void;
+}
