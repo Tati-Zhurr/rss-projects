@@ -34,13 +34,13 @@ const baseConfig = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  output: {
+ /* output: {
     filename: ['@babel/polyfill', 'bundle.js'],
     path: path.resolve(__dirname, 'dist'),
   },
-   entry: {
+  /* entry: {
         bundle: ['@babel/polyfill', path.resolve(__dirname,'src/index.js')]
-    },
+    },*/
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name][contenthash].js',
