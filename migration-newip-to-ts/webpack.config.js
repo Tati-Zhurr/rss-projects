@@ -4,20 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-/*const jsLoaders =() =>{
-    const loaders = [{
-        loader: 'babel-loader',
-        options: {
-            presets: ['@babel/preset-env']
-                  }
-    }]
 
-    if (isDev) {
-        loaders.push('eslint-loader')
-    }
-
-    return loaders;
-}*/
 
 const baseConfig = {
     mode: 'development',
@@ -77,7 +64,12 @@ const baseConfig = {
                     presets: ['@babel/preset-env']
                   }
                 }
-              }
+              },
+
+              {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+              },
         ],
     },
    /* resolve: {
