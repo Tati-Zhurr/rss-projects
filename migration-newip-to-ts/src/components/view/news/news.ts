@@ -3,8 +3,14 @@ import './news.css';
 
 
 class News {
+    readonly newsNumberOnPage: number;
+
+    constructor(){
+        this.newsNumberOnPage =10;
+    }
+
     draw(data: IArticle[]) {
-        const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+        const news = data.length >=  this.newsNumberOnPage ? data.filter((_item, idx) => idx <  this.newsNumberOnPage) : data;
 
         const fragment = document.createDocumentFragment();
 
