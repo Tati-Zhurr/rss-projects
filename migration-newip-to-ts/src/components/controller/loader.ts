@@ -1,5 +1,7 @@
-import {ILoader, IRequestParameters, IResponseArticles, IResponseSources} from '../../types/index';
+import {ILoader, IRequestParameters, IResponseArticles, IResponseSources, ResponseErrors} from '../../types/index';
 
+const error401: ResponseErrors = ResponseErrors.unauthorized;
+const error404: ResponseErrors = ResponseErrors.brokenLink;
 
 class Loader implements ILoader {
     baseLink: string;
@@ -21,7 +23,7 @@ class Loader implements ILoader {
 
     errorHandler (res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === error401 || res.status === error404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }

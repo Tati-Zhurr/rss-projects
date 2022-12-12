@@ -77,3 +77,12 @@ export interface IRequestParameters {
     pageSize: number;
     page: number;
 }
+
+export enum ResponseErrors{
+  ok = 200,
+  badRequest = 400,
+  unauthorized = 401,
+  brokenLink = 404,
+  tooManyRequest = 429,
+  serverError = 500,
+}
