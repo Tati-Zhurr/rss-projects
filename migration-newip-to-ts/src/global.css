@@ -65,3 +65,27 @@ footer .copyright:before {
 .year{
     align-self: center;
 }
+
+.wrapper_button{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.button_top10{
+    background-color:  #17181c;
+    border-radius: 5px;
+    color:  #30c5ff;
+    margin: 10px auto;
+    font-size: 24px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.button_top10:hover{
+    background-color: #30c5ff;
+    color: #17181c;
+   
+}
+
+

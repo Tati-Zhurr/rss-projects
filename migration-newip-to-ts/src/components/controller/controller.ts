@@ -16,8 +16,22 @@ class AppController extends AppLoader {
     getNews(e: Event, callback: Callback1) {
         if (e.target instanceof HTMLElement &&  e.currentTarget instanceof HTMLElement){
         let target = e.target;
+        if (target.classList.contains('button_top10')){
+            super.getResp(
+                {
+                    endpoint: 'top-headlines',
+                    options: {
+                        sortBy: 'popularity',
+                        pageSize: '10',
+                        category: 'general',
+                    },
+                },
+                callback
+            );
+            target.textContent = 'You are reading TOP 10';
+            return; 
+        }
         const newsContainer = e.currentTarget;
-
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
                 const sourceId = target.getAttribute('data-source-id');

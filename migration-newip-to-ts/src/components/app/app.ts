@@ -13,8 +13,17 @@ class App {
 
     start() {
         const blockSources = document.querySelector('.sources');
+        const buttonTop = document.querySelector('.button_top10');
+        if (buttonTop){
+           buttonTop.addEventListener('click', (e)=> this.controller.getNews(e, (data) => this.view.drawNews(data)));
+        }
         if (blockSources){
-            blockSources.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+            blockSources.addEventListener('click', (e) => {
+                 this.controller.getNews(e, (data) => this.view.drawNews(data));
+                 if (buttonTop){
+                 buttonTop.textContent = 'GET TOP 10';
+                 }
+            });
             this.controller.getSources((data) => this.view.drawSources(data));
         }  
     }

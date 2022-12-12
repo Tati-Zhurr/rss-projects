@@ -5,6 +5,7 @@
     height: 130px;
     overflow: auto;
     align-items: center;
+    justify-content: center;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
