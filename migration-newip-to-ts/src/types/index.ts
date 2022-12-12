@@ -34,10 +34,10 @@ export interface ILoader {
     baseLink: string;
     options: object;
 
-    getResp({endpoint, options}: {endpoint: string, options?: object | undefined}, callback?: () => void) : void;
+    getResp({endpoint, options}: {endpoint: string, options?: Partial<IRequestParameters>}, callback?: () => void) : void;
     errorHandler(res: Response): Response; 
-    makeUrl(options: object, endpoint: string): string;
-    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources)=> void, options: object): void;
+    makeUrl(options: Partial<IRequestParameters>, endpoint: string): string;
+    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources)=> void, options: Partial<IRequestParameters>): void;
 }
 
 export interface INews {
@@ -60,4 +60,20 @@ export interface IAppView {
 
     drawNews(data: IResponseArticles | undefined): void;
     drawSources(data: IResponseSources | undefined): void;
+}
+
+
+export interface IRequestParameters {
+    apiKey: string;
+    q: string;
+    searchIn: string;
+    sources: string;
+    domains: string;
+    excludeDomains: string;
+    from: string;
+    to: string;
+    language: string;
+    sortBy: string;
+    pageSize: number;
+    page: number;
 }

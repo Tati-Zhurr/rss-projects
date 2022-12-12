@@ -1,17 +1,17 @@
-import {ILoader, IResponseArticles, IResponseSources} from '../../types/index';
+import {ILoader, IRequestParameters, IResponseArticles, IResponseSources} from '../../types/index';
 
 
 class Loader implements ILoader {
     baseLink: string;
     options: object;
 
-    constructor(baseLink: string, options: object) {
+    constructor(baseLink: string, options: Partial<IRequestParameters>) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp(
-        { endpoint, options = {} }: {endpoint: string, options?: object | undefined},
+        { endpoint, options = {} }: {endpoint: string, options?: Partial<IRequestParameters>},
         callback = () => {
             console.error('No callback for GET response');
         }
