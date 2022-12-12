@@ -74,8 +74,8 @@ export interface IRequestParameters {
     to: string;
     language: string;
     sortBy: string;
-    pageSize: number;
-    page: number;
+    pageSize: string;
+    page: string;
 }
 
 export enum ResponseErrors{

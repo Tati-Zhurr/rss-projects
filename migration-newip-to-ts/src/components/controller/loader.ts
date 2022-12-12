@@ -4,8 +4,8 @@ const error401: ResponseErrors = ResponseErrors.unauthorized;
 const error404: ResponseErrors = ResponseErrors.brokenLink;
 
 class Loader implements ILoader {
-    baseLink: string;
-    options: object;
+   readonly baseLink: string;
+    options: { [key: string]: string };
 
     constructor(baseLink: string, options: Partial<IRequestParameters>) {
         this.baseLink = baseLink;
