@@ -4,9 +4,8 @@ import './news.css';
 
 class News {
     readonly newsNumberOnPage: number;
-
     constructor(){
-        this.newsNumberOnPage =10;
+        this.newsNumberOnPage = 10;
     }
 
     draw(data: IArticle[]) {
