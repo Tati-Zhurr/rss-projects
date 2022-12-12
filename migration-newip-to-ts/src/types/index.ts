@@ -1,4 +1,4 @@
-import { Callback1, Callback2 } from "../components/controller/controller";
+import { Callback1, Callback2 } from '../components/controller/controller';
 export interface ISource {
     id: string;
     name: string;
@@ -30,16 +30,6 @@ export interface IArticle {
       content: string;
 }
 
-export interface ILoader {
-    baseLink: string;
-    options: object;
-
-    getResp({endpoint, options}: {endpoint: string, options?: Partial<IRequestParameters>}, callback?: () => void) : void;
-    errorHandler(res: Response): Response; 
-    makeUrl(options: Partial<IRequestParameters>, endpoint: string): string;
-    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources)=> void, options: Partial<IRequestParameters>): void;
-}
-
 export interface INews {
     draw(data: IArticle[]): void;
 }
@@ -57,7 +47,6 @@ export interface IAppController {
 export interface IAppView {
     news: INews; 
     sources: ISources;
-
     drawNews(data: IResponseArticles | undefined): void;
     drawSources(data: IResponseSources | undefined): void;
 }

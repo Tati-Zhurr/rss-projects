@@ -1,9 +1,9 @@
-import {ILoader, IRequestParameters, IResponseArticles, IResponseSources, ResponseErrors} from '../../types/index';
+import {IRequestParameters, IResponseArticles, IResponseSources, ResponseErrors} from '../../types/index';
 
 const error401: ResponseErrors = ResponseErrors.unauthorized;
 const error404: ResponseErrors = ResponseErrors.brokenLink;
 
-class Loader implements ILoader {
+class Loader {
    readonly baseLink: string;
     options: { [key: string]: string };
 
@@ -21,7 +21,7 @@ class Loader implements ILoader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler (res: Response): Response {
+   errorHandler (res: Response): Response {
         if (!res.ok) {
             if (res.status === error401 || res.status === error404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -31,7 +31,7 @@ class Loader implements ILoader {
         return res;
     }
 
-    makeUrl(options: { [key: string]: string }, endpoint: string) {
+   makeUrl(options: { [key: string]: string }, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -42,7 +42,7 @@ class Loader implements ILoader {
         return url.slice(0, -1);
     }
 
-    load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources) => void, options = {}) {
+    private load (method: string, endpoint: string, callback: (data: IResponseArticles | IResponseSources) => void, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
