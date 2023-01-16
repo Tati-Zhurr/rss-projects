@@ -43,21 +43,16 @@ const baseConfig = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
-            favicon: './src/favicon.ico',
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/card.html'),
-            filename: 'card.html',
-            favicon: './src/favicon.ico',
+            favicon: './src/favicon.png',
         }),
         new CleanWebpackPlugin(),
         new ESLintPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                {
+               /* {
                     from: path.resolve(__dirname, './src/assets/img'),
                     to: path.resolve(__dirname, './dist'),
-                },
+                },*/
                 {
                     from: path.resolve(__dirname, './src/assets/svg'),
                     to: path.resolve(__dirname, './dist'),
@@ -66,10 +61,10 @@ const baseConfig = {
                     from: path.resolve(__dirname, './src/assets/png'),
                     to: path.resolve(__dirname, './dist'),
                 },
-                {
+              /*  {
                     from: path.resolve(__dirname, './src/favicon.ico'),
                     to: path.resolve(__dirname, './dist'),
-                },
+                },*/
             ],
         }),
     ],

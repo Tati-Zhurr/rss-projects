@@ -1,46 +1,24 @@
 .button{
-    color: $color-white;
+    color: $color-text-light;
     padding: 0 2%;
     font-size: 2rem;
     border-style: none;
-    font-weight: 300;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 0%;
-    background-color: $color-additional;
+    background-color: $brand-color5;
+    border-radius: 0.5rem;
+    padding: 1rem;
 
     @media screen and (max-width: 1000px) {
         background-color: $brand-color2;
     }
 
     &:hover{
-        background-color: $brand-color2;
+        background-color: $brand-color3;
         color: $color-text-dark;
         font-weight: 400;
+        scale: 1.1;
     }
 }
 
-.button_reset{
-    color: $color-buttons;
-
-    @media screen and (max-width: 1000px) {
-        color: $color-text-dark;
-
-        &:hover{
-            color: $color-buttons;   
-        }
-
-     }
-}
-
-.button_link{
-    color: $color-button-hover;
-
-    @media screen and (max-width: 1000px) {
-       color: $color-text-dark;
-
-       &:hover{
-        color: $color-button-hover;
-    }
-
-    }
-}

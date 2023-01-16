@@ -1,37 +1,11 @@
 .header__wrapper {
     margin: 0 auto;
-    background-color: rgba($brand-color2, $alpha: 0.4);
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 2rem;
     align-items: center;
     width: 100%;
     padding: 1%;
-    .brand {
-        position: relative;
-        border-radius: 10px;
-        margin-top: 10px;
-        .link-home {
-            text-decoration: none;
-            color: $color-text-dark;
-            font-size: 1rem;
-            font-weight: 800;
-            padding: 10%;
-
-            .brand-name{
-                position: absolute;
-                top: -15px;
-                right: 40px;
-                margin: 0;
-                width: 100px;
-                height: 80px;
-                text-align: center;
-                line-height: 1;
-                color: $color-white;
-                background-color: black;
-                border-radius: 50%;
-                margin: 0; 
-                padding-top: 10px;
-
                 @media screen and (max-width: 569px) {
                     width: 50px;
                     height: 40px;
@@ -40,77 +14,8 @@
                     right: 20px;
                     padding-top: 7px;
                 }
-            }
-            .brand-img {
-                display: inline-block;
-                width: 181px;
-                height: 150px;
-
-                @media screen and (max-width: 569px) {
-                    width: 90.5px;
-                    height: 75px;
-                }
-            }
-        }
-       
     }
-
-    .cart{
-        position: relative;
-        .cart-img{
-            display: inline-block;
-            width: 113.76px;
-            height: 83.84px;
-
-            @media screen and (max-width: 569px) {
-                width: 56.88px;
-                height: 41.92px;
-            }
-
-        }
-        .cart-content{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            min-width: 30px;
-            min-height: 30px;
-            padding: 2%;
-            background-color: $color-button-hover;
-            border-radius: 50%;
-            font-size: 2rem;
-            border: 3px solid black;
-            color: $color-text-dark;
-            text-align: center;
-            font-weight: 500;
-
-            @media screen and (max-width: 569px) {
-                top: 8px;
-                right: 18px;
-                min-width: 15px;
-                min-height: 15px;
-                font-size: 1rem;
-                padding: 1%;
-                border: 1.5px solid black;
-            }
            
-        }
-    }
-    .total-price{
-        font-size: 3rem;
-        font-weight: 200;
+  
 
-        @media screen and (max-width: 569px) {
-            font-size: 2rem;
-        }
-        .total{
-            @media screen and (max-width: 569px) {
-                font-size: 2rem;
-            }
-        }
     
-    }
-}
-
