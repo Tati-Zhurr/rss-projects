@@ -10,7 +10,7 @@
         display: flex;
         gap: 2rem;
         
-        .car-block__options_name{
+        &__options_name{
             font-size: 1.6rem;
             color: $brand-color2;
         }

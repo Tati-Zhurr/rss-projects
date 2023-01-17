@@ -7,8 +7,8 @@
     cursor: pointer;
     border-radius: 0%;
     background-color: $brand-color5;
-    border-radius: 0.5rem;
-    padding: 1rem;
+    border-radius: 5px;
+    padding: 10px;
 
     &:hover{
         background-color: $brand-color3;
@@ -21,7 +21,7 @@
 .settings__button{
     color: $color-text-dark;
     background-color: $brand-color2;
-    padding: 0.5rem;
+    padding: 5px;
 
     &:hover{
         background-color: $brand-color;
@@ -45,7 +45,7 @@
 .button_remove{
     color: #ff17d1;
     background-color: $color-primary;
-    padding: 0.5rem 1rem;
+    padding: 5px 10px;
 
 }
 
