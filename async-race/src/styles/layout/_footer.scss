@@ -1,10 +1,9 @@
 .footer__wrapper{
-    background-color: rgba($brand-color2, $alpha: 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1%;
-    color: $color-additional;
+
     .footer__links{
         display: flex;
         align-items: center;
@@ -21,3 +20,4 @@
 
     } 
 }
+

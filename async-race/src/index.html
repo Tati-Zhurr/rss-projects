@@ -4,25 +4,70 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="shortcut icon" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.ico">
     <title>Async-race</title>
 </head>
 <body>
     <header class="header">
         <div class="wrapper header__wrapper wrapper_buttons">
-            <button class="button view_to-garage">TO GARAGE</button>
-            <button class="button view_to-winners">TO WINNERS</button>
+            <button class="button button_to-garage">TO GARAGE</button>
+            <button class="button button_to-winners">TO WINNERS</button>
         </div>
     </header>
     <main>
         <div class="garage">
             <div class="settings-block garage__settings-block">
-                <div class="settings settings_create"></div>
-                <div class="settings settings_update"></div>
-                <div class="settings settings_more-options"></div>
+                <div class="settings settings_create">
+                    <input type="text" class="input-text settings__input-text input-text_create">
+                    <input type="color" class="input-color settings__input-color input-text_color" value="#55ff00">
+                    <button class="button settings__button button_create">CREATE</button>
+                </div>
+                <div class="settings settings_update">
+                    <input type="text" class="input-text settings__input-text input-text_update">
+                    <input type="color" class="input-color settings__input-color input-color_update" value="#ff17d1">
+                    <button class="button settings__button button_update">UPDATE</button>
+                </div>
+                <div class="settings settings_more-options">
+                    <button class="button settings__button button_race">RACE</button>
+                    <button class="button settings__button button_reset">RESET</button>
+                    <button class="button settings__button button_generate">GENERATE CARS</button>
+                </div>
             </div>
-            <div class="garage__main-block"></div>
+            <div class="main-block garage__main-block">
+                <h1 class="title main-block__title title_garage">Garage(<span class="total-cars"></span>)</h1>
+                <h2 class="subtitle main-block__subtitle subtitle_page">Page #<span class="page-number"></span></h2>
+                <div class="car-block">
+                    <div class="options car-block__options">
+                        <div class="buttons-wrapper options__buttons-wrapper">
+                            <button class="button button_select">SELECT</button>
+                            <button class="button button_select">REMOVE</button>
+                        </div>
+                        <span class="car-block__options_name">Tesla</span> 
+                    </div>
+                    <div class="start-back car-block__start-back">
+                        <span class="start" title="Get start">A</span>
+                        <span class="back disabled" title="Get back">B</span>
+                    </div>
+                    <div class="car-flag car-block__car-flag">
+                       <svg class="car car-block__car">
+                            <use xlink:href ="./sprite.svg#car"></use>
+                        </svg>
+                        <img src="./flag.svg" alt="Finish flag" class="flag car-block__flag">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+    <footer>
+        <div class="wrapper footer__wrapper">
+            <div class="links footer__links">
+                <a href="https://github.com/Tati-Zhurr"><img src="github_logo.png" alt="Github link"
+                                                             class="img-github"></a>
+                                                             2022
+                <a href="https://rs.school/js/"><img src="rs_school_js.svg" alt="rssscool link"
+                                                     class="img-rssschool"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

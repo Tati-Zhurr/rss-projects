@@ -43,7 +43,7 @@ const baseConfig = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
-            favicon: './src/favicon.png',
+            favicon: './src/favicon.ico',
         }),
         new CleanWebpackPlugin(),
         new ESLintPlugin(),
@@ -61,10 +61,10 @@ const baseConfig = {
                     from: path.resolve(__dirname, './src/assets/png'),
                     to: path.resolve(__dirname, './dist'),
                 },
-              /*  {
+                {
                     from: path.resolve(__dirname, './src/favicon.ico'),
                     to: path.resolve(__dirname, './dist'),
-                },*/
+                },
             ],
         }),
     ],

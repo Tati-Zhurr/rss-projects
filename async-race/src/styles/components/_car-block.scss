@@ -1,0 +1,79 @@
+.car-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+   
+    
+
+    .options {
+        display: flex;
+        gap: 2rem;
+        
+        .car-block__options_name{
+            font-size: 1.6rem;
+            color: $brand-color2;
+        }
+    }
+
+    .start-back {
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: $brand-color4;
+
+
+        .start, 
+        .back {
+            border: 1px solid $brand-color4;
+            border-radius: 0.5rem;
+            padding: 0 0.8rem;
+            cursor: pointer;
+        }
+
+        .start:hover{
+            color: $brand-color2;
+            border: 1px solid $brand-color2;
+            font-weight: 400;
+            scale: 1.1;
+        }
+
+        .back:hover{
+            color: $brand-color3;
+            border: 1px solid $brand-color3;
+            font-weight: 400;
+            scale: 1.1;
+        }
+
+        .disabled {
+            color: rgba($color-primary, 0.4);
+            border: 1px solid rgba($color-primary, 0.4);
+        }
+    }
+
+    .car-flag {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: end;
+        padding: 0 100px;
+        margin-top: -30px;
+       
+
+        .car{
+            width: 80px;
+            transform: rotateY(180deg);
+            position: absolute;
+            left: 85px;
+        }
+        
+        .flag{
+           height: 30px;
+           z-index: 2;
+        }
+
+        border-bottom: 3px dashed $color-primary;
+
+    }
+
+  
+}

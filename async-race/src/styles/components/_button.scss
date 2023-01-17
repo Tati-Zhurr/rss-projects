@@ -10,15 +10,42 @@
     border-radius: 0.5rem;
     padding: 1rem;
 
-    @media screen and (max-width: 1000px) {
-        background-color: $brand-color2;
-    }
-
     &:hover{
         background-color: $brand-color3;
         color: $color-text-dark;
         font-weight: 400;
         scale: 1.1;
     }
+}
+
+.settings__button{
+    color: $color-text-dark;
+    background-color: $brand-color2;
+    padding: 0.5rem;
+
+    &:hover{
+        background-color: $brand-color;
+        font-weight: 400;
+        scale: 1.1;
+    }
+}
+
+.button_race, 
+.button_reset{
+    color: #ff17d1;
+    font-weight: 700;
+}
+
+.button_generate{
+    background-color: $brand-color4;
+    color: $color-text-dark;
+}
+
+.button_select,
+.button_remove{
+    color: #ff17d1;
+    background-color: $color-primary;
+    padding: 0.5rem 1rem;
+
 }
 
