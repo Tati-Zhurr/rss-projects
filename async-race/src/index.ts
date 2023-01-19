@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import createHeader from './components/createHeader';
+import createPage from './components/drawPage';
 
-createHeader();
+createPage();
 
