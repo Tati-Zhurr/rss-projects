@@ -1,9 +1,10 @@
-import { IlinkObj } from "./types/interfaces";
+import { IlinkFooter } from "./types/interfaces";
 
 function drawPage () {
     const body = document.querySelector('body');
     const header = drawHeader();
     const main = document.createElement('main');
+    main.classList.add('main');
     const footer = drawFooter();
 
     if (body instanceof HTMLElement){
@@ -39,14 +40,14 @@ function drawFooter () {
     const footerLinks = document.createElement('div');
     footerLinks.classList.add('footer__links');
 
-    const github: IlinkObj = {
+    const github: IlinkFooter = {
         href: 'https://github.com/Tati-Zhurr',
         src:  'github_logo.png',
         alt: 'Github link',
         class: 'img-github'
     };
 
-    const rssschool: IlinkObj = {
+    const rssschool: IlinkFooter = {
         href: 'https://rs.school/js/',
         src:  'rs_school_js.svg',
         alt: 'Rssscool link',
@@ -63,7 +64,7 @@ function drawFooter () {
     return footer;
 }
 
-function createLink(objLink: IlinkObj){
+function createLink(objLink: IlinkFooter){
     let fragment = new DocumentFragment();
     const link = document.createElement('a');
     link.setAttribute('href', objLink.href);
