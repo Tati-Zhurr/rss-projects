@@ -1,40 +1,41 @@
 import { ICar } from "./types/interfaces";
 
-function drawMain(isGarage = true, garage: ICar[], pageNumber: number = 1) {
+function drawGarageView (garage: ICar[], pageNumber: number = 1){
     const main = document.querySelector('.main');
-    if ((main)&&(isGarage)) {
+    if (main){
         const divGarage = document.createElement('div');
-        divGarage.classList.add('garage');
+    divGarage.classList.add('garage');
         
-        const block = {
-            create: 'create',
-            update: 'update'
-        }
-        const divSettingsBlock = document.createElement('div');
-        divSettingsBlock.classList.add('settings-block');
-        const divSettingsCreate = drawBlock(block.create);
-        const divSettingsUpdatte = drawBlock(block.update);
-        divSettingsBlock.append(divSettingsCreate);
-        divSettingsBlock.append(divSettingsUpdatte);
+    const block = {
+        create: 'create',
+        update: 'update'
+    }
+    
+    const divSettingsBlock = document.createElement('div');
+    divSettingsBlock.classList.add('settings-block');
+    const divSettingsCreate = drawSettingsBlock(block.create);
+    const divSettingsUpdatte = drawSettingsBlock(block.update);
+    divSettingsBlock.append(divSettingsCreate);
+    divSettingsBlock.append(divSettingsUpdatte);
 
-        const buttonsSettings = ['race', 'reset', 'generate cars']
-        const divOptions = document.createElement('div');
-        divOptions.classList.add('settings');
-        divOptions.classList.add('settings_more-options');
-        const buttons = buttonsSettings.map((e) => drawButton(e));
-        buttons.forEach((e) => {
-            e.classList.add('settings__button');
-            divOptions.append(e);
-        })
-        divSettingsBlock.append(divOptions);
-        const mainBlock = drawMainBlock(garage, pageNumber);
-        divGarage.append(divSettingsBlock);
-        divGarage.append(mainBlock);
-        main.append(divGarage);
-}
+    const buttonsSettings = ['race', 'reset', 'generate cars']
+    const divOptions = document.createElement('div');
+    divOptions.classList.add('settings');
+    divOptions.classList.add('settings_more-options');
+    const buttons = buttonsSettings.map((e) => drawButton(e));
+    buttons.forEach((e) => {
+    e.classList.add('settings__button');
+    divOptions.append(e);
+    })
+    divSettingsBlock.append(divOptions);
+    const mainBlock = drawMainBlock(garage, pageNumber);
+    divGarage.append(divSettingsBlock);
+    divGarage.append(mainBlock);
+    main.append(divGarage);
+    }   
 }
 
-function drawBlock (blockName: string){
+function drawSettingsBlock (blockName: string){
         const divSettings = document.createElement('div');
         divSettings.classList.add('settings');
         divSettings.classList.add(`settings_${blockName}`);
@@ -157,6 +158,6 @@ function drawCarFlagCarBlock (car: ICar){
     return divCarFlag;
 }
 
-export default drawMain;
+export default drawGarageView;
 
 

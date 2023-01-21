@@ -10,3 +10,9 @@ export interface IlinkFooter {
     color: string,
     id: number
   }
+
+  export interface IWinner {
+    id: number,
+    wins: number,
+    time: number
+  }
