@@ -26,6 +26,17 @@ export const request = {
         urlParams: 'id=[integer]',
         queryParams: '',
         dataParams: '',
+    },
+    createCar: {
+        path: '/garage/', 
+        method: 'POST',
+        headers: '"Content-Type": "application/json"',
+        urlParams: '',
+        queryParams: '',
+        dataParams: {
+            name: 'string',
+            color: 'string'
+        },
     }
 
 }

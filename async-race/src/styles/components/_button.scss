@@ -30,6 +30,19 @@
     }
 }
 
+.settings {
+    .disabled {
+        background-color: rgba(219, 240, 219, 0.4);
+        cursor: default;
+        &:hover{
+            background-color: rgba(219, 240, 219, 0.4);
+            scale: 1;
+            font-weight: 500;
+        }
+    }
+}
+
+
 .button_race, 
 .button_reset{
     color: #ff17d1;
