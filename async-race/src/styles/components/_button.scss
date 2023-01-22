@@ -42,16 +42,29 @@
 }
 
 .button_select,
-.button_remove{
+.button_remove {
     color: #ff17d1;
     background-color: $color-primary;
     padding: 5px 10px;
+}
 
+.button_prev,
+.button_next {
+    background-color: $color-text-dark;
+    color: $brand-color2;
+    padding: 0px 5px;
+    font-weight: 100;
+
+    &:hover {
+        background-color: $brand-color2;
+        color: $color-text-dark;
+        font-weight: 400;
+        scale: 1.1;
+    }
 }
 
 .buttons-wrapper{
     display: flex;
     gap: 5px;
-
 }
 

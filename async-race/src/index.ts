@@ -1,7 +1,7 @@
 import './styles/main.scss';
-import drawPage from './components/drawPage';
-import getCarsInGarage from './components/getCarsInGarage';
-import getWinners from './components/getWinners';
+import drawPage from './components/view/drawPage';
+import getCarsInGarage from './components/requests/getCarsInGarage';
+import getWinners from './components/requests/getWinners';
 
 let garageView = true;
 export const baseUrl = 'http://127.0.0.1:3000';

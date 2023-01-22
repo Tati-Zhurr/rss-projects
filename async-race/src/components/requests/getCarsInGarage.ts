@@ -1,6 +1,6 @@
 import { request } from "./request";
-import drawGarageView from "./drawGarageView";
-import { baseUrl } from "..";
+import drawGarageView from "../view/drawGarageView";
+import { baseUrl } from "../..";
 
 const getCarsInGarage = async () => {
     const method = request.getCars.method;

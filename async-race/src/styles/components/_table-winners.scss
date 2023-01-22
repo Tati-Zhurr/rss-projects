@@ -3,4 +3,20 @@
     font-size: 1.6rem;
     border-color: $brand-color5;
     background-color: $brand-color5;
+    text-align: center;
+    margin-bottom: 20px;
+
+    .table-head {
+        #Wins,
+        #Time {
+            cursor: pointer;
+        }
+        
+    }
+
+    .car{
+        width: 40px;
+        height: 40px;
+        transform: rotateY(180deg);
+    }
 }

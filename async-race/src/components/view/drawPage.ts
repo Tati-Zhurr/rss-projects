@@ -1,4 +1,4 @@
-import { IlinkFooter } from "./types/interfaces";
+import { IlinkFooter } from "../types/interfaces";
 
 function drawPage () {
     const body = document.querySelector('body');
@@ -11,8 +11,7 @@ function drawPage () {
         body.prepend(header);
         body.append(main);
         body.append(footer);
-    }
-    
+    }   
 }
 
 function drawHeader (){
