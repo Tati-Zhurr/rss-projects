@@ -17,6 +17,7 @@ function drawWinnersView(winners: IWinner[], cars: ICar[], pageNumber: number = 
     const divPrevNext = drawPrevNext();
     divWinners.append(divPrevNext);
     main.append(divWinners);
+    divWinners.classList.add('hidden');
     }
 }
 
