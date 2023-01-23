@@ -38,8 +38,16 @@ export const request = {
             color: 'string'
         },
     },
-    deleteCar: {
+    deleteCarGarage: {
         path: '/garage/', 
+        method: 'DELETE',
+        headers: '',
+        urlParams: '',
+        queryParams: 'id=[integer]',
+        dataParams: '',
+    },
+    deleteCarWinners: {
+        path: '/winners/', 
         method: 'DELETE',
         headers: '',
         urlParams: '',

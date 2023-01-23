@@ -1,6 +1,7 @@
 import deleteCar from "../requests/deleteCar";
 import getCar from "../requests/getCar";
 import updateCar from "../requests/updateCar";
+import generateCars from "./generateCars";
 
 
 function drawButton(buttonName: string){
@@ -12,6 +13,8 @@ function drawButton(buttonName: string){
         addListenerToRemoveBtn(button); 
     } else if (button.classList.contains('button_select')) {
         addListenerToSelectBtn(button); 
+    } else if (button.classList.contains('button_generate')) {
+        addListenerToGenerateBtn(button);
     }
     return button;
 }
@@ -61,13 +64,17 @@ const  getInputsUpdateReadyToCgange = async (id: number) => {
     }
 }
 
- function updateHandler (id: number, name: string, color: string, button: HTMLButtonElement) {
-        button.classList.remove('disabled');
-        button.addEventListener('click', () =>{
-            updateCar(id, name, color);
- })
-       
+function updateHandler (id: number, name: string, color: string, button: HTMLButtonElement) {
+    button.classList.remove('disabled');
+    button.addEventListener('click', () =>{
+        updateCar(id, name, color);
+        })
+}
 
+function addListenerToGenerateBtn (button: HTMLElement) {
+    button.addEventListener('click', () =>{
+        generateCars();
+        })
 }
 
 export default drawButton;

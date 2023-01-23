@@ -5,6 +5,10 @@ function addListenerToPrevNext (block: HTMLElement, page: number, totalPage: num
     const buttonPrev = block.firstChild;
     const buttonNext = block.lastChild;
     if ((buttonPrev instanceof HTMLElement) && (buttonNext instanceof HTMLElement)) {
+        if (totalPage === 1) {
+            buttonPrev.classList.add('disabled');
+            buttonNext.classList.add('disabled');
+        }
         if (page === 1) {
             buttonPrev.classList.add('disabled');
             buttonNext.addEventListener('click', getNextPage);
