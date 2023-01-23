@@ -37,6 +37,14 @@ export const request = {
             name: 'string',
             color: 'string'
         },
+    },
+    deleteCar: {
+        path: '/garage/', 
+        method: 'DELETE',
+        headers: '',
+        urlParams: '',
+        queryParams: 'id=[integer]',
+        dataParams: '',
     }
 
 }
