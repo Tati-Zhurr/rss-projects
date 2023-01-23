@@ -1,4 +1,5 @@
 import { ICar } from "../types/interfaces";
+
 function drawCarFlagCarBlock (car: ICar){
     const divCarFlag = document.createElement('div');
     divCarFlag.classList.add('car-flag');

@@ -1,10 +1,9 @@
 import { request } from "./request";
 import { baseUrl } from "../..";
 import { ICar } from "../types/interfaces";
-import addNewCarBlock from "../view/addNewCarBlock";
 import getCarsInGarage from "./getCarsInGarage";
 
-const createCar = async (name: string, color: string) => {
+const createCar = async (name: string, color: string ) => {
     const dataOfCar = {
         name: `${name}`,
         color: `${color}`
@@ -18,7 +17,7 @@ const createCar = async (name: string, color: string) => {
             body: JSON.stringify(dataOfCar),
             }
         );
-        const data: ICar = await response.json();  
+       // const data: ICar = await response.json();  
        getCarsInGarage();
     } catch(err){
         throw new Error('err');

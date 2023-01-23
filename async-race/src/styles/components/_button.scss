@@ -81,3 +81,21 @@
     gap: 5px;
 }
 
+
+.buttons-wrapper{
+    .disabled{
+        background-color: rgba(219, 240, 219, 0.4);
+        cursor: default;
+
+        &:hover{
+            background-color: rgba(219, 240, 219, 0.4);
+            scale: 1;
+            font-weight: 100;
+            color: $brand-color2;
+        }
+    }
+    
+
+}
+
+

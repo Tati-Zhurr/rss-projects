@@ -1,10 +1,13 @@
 import { IlinkFooter } from "../types/interfaces";
+import drawPrevNext from "./drawPrevNext";
 
 function drawPage () {
     const body = document.querySelector('body');
     const header = drawHeader();
     const main = document.createElement('main');
     main.classList.add('main');
+   // const divPrevNext = drawPrevNext();
+   // main.append(divPrevNext);
     const footer = drawFooter();
 
     if (body instanceof HTMLElement){

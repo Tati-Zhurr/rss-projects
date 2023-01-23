@@ -5,8 +5,11 @@ import drawOptionsCarBlock from "./drawOptionsCarBlock";
 import drawStartBackCarBlock from "./drawStartBackCarBlock";
 import drawCarFlagCarBlock from "./drawCarFlagCarBlock";
 import createCar from "../requests/createCar";
+import addListenerToPrevNext from "./addlistenerToPrevNext";
+import { store } from "../store";
 
-function drawGarageView (garage: ICar[], pageNumber: number = 1){
+
+function drawGarageView (garage: ICar[]){
     const main = document.querySelector('.main');
     if (main){
         let divGarage = document.querySelector('.garage');
@@ -38,12 +41,13 @@ function drawGarageView (garage: ICar[], pageNumber: number = 1){
         divOptions.append(e);
         })
       divSettingsBlock.append(divOptions);
-      const mainBlock = drawMainBlock(garage, pageNumber);
+      const mainBlock = drawMainBlock(garage);
       divGarage.append(divSettingsBlock);
       divGarage.append(mainBlock);
       const divPrevNext = drawPrevNext();
       divGarage.append(divPrevNext);
-      main.append(divGarage);
+      addListenerToPrevNext(divPrevNext, store.pageGarage, store.totalPageGarage);
+      main.prepend(divGarage);
     }   
 }
 
@@ -83,13 +87,13 @@ function drawSettingsBlock (blockName: string){
 
 
 
-function drawMainBlock(garage: ICar[], pageNumber: number = 1) {
+function drawMainBlock(garage: ICar[] ) {
     const mainBlock = document.createElement('div');
     mainBlock.classList.add ('main-block');
     const title = document.createElement('h1');
-    title.textContent = `Garage(${garage.length})`;
+    title.textContent = `Garage(${store.totalCarsGarage})`;
     const subTitle = document.createElement('h2');
-    subTitle.textContent = `Page #${pageNumber}`;
+    subTitle.textContent = `Page #${store.pageGarage}`;
     const allCarBlocks = drawCarBlocks(garage);
 
     mainBlock.appendChild(title);
@@ -119,6 +123,7 @@ function drawCarBlocks (garage: ICar[]){
     }
     return fragment;
 }
+
 
 
 export default drawGarageView;

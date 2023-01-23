@@ -47,6 +47,13 @@
         .disabled {
             color: rgba($color-primary, 0.4);
             border: 1px solid rgba($color-primary, 0.4);
+
+            &:hover{
+                color: rgba($color-primary, 0.4);
+                border: 1px solid rgba($color-primary, 0.4);
+                cursor: default;
+                scale: 1;
+            }
         }
     }
 

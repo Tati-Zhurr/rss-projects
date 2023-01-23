@@ -1,5 +1,7 @@
 import { ICar, IWinner } from "../types/interfaces";
 import drawPrevNext from "./drawPrevNext";
+import { store } from "../store";
+import addListenerToPrevNext from "./addlistenerToPrevNext";
 
 function drawWinnersView(winners: IWinner[], cars: ICar[], pageNumber: number = 1){
     const main = document.querySelector('.main');
@@ -16,7 +18,8 @@ function drawWinnersView(winners: IWinner[], cars: ICar[], pageNumber: number = 
     divWinners.append(table);
     const divPrevNext = drawPrevNext();
     divWinners.append(divPrevNext);
-    main.append(divWinners);
+    addListenerToPrevNext(divPrevNext, store.pageWinners, store.totalPageWinners);
+    main.prepend(divWinners);
     divWinners.classList.add('hidden');
     }
 }

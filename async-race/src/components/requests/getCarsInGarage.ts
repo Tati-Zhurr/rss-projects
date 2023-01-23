@@ -1,13 +1,20 @@
 import { request } from "./request";
 import drawGarageView from "../view/drawGarageView";
-import { baseUrl } from "../..";
+import { store } from "../store";
 import { ICar } from "../types/interfaces";
 
 const getCarsInGarage = async () => {
     try{
         const method = request.getCars.method;
-        const response = await fetch(`${baseUrl}${request.getCars.path}`, {method});
+        const response = await fetch(`${store.baseUrl}${request.getCars.path}?_page=${store.pageGarage}`, {method});
         const data: ICar[] = await response.json();  
+
+        for (var pair of response.headers.entries()) {
+            if (pair[0] === 'x-total-count') {
+                store.totalCarsGarage = Number(pair[1]);
+                store.totalPageGarage = Math.ceil (store.totalCarsGarage / store.limitGarage);
+            }
+        }
         drawGarageView(data);
         return data;
     }
