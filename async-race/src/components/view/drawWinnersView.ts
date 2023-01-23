@@ -3,15 +3,15 @@ import drawPrevNext from "./drawPrevNext";
 import { store } from "../store";
 import addListenerToPrevNext from "./addlistenerToPrevNext";
 
-function drawWinnersView(winners: IWinner[], cars: ICar[], pageNumber: number = 1){
+function drawWinnersView(winners: IWinner[], cars: ICar[]){
     const main = document.querySelector('.main');
     if (main){
     const divWinners = document.createElement('div');
     divWinners.classList.add('winners');
     const title = document.createElement('h1');
-    title.textContent = `Winners(${winners.length})`;
+    title.textContent = `Winners(${store.totalCarsWinners})`;
     const subTitle = document.createElement('h2');
-    subTitle.textContent = `Page #${pageNumber}`;
+    subTitle.textContent = `Page #${store.pageWinners}`;
     const table = drawTamble(winners, cars);
     divWinners.append(title);
     divWinners.append(subTitle);

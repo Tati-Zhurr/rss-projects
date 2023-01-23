@@ -6,7 +6,7 @@ import getWinners from './components/requests/getWinners';
 import { store } from './components/store';
 import getNextPage from './components/view/getNextPage';
 
-let isGarageView = store.isGarageView;
+
 export let pageGarage = store.pageGarage;
 export let pageWinners = store.pageWinners;
 export const baseUrl = 'http://127.0.0.1:3000';
@@ -50,7 +50,7 @@ if (store.pageGarage === store. totalPageGarage) {
 }
 
 if (store.pageGarage > 1) {
-    
+
 }
 
 

@@ -6,6 +6,7 @@ import drawStartBackCarBlock from "./drawStartBackCarBlock";
 import drawCarFlagCarBlock from "./drawCarFlagCarBlock";
 import createCar from "../requests/createCar";
 import addListenerToPrevNext from "./addlistenerToPrevNext";
+import updateCar from "../requests/updateCar";
 import { store } from "../store";
 
 
@@ -74,12 +75,8 @@ function drawSettingsBlock (blockName: string){
             buttonSettings.classList.remove('disabled');
                 buttonSettings.addEventListener('click', () => {
                     if (blockName === 'create') {
-                        console.log('yes');
                         createCar(inputName.value, inputColor.value);
-                    } else {
-                       // updateCar(inputName.value, inputColor.value);
-                    }    
-                
+                    }
                 }, { once: true });
         })
         return divSettings;

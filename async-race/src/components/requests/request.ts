@@ -45,6 +45,14 @@ export const request = {
         urlParams: '',
         queryParams: 'id=[integer]',
         dataParams: '',
+    },
+    updateCar: {
+        path: '/garage/', 
+        method: 'PUT',
+        headers: '',
+        urlParams: '',
+        queryParams: 'id=[integer]',
+        dataParams: '',
     }
 
 }
