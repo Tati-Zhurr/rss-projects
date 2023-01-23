@@ -1,7 +1,7 @@
 export const store = {
     pageGarage: 1,
     pageWinners: 1,
-    limitGarage: 10,
+    limitGarage: 7,
     limitWinners: 7,
     isGarageView: true,
     baseUrl: 'http://127.0.0.1:3000',
