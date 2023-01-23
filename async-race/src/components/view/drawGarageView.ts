@@ -9,37 +9,41 @@ import createCar from "../requests/createCar";
 function drawGarageView (garage: ICar[], pageNumber: number = 1){
     const main = document.querySelector('.main');
     if (main){
-        const divGarage = document.createElement('div');
-    divGarage.classList.add('garage');
+        let divGarage = document.querySelector('.garage');
+        if (divGarage instanceof HTMLDivElement) {
+            divGarage.replaceChildren();
+        } else {
+            divGarage = document.createElement('div');
+        }
+        divGarage.classList.add('garage');
 
-    const block = {
-        create: 'create',
-        update: 'update'
-    }
+        const block = {
+            create: 'create',
+            update: 'update'
+        }
+        const divSettingsBlock = document.createElement('div');
+        divSettingsBlock.classList.add('settings-block');
+        const divSettingsCreate = drawSettingsBlock(block.create);
+        const divSettingsUpdatte = drawSettingsBlock(block.update);
+        divSettingsBlock.append(divSettingsCreate);
+        divSettingsBlock.append(divSettingsUpdatte);
 
-    const divSettingsBlock = document.createElement('div');
-    divSettingsBlock.classList.add('settings-block');
-    const divSettingsCreate = drawSettingsBlock(block.create);
-    const divSettingsUpdatte = drawSettingsBlock(block.update);
-    divSettingsBlock.append(divSettingsCreate);
-    divSettingsBlock.append(divSettingsUpdatte);
-
-    const buttonsSettings = ['race', 'reset', 'generate cars']
-    const divOptions = document.createElement('div');
-    divOptions.classList.add('settings');
-    divOptions.classList.add('settings_more-options');
-    const buttons = buttonsSettings.map((e) => drawButton(e));
-    buttons.forEach((e) => {
-    e.classList.add('settings__button');
-    divOptions.append(e);
-    })
-    divSettingsBlock.append(divOptions);
-    const mainBlock = drawMainBlock(garage, pageNumber);
-    divGarage.append(divSettingsBlock);
-    divGarage.append(mainBlock);
-    const divPrevNext = drawPrevNext();
-    divGarage.append(divPrevNext);
-    main.append(divGarage);
+       const buttonsSettings = ['race', 'reset', 'generate cars']
+       const divOptions = document.createElement('div');
+       divOptions.classList.add('settings');
+       divOptions.classList.add('settings_more-options');
+       const buttons = buttonsSettings.map((e) => drawButton(e));
+       buttons.forEach((e) => {
+        e.classList.add('settings__button');
+        divOptions.append(e);
+        })
+      divSettingsBlock.append(divOptions);
+      const mainBlock = drawMainBlock(garage, pageNumber);
+      divGarage.append(divSettingsBlock);
+      divGarage.append(mainBlock);
+      const divPrevNext = drawPrevNext();
+      divGarage.append(divPrevNext);
+      main.append(divGarage);
     }   
 }
 
@@ -62,18 +66,21 @@ function drawSettingsBlock (blockName: string){
         divSettings.append(inputName);
         divSettings.append(inputColor);
         divSettings.append(buttonSettings);
-        inputName.addEventListener('oninput',  () =>{
+        inputName.addEventListener('change',  () =>{
             buttonSettings.classList.remove('disabled');
                 buttonSettings.addEventListener('click', () => {
                     if (blockName === 'create') {
+                        console.log('yes');
                         createCar(inputName.value, inputColor.value);
                     } else {
                        // updateCar(inputName.value, inputColor.value);
-                    }       
-                })
+                    }    
+                
+                }, { once: true });
         })
         return divSettings;
 }
+
 
 
 function drawMainBlock(garage: ICar[], pageNumber: number = 1) {

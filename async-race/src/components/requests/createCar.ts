@@ -2,6 +2,7 @@ import { request } from "./request";
 import { baseUrl } from "../..";
 import { ICar } from "../types/interfaces";
 import addNewCarBlock from "../view/addNewCarBlock";
+import getCarsInGarage from "./getCarsInGarage";
 
 const createCar = async (name: string, color: string) => {
     const dataOfCar = {
@@ -18,7 +19,7 @@ const createCar = async (name: string, color: string) => {
             }
         );
         const data: ICar = await response.json();  
-        addNewCarBlock(data);
+       getCarsInGarage();
     } catch(err){
         throw new Error('err');
     }

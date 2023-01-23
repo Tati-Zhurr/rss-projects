@@ -4,7 +4,6 @@ import drawStartBackCarBlock from "./drawStartBackCarBlock";
 import drawCarFlagCarBlock from "./drawCarFlagCarBlock";
 
 function addNewCarBlock (car: ICar){
-    let fragment = new DocumentFragment();
     const carBlock = document.createElement('div');
     carBlock.classList.add('car-block');
     carBlock.setAttribute('id', `${car.id}`);
@@ -16,6 +15,10 @@ function addNewCarBlock (car: ICar){
         carBlock.appendChild(divOptions);
         carBlock.appendChild(divStartBack);
         carBlock.appendChild(divCarFlag);
+        const mainBlock = document.querySelector('.main-block');
+        if (mainBlock instanceof HTMLDivElement) {
+            mainBlock.append(carBlock);
+        }
         
 }
 
