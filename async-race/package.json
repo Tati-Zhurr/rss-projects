@@ -21,11 +21,15 @@
   },
   "homepage": "https://github.com/sensaur/online-store#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.1.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^3.4.0",
@@ -41,7 +45,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
     "eslint-webpack-plugin": "^3.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4"

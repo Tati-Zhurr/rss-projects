@@ -1,27 +1,27 @@
-import { request } from "./request";
-import drawGarageView from "../view/drawGarageView";
-import { store } from "../store";
-import { ICar } from "../types/interfaces";
+/* eslint import/no-cycle: [2, { maxDepth: 1 }] */
+import drawGarageView from '../view/drawGarageView';
+import store from '../store';
+import { ICar } from '../types/interfaces';
 
 const getCarsInGarage = async () => {
-    try{
-        const method = request.getCars.method;
-        const response = await fetch(`${store.baseUrl}${request.getCars.path}?_page=${store.pageGarage}&_limit=${store.limitGarage}`, {method});
-        const data: ICar[] = await response.json();  
+  try {
+    const response = await fetch(
+      `${store.baseUrl}${'/garage'}?_page=${store.pageGarage}&_limit=${store.limitGarage}`,
+      { method: 'GET' },
+    );
+    const data: ICar[] = await response.json();
 
-        for (var pair of response.headers.entries()) {
-            if (pair[0] === 'x-total-count') {
-                store.totalCarsGarage = Number(pair[1]);
-                store.totalPageGarage = Math.ceil (store.totalCarsGarage / store.limitGarage);
-            }
-        }
-        drawGarageView(data);
-        return data;
+    for (const pair of response.headers.entries()) {
+      if (pair[0] === 'x-total-count') {
+        store.totalCarsGarage = Number(pair[1]);
+        store.totalPageGarage = Math.ceil(store.totalCarsGarage / store.limitGarage);
+      }
     }
-    catch (err) {
-        console.log(err);
-    }
-    
+    drawGarageView(data);
+    return data;
+  } catch (err) {
+    throw new Error('err');
+  }
 };
 
 export default getCarsInGarage;

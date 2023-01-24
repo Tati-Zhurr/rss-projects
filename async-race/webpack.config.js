@@ -27,6 +27,16 @@ const baseConfig = {
                 test: /\.(gif|png|jpg|jpeg|svg|mp3|webm|ico)$/i,
                 type: 'asset/resource',
             },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+            }
         ],
     },
     resolve: {
