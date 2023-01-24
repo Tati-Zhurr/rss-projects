@@ -4,7 +4,6 @@ import getView from './components/view/getView';
 import getCarsInGarage from './components/requests/getCarsInGarage';
 import getWinners from './components/requests/getWinners';
 import { store } from './components/store';
-import getNextPage from './components/view/getNextPage';
 
 
 export let pageGarage = store.pageGarage;
@@ -35,23 +34,6 @@ if (buttonGarage instanceof HTMLButtonElement){
     });
 }
 
-const buttonNext = document.querySelector('.button_next');
-if (buttonNext instanceof HTMLButtonElement) {
-    buttonNext.addEventListener('click', getNextPage)
-}
-
-
-if (store.pageGarage === store. totalPageGarage) {
-    const buttonNext = document.querySelector('.button_next');
-    if (buttonNext instanceof HTMLButtonElement) {
-        buttonNext.classList.add('disabled');
-        buttonNext.removeEventListener('click', getNextPage);
-    }
-}
-
-if (store.pageGarage > 1) {
-
-}
 
 
 
@@ -59,7 +41,8 @@ if (store.pageGarage > 1) {
 
 
 
-//getWinners();
+
+
 
 
 

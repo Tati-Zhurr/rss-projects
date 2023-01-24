@@ -61,6 +61,16 @@ export const request = {
         urlParams: '',
         queryParams: 'id=[integer]',
         dataParams: '',
+    },
+    getEngineStart: {
+        path: '/engine', 
+        method: 'PATCH',
+        headers: '',
+        urlParams: '',
+        queryParams: [
+            'id=[integer]',
+            'status=started'
+        ],
+        dataParams: '',
     }
-
 }
