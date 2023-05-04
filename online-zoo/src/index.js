@@ -1,7 +1,7 @@
 import generateJoke from "./generateJoke";
 import getNewCards from "./petSlider";
 import './styles/main.scss';
-generateJoke();
+
 
 //burger-menu
 let burgerButton = document.querySelector('.burger-nav');
